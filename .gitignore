@@ -188,7 +188,14 @@ Plugins/**/Binaries/*
 Plugins/**/Intermediate/*
 
 # End of https://www.toptal.com/developers/gitignore/api/unity,unrealengine
-RHTF_UE5/Content/StarterContent/
-RHTF_UE5/Intermediate/
 RHTF_Unity/Library/Artifacts/
 RHTF_Unity/Library/Bee/artifacts/
+
+RHTF_UE5/Content/StarterContent/
+RHTF_UE5/Intermediate/
+
+RHTF_UE5/Saved/Logs/
+RHTF_UE5/Saved/Logs/RHTF_UE5.log
+RHTF_UE5/Saved/Config/CrashReportClient/
+RHTF_UE5/Saved/AutoScreenshot.png
+RHTF_UE5/Saved/Config/WindowsEditor/EditorPerProjectUserSettings.ini
