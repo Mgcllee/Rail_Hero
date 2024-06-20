@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RHMainServer
+namespace RHTFMainServer
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+
         }
     }
 }

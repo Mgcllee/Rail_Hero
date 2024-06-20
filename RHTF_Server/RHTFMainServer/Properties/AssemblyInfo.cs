@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("RHMainServer")]
+[assembly: AssemblyTitle("RHTFMainServer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("RHMainServer")]
+[assembly: AssemblyProduct("RHTFMainServer")]
 [assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("4519c542-e916-47f4-b350-c46360baeaf4")]
+[assembly: Guid("cca95d15-c749-4a79-b7b6-4fe5d41eaf8d")]
 
 // Version information for an assembly consists of the following four values:
 //
