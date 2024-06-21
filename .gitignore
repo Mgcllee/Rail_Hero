@@ -1,6 +1,12 @@
 # Created by https://www.toptal.com/developers/gitignore/api/unity,unrealengine
 # Edit at https://www.toptal.com/developers/gitignore?templates=unity,unrealengine
 
+### Server File ###
+RHTF_Server/boost_1_85_0/
+
+
+
+
 ### Unity ###
 # This .gitignore file should be placed at the root of your Unity project directory
 #
