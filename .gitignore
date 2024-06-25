@@ -4,6 +4,9 @@
 ### Server File ###
 RHTF_Server/boost_1_85_0/
 
+### Model File ###
+/RHTF_Model/
+
 ### Unity ###
 # This .gitignore file should be placed at the root of your Unity project directory
 #
@@ -107,7 +110,7 @@ crashlytics-build.properties
 *.slo
 *.lo
 *.o
-*.obj
+#*.obj
 
 /Content/StarterContent/
 \Content\StarterContent\
