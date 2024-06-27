@@ -11,7 +11,9 @@
 
 # Main Server
 
-C#을 사용
+C#을 사용  
+
+[[Mgcllee.github.io] C#에서 외부 실행파일 실행하기](https://mgcllee.github.io/posts/Diagnostics/)
 
 # Stage Server
 C++20 과 Boost 를 사용.  
