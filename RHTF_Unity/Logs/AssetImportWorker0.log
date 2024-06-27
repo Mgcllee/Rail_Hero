@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2022.3/staging' branch; Version is '2022.3.32f1 (c8300dc0a3fa) revision 13119501'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 11  (10.0.22621) 64bit Core' Language: 'ko' Physical Memory: 16322 MB
+OS: 'Windows 11  (10.0.22631) 64bit Core' Language: 'ko' Physical Memory: 12121 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
 
 COMMAND LINE ARGUMENTS:
@@ -15,7 +15,7 @@ C:/Git/RHTF/RHTF_Unity
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-10996
+57169
 Successfully changed project path to: C:/Git/RHTF/RHTF_Unity
 C:/Git/RHTF/RHTF_Unity
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -49,12 +49,12 @@ C:/Git/RHTF/RHTF_Unity
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [33232] Host "[IP] 192.168.0.9 [Port] 0 [Flags] 2 [Guid] 25963557 [EditorId] 25963557 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-1PVRDUP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [9728] Host "[IP] 10.10.192.129 [Port] 0 [Flags] 2 [Guid] 1960698278 [EditorId] 1960698278 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-2HQHUSC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [33232] Host "[IP] 192.168.0.9 [Port] 0 [Flags] 2 [Guid] 25963557 [EditorId] 25963557 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-1PVRDUP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [9728] Host "[IP] 10.10.192.129 [Port] 0 [Flags] 2 [Guid] 1960698278 [EditorId] 1960698278 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-2HQHUSC) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-Refreshing native plugins compatible for Editor in 21.28 ms, found 3 plugins.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+Refreshing native plugins compatible for Editor in 25.33 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2022.3.32f1 (c8300dc0a3fa)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/Resources/UnitySubsystems
@@ -62,61 +62,61 @@ Initialize engine version: 2022.3.32f1 (c8300dc0a3fa)
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: NVIDIA GeForce RTX 2070 SUPER (ID=0x1e84)
-    Vendor:   NVIDIA
-    VRAM:     7989 MB
-    Driver:   32.0.15.5599
+    Renderer: Intel(R) UHD Graphics 620 (ID=0x5917)
+    Vendor:   Intel
+    VRAM:     6060 MB
+    Driver:   31.0.101.2111
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56648
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56272
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.019398 seconds.
-- Loaded All Assemblies, in  0.541 seconds
+Registered in 0.027059 seconds.
+- Loaded All Assemblies, in  0.821 seconds
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 1344 ms
+Android Extension - Scanning For ADB Devices 752 ms
 Native extension for WebGL target not found
 Mono: successfully reloaded assembly
-- Finished resetting the current domain, in  1.814 seconds
-Domain Reload Profiling: 2353ms
-	BeginReloadAssembly (153ms)
+- Finished resetting the current domain, in  1.923 seconds
+Domain Reload Profiling: 2741ms
+	BeginReloadAssembly (259ms)
 		ExecutionOrderSort (0ms)
 		DisableScriptedObjects (0ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
 		CreateAndSetChildDomain (1ms)
-	RebuildCommonClasses (54ms)
-	RebuildNativeTypeToScriptingClass (21ms)
-	initialDomainReloadingComplete (89ms)
-	LoadAllAssembliesAndSetupDomain (220ms)
-		LoadAssemblies (151ms)
+	RebuildCommonClasses (77ms)
+	RebuildNativeTypeToScriptingClass (26ms)
+	initialDomainReloadingComplete (124ms)
+	LoadAllAssembliesAndSetupDomain (330ms)
+		LoadAssemblies (257ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (216ms)
-			TypeCache.Refresh (214ms)
-				TypeCache.ScanAssembly (192ms)
-			ScanForSourceGeneratedMonoScriptInfo (1ms)
-			ResolveRequiredComponents (1ms)
-	FinalizeReload (1815ms)
+		AnalyzeDomain (324ms)
+			TypeCache.Refresh (319ms)
+				TypeCache.ScanAssembly (279ms)
+			ScanForSourceGeneratedMonoScriptInfo (2ms)
+			ResolveRequiredComponents (2ms)
+	FinalizeReload (1924ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (1731ms)
+		SetupLoadedEditorAssemblies (1712ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (1515ms)
-			SetLoadedEditorAssemblies (5ms)
+			InitializePlatformSupportModulesInManaged (1196ms)
+			SetLoadedEditorAssemblies (15ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (2ms)
-			ProcessInitializeOnLoadAttributes (152ms)
-			ProcessInitializeOnLoadMethodAttributes (57ms)
+			BeforeProcessingInitializeOnLoad (7ms)
+			ProcessInitializeOnLoadAttributes (374ms)
+			ProcessInitializeOnLoadMethodAttributes (120ms)
 			AfterProcessingInitializeOnLoad (0ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
@@ -124,8 +124,8 @@ Domain Reload Profiling: 2353ms
 ========================================================================
 Worker process is ready to serve import requests
 Begin MonoManager ReloadAssembly
-- Loaded All Assemblies, in  0.732 seconds
-Refreshing native plugins compatible for Editor in 7.26 ms, found 3 plugins.
+- Loaded All Assemblies, in  1.634 seconds
+Refreshing native plugins compatible for Editor in 16.45 ms, found 3 plugins.
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
@@ -141,50 +141,51 @@ Mono: successfully reloaded assembly
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] UpmClient::Send -- Unable to send message (not connected to UPM process).
 [Package Manager] Cannot connect to Unity Package Manager local server
-- Finished resetting the current domain, in  0.795 seconds
-Domain Reload Profiling: 1520ms
-	BeginReloadAssembly (178ms)
+- Finished resetting the current domain, in  1.477 seconds
+Domain Reload Profiling: 3107ms
+	BeginReloadAssembly (421ms)
 		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (7ms)
+		DisableScriptedObjects (13ms)
 		BackupInstance (0ms)
 		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (28ms)
-	RebuildCommonClasses (42ms)
-	RebuildNativeTypeToScriptingClass (13ms)
-	initialDomainReloadingComplete (58ms)
-	LoadAllAssembliesAndSetupDomain (434ms)
-		LoadAssemblies (360ms)
+		CreateAndSetChildDomain (56ms)
+	RebuildCommonClasses (90ms)
+	RebuildNativeTypeToScriptingClass (32ms)
+	initialDomainReloadingComplete (95ms)
+	LoadAllAssembliesAndSetupDomain (990ms)
+		LoadAssemblies (798ms)
 		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (174ms)
-			TypeCache.Refresh (151ms)
-				TypeCache.ScanAssembly (133ms)
-			ScanForSourceGeneratedMonoScriptInfo (17ms)
-			ResolveRequiredComponents (5ms)
-	FinalizeReload (795ms)
+		AnalyzeDomain (441ms)
+			TypeCache.Refresh (361ms)
+				TypeCache.ScanAssembly (322ms)
+			ScanForSourceGeneratedMonoScriptInfo (43ms)
+			ResolveRequiredComponents (35ms)
+	FinalizeReload (1479ms)
 		ReleaseScriptCaches (0ms)
 		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (602ms)
+		SetupLoadedEditorAssemblies (1054ms)
 			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (41ms)
-			SetLoadedEditorAssemblies (3ms)
+			InitializePlatformSupportModulesInManaged (92ms)
+			SetLoadedEditorAssemblies (9ms)
 			RefreshPlugins (0ms)
-			BeforeProcessingInitializeOnLoad (67ms)
-			ProcessInitializeOnLoadAttributes (446ms)
-			ProcessInitializeOnLoadMethodAttributes (33ms)
-			AfterProcessingInitializeOnLoad (12ms)
+			BeforeProcessingInitializeOnLoad (138ms)
+			ProcessInitializeOnLoadAttributes (746ms)
+			ProcessInitializeOnLoadMethodAttributes (50ms)
+			AfterProcessingInitializeOnLoad (19ms)
 			EditorAssembliesLoaded (0ms)
 		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (9ms)
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 9.01 ms, found 3 plugins.
+		AwakeInstancesAfterBackupRestoration (22ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.17 seconds
+Refreshing native plugins compatible for Editor in 15.52 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 3215 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 44 unused Assets / (63.3 KB). Loaded Objects now: 3667.
+Unloading 44 unused Assets / (63.2 KB). Loaded Objects now: 3667.
 Memory consumption went from 126.5 MB to 126.4 MB.
-Total: 4.223800 ms (FindLiveObjects: 0.277700 ms CreateObjectMapping: 0.322900 ms MarkObjects: 3.449600 ms  DeleteObjects: 0.172200 ms)
+Total: 8.605000 ms (FindLiveObjects: 0.475700 ms CreateObjectMapping: 0.556300 ms MarkObjects: 7.372600 ms  DeleteObjects: 0.198100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
   custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
   custom:CustomObjectIndexerAttribute: 9a22284fe3817be447336de3de66b15e -> 
@@ -198,1075 +199,484 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 584812.226446 seconds.
+  Time since last request: 1273134.676016 seconds.
+  path: Assets/RH_Asset/suburb_assets_pt1/print_buildings-houses_v1.blend
+  artifactKey: Guid(6063bcaebdc43f34980186c77358e633) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/suburb_assets_pt1/print_buildings-houses_v1.blend using Guid(6063bcaebdc43f34980186c77358e633) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '12b40c08b00ad653e0aaceed780344b3') in 1.082464 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 192
+========================================================================
+Received Import Request.
+  Time since last request: 311.479952 seconds.
   path: Assets/Readme.asset
   artifactKey: Guid(7f2c382dc2c22446db59030979f6e495) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Readme.asset using Guid(7f2c382dc2c22446db59030979f6e495) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '6685bce48972444adef26de25d107d5d') in 0.018932 seconds
+Start importing Assets/Readme.asset using Guid(7f2c382dc2c22446db59030979f6e495) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'bff16149bc47910b7ada48dca94879f8') in 0.008977 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 41.512558 seconds.
-  path: Assets
-  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'ae5280ad91af67e2a353905758f96678') in 0.000549 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 3.180332 seconds.
+  Time since last request: 2.271935 seconds.
   path: Assets/Scenes
   artifactKey: Guid(c3b1d0cc1b343934bb7220dfe5a51bfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes using Guid(c3b1d0cc1b343934bb7220dfe5a51bfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '8ca21c4987bbd91adfe9195362300983') in 0.006241 seconds
+Start importing Assets/Scenes using Guid(c3b1d0cc1b343934bb7220dfe5a51bfd) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e7cd6b34ca7d407e20ce830e3f71af9c') in 0.000753 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 1.425222 seconds.
-  path: Assets/Editor
-  artifactKey: Guid(9a2df797eb7ea8e44843144af9429b99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Editor using Guid(9a2df797eb7ea8e44843144af9429b99) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'a2984d40dc10e4e979279e01c8ba14a6') in 0.000545 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 8.662515 seconds.
+  Time since last request: 2.373528 seconds.
   path: Assets/RH_Asset
   artifactKey: Guid(5688b8575a73a764aa1e17dddbc8f14b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset using Guid(5688b8575a73a764aa1e17dddbc8f14b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '7cff41ab136eee0890b2a8790b096887') in 0.000760 seconds
+Start importing Assets/RH_Asset using Guid(5688b8575a73a764aa1e17dddbc8f14b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7c7cbc0fc423d6eb7e6b56eebdb04790') in 0.000700 seconds
 Number of updated asset objects reloaded before import = 0
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 20.312215 seconds.
-  path: Assets/RH_Asset/water-river-junction.obj
-  artifactKey: Guid(2dd8c297bbeef2140ae12fe877b9caf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/water-river-junction.obj using Guid(2dd8c297bbeef2140ae12fe877b9caf7) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'd0bf25cb8b1fdb4fd86157f662c704d6') in 0.425704 seconds
+  Time since last request: 0.896326 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a
+  artifactKey: Guid(2de05a78b264ea7479b05c5a400eaab8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a using Guid(2de05a78b264ea7479b05c5a400eaab8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1b5e7fec9e874c03e0342b1f074fbba4') in 0.000711 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000114 seconds.
-  path: Assets/RH_Asset/hill-corner-low.obj
-  artifactKey: Guid(94a82dd96a4081046ac5c5651514ebde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/hill-corner-low.obj using Guid(94a82dd96a4081046ac5c5651514ebde) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '1dbcfe77d813e45bafeb7351bf2510f7') in 0.036249 seconds
+  Time since last request: 0.071167 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/basetexture.jpg
+  artifactKey: Guid(cf2a3afa0a6df27479371cb55b628698) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/basetexture.jpg using Guid(cf2a3afa0a6df27479371cb55b628698) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '14685c77120c3125e876fb9b243661d3') in 0.057584 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/lot-exit.obj
+  artifactKey: Guid(e3a7e981870c2fa459603c5c16f8f079) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/lot-exit.obj using Guid(e3a7e981870c2fa459603c5c16f8f079) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'dc5c71cf245311cdf58414ba5ba33265') in 0.093321 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/canal-river-low.obj
+  artifactKey: Guid(6513cdb072988ce479c7adffe7c609f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/canal-river-low.obj using Guid(6513cdb072988ce479c7adffe7c609f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '969a9433103d9b3713e5c9b94c0fe78d') in 0.056980 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/grass.obj
+  artifactKey: Guid(a523507b2d8b81a4dbd7aa2e33b7d3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/grass.obj using Guid(a523507b2d8b81a4dbd7aa2e33b7d3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '476ccc8c53ff41693d71d0af325db7a0') in 0.068488 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/New Material.mat
+  artifactKey: Guid(086532e1f4859f746821e81aaf6764ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/New Material.mat using Guid(086532e1f4859f746821e81aaf6764ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e4dfd62165769d730f5b6b7be968b524') in 0.106578 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
   Time since last request: 0.000048 seconds.
-  path: Assets/RH_Asset/water-beddng-concave.obj
-  artifactKey: Guid(ce1c442a856fcd847ae2913a94149554) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/water-beddng-concave.obj using Guid(ce1c442a856fcd847ae2913a94149554) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '984f49057ad485b726e4259756ddd4b9') in 0.031673 seconds
+  path: Assets/RH_Asset/landscape_asset_v2a/river-straight-low.obj
+  artifactKey: Guid(d6cac7ed7017cc64f94c1167fe01cab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/river-straight-low.obj using Guid(d6cac7ed7017cc64f94c1167fe01cab4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '132f78d279d23965837eae0fc37f8c1f') in 0.065509 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
+Number of asset objects unloaded after import = 11
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000028 seconds.
-  path: Assets/RH_Asset/lot-parking.obj
-  artifactKey: Guid(d1dec4fc2f74ea240b07d2371c3662d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/lot-parking.obj using Guid(d1dec4fc2f74ea240b07d2371c3662d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '85ceeee5927db4951c2d642ee94a55ab') in 0.033772 seconds
+  Time since last request: 0.000039 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/canal-high-water-low.obj
+  artifactKey: Guid(c369f564dcd4aa647bdc47c0fa9710e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/canal-high-water-low.obj using Guid(c369f564dcd4aa647bdc47c0fa9710e4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7d00b67d13a79df36506d25dc80c8c3d') in 0.063188 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
+Number of asset objects unloaded after import = 11
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/RH_Asset/grass.obj
-  artifactKey: Guid(1970475ffc2d13e4fb57e6382d8294a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/grass.obj using Guid(1970475ffc2d13e4fb57e6382d8294a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '1085ddfbd28d177a1c6a961c95ee0ec1') in 0.032360 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/RH_Asset/river-end-high.obj
-  artifactKey: Guid(23cf26d68cb79be41886d45593dfe391) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/river-end-high.obj using Guid(23cf26d68cb79be41886d45593dfe391) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '134faefcab776f47bb910152736ba176') in 0.034874 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/RH_Asset/hill-corner-high.obj
-  artifactKey: Guid(f3b26f33a7c692245be083b05c84e547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/hill-corner-high.obj using Guid(f3b26f33a7c692245be083b05c84e547) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '78facd6f2d4ceedfb3450965564fd217') in 0.027626 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/RH_Asset/river-straight-low.obj
-  artifactKey: Guid(8aaef02259b671240bedde613375c686) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/river-straight-low.obj using Guid(8aaef02259b671240bedde613375c686) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '97ece0cbd5100e735a2f6de1c1c602c4') in 0.025990 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/RH_Asset/canal-corner-low.obj
-  artifactKey: Guid(3b0c00d3de355ea40a3d3519420a5698) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/canal-corner-low.obj using Guid(3b0c00d3de355ea40a3d3519420a5698) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '3fc5e0df98d12c684bd4fbb08c8463fe') in 0.026678 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/RH_Asset/hill-ramp.obj
-  artifactKey: Guid(b8ebd378d61bd2e4e837486a996cb2e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/hill-ramp.obj using Guid(b8ebd378d61bd2e4e837486a996cb2e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'f741206bfdfa8dd52c2fa4a50c8151f9') in 0.026473 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/RH_Asset/road-corner-high.obj
-  artifactKey: Guid(612dfec1c1fad3c49aeb434c3a4eed78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-corner-high.obj using Guid(612dfec1c1fad3c49aeb434c3a4eed78) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '81b511cc0e2aa70f96253ef4f8b5c601') in 0.025489 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000020 seconds.
-  path: Assets/RH_Asset/road-bridge-coast.obj
-  artifactKey: Guid(bdd2448ca67da8b4c9c2437dea881761) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-bridge-coast.obj using Guid(bdd2448ca67da8b4c9c2437dea881761) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'bfde581f5400c58100b8f296fe9306b5') in 0.034469 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/RH_Asset/road-end-low.obj
-  artifactKey: Guid(9fb4d8a0e32512342bfb256ea8b8d62f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-end-low.obj using Guid(9fb4d8a0e32512342bfb256ea8b8d62f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'c2fb0b869d61e64d2d864c94de1aedf9') in 0.028159 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/RH_Asset/road-bridge-ramp.obj
-  artifactKey: Guid(e8b18a1d9dcf29f49a7436a52ceaaad5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-bridge-ramp.obj using Guid(e8b18a1d9dcf29f49a7436a52ceaaad5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'd61a82fe5d8f84c94ec9ef1aa3a675be') in 0.028597 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/RH_Asset/canal-straight-low.obj
-  artifactKey: Guid(a30b0a3d1e42cbb429f212d8af28c1ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/canal-straight-low.obj using Guid(a30b0a3d1e42cbb429f212d8af28c1ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '7542c0ae0c8acb08b0c05569d5d731a1') in 0.028782 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/RH_Asset/road-tunnel-entry.obj
-  artifactKey: Guid(2bb6fed8b15eb3846a425762b5a947dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-tunnel-entry.obj using Guid(2bb6fed8b15eb3846a425762b5a947dc) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'f4b2087a983ee72280236c1c9aa8ba11') in 0.028042 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/RH_Asset/road-corner-low.obj
-  artifactKey: Guid(8c2fb06d420c07e4cb6f4193eecb8b53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-corner-low.obj using Guid(8c2fb06d420c07e4cb6f4193eecb8b53) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'c9b61538eb82eba70aed520a54a737b1') in 0.030468 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/RH_Asset/lot-exit.obj
-  artifactKey: Guid(05278c0f9cab6384f954eedc799cc66a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/lot-exit.obj using Guid(05278c0f9cab6384f954eedc799cc66a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e6aab2d6f10739296c401beb9d6d7b01') in 0.028911 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/RH_Asset/road-tjunction-low.obj
-  artifactKey: Guid(28cb77310de29994c9d92e0d64c00fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-tjunction-low.obj using Guid(28cb77310de29994c9d92e0d64c00fd8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '7608a3602f6b35440a6acb01d7cddb74') in 0.032606 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/RH_Asset/dirt-low.obj
-  artifactKey: Guid(636a7af243ea5ba46b28e96b7144ad4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/dirt-low.obj using Guid(636a7af243ea5ba46b28e96b7144ad4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '93042f3317152370b653275b8c851d03') in 0.029380 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/RH_Asset/water-bedding-convex.obj
-  artifactKey: Guid(55adf6a30b21d5d4db6611aef14dd5e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/water-bedding-convex.obj using Guid(55adf6a30b21d5d4db6611aef14dd5e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'f005105a7cf0a8d59ca310229feff07f') in 0.031190 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/RH_Asset/water-beach-concave.obj
-  artifactKey: Guid(c3d0f4887eb10f748b0b7d7ed5456230) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/water-beach-concave.obj using Guid(c3d0f4887eb10f748b0b7d7ed5456230) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '93fff37e56d11a9d4179452f627affaf') in 0.028953 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/RH_Asset/road-tunnel-segment.obj
-  artifactKey: Guid(a85e05f0f06079a47bb5c2e6d48ffa2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-tunnel-segment.obj using Guid(a85e05f0f06079a47bb5c2e6d48ffa2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'bb1336d70342e52c8f74b15b7553462f') in 0.027740 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/RH_Asset/river-end-low.obj
-  artifactKey: Guid(b56fd4a14df063548958dc089b561128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/river-end-low.obj using Guid(b56fd4a14df063548958dc089b561128) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '14403bf3974738c81cda283a5e65c564') in 0.026620 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/RH_Asset/road-bridge-canal.obj
-  artifactKey: Guid(76d52a2cb2673b84b830e2013460e664) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-bridge-canal.obj using Guid(76d52a2cb2673b84b830e2013460e664) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'cb91b24b06f389545cc447032a9e638c') in 0.028820 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/RH_Asset/river-corner-high.obj
-  artifactKey: Guid(c15231988ec44564c91fe8cffe6f66a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/river-corner-high.obj using Guid(c15231988ec44564c91fe8cffe6f66a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '33a680f4058f8900706395b18c0cd395') in 0.028727 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/RH_Asset/canal-river-low.obj
-  artifactKey: Guid(b0c3b73954b519940afb75eba7c87e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/canal-river-low.obj using Guid(b0c3b73954b519940afb75eba7c87e14) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '931d67bf3510b8d879ad8cf59e4500b3') in 0.026772 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/RH_Asset/road-crossing-high.obj
-  artifactKey: Guid(a800b23576af3a944ad90c448c244c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-crossing-high.obj using Guid(a800b23576af3a944ad90c448c244c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '18ca7682d6abe91a931f3171bc27b355') in 0.031017 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/RH_Asset/water-beach-straight.obj
-  artifactKey: Guid(7dd3a29d95164b64a90d75bf7ef04519) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/water-beach-straight.obj using Guid(7dd3a29d95164b64a90d75bf7ef04519) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'b6f9d884f36515a0a808d74306f31d29') in 0.027895 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/RH_Asset/water-bedding-straight.obj
-  artifactKey: Guid(1b893db74d1423a4ea3c5c041db83766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/water-bedding-straight.obj using Guid(1b893db74d1423a4ea3c5c041db83766) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'c132ee6ee270a6472ef832ca035b66f1') in 0.025499 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 45.606701 seconds.
-  path: Assets/RH_Asset/canal-corner-high.obj
-  artifactKey: Guid(ca198ef37a099874882307be140cb8ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/canal-corner-high.obj using Guid(ca198ef37a099874882307be140cb8ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '10a2e9913c65c61112035817c8e3b5dd') in 0.030282 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/RH_Asset/hill-corner-low.obj
-  artifactKey: Guid(94a82dd96a4081046ac5c5651514ebde) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/hill-corner-low.obj using Guid(94a82dd96a4081046ac5c5651514ebde) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '82e2948fe5b0013a83015ec3e2c63f1c') in 0.032340 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000032 seconds.
-  path: Assets/RH_Asset/grass.obj
-  artifactKey: Guid(1970475ffc2d13e4fb57e6382d8294a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/grass.obj using Guid(1970475ffc2d13e4fb57e6382d8294a2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'fa1f2b44fa190c639aecf06fea8f323f') in 0.040775 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/RH_Asset/hill-corner-high.obj
-  artifactKey: Guid(f3b26f33a7c692245be083b05c84e547) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/hill-corner-high.obj using Guid(f3b26f33a7c692245be083b05c84e547) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'b6bf55efee8d363327610e88c8d60756') in 0.047038 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/RH_Asset/river-straight-low.obj
-  artifactKey: Guid(8aaef02259b671240bedde613375c686) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/river-straight-low.obj using Guid(8aaef02259b671240bedde613375c686) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '2f148eb59f6d5f04ad5191f452d59214') in 0.040012 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/RH_Asset/river-hill.obj
-  artifactKey: Guid(570b5b9b562f6eb47b66f255e6cfc601) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/river-hill.obj using Guid(570b5b9b562f6eb47b66f255e6cfc601) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '9494f02444671732273e3b2b10d5a5f3') in 0.038737 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/RH_Asset/canal-hill-water-low.obj
-  artifactKey: Guid(fbbd3e84dbb88f0408726fd3441562a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/canal-hill-water-low.obj using Guid(fbbd3e84dbb88f0408726fd3441562a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '7198c97e51ee21638b50c7641d4573b4') in 0.032164 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/RH_Asset/canal-straight-low.obj
-  artifactKey: Guid(a30b0a3d1e42cbb429f212d8af28c1ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/canal-straight-low.obj using Guid(a30b0a3d1e42cbb429f212d8af28c1ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '803cffb862d13148ddfdaf609afa8798') in 0.032740 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/RH_Asset/road-crossing-low.obj
-  artifactKey: Guid(b8c1c5917e5c7f041ad06048c7e83c8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-crossing-low.obj using Guid(b8c1c5917e5c7f041ad06048c7e83c8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '165189fd0b51708dd21c798d66a208b8') in 0.028335 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/RH_Asset/dirt-low.obj
-  artifactKey: Guid(636a7af243ea5ba46b28e96b7144ad4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/dirt-low.obj using Guid(636a7af243ea5ba46b28e96b7144ad4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '630b9bf6517a832dcac4841af7a141e0') in 0.027793 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000035 seconds.
-  path: Assets/RH_Asset/river-end-low.obj
-  artifactKey: Guid(b56fd4a14df063548958dc089b561128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/river-end-low.obj using Guid(b56fd4a14df063548958dc089b561128) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '2901bebf6d3e1bd0d6c1bc2c49dd69aa') in 0.030116 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/RH_Asset/lot-border.obj
-  artifactKey: Guid(311feeac6b7fb3f4daa5dbe360ecc688) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/lot-border.obj using Guid(311feeac6b7fb3f4daa5dbe360ecc688) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '257bc719fb31e47b8c706ccfe8c88946') in 0.036237 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/RH_Asset/road-crossing-high.obj
-  artifactKey: Guid(a800b23576af3a944ad90c448c244c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-crossing-high.obj using Guid(a800b23576af3a944ad90c448c244c79) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '5d171c1bc579ba254e691c991ae27e2c') in 0.033141 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/RH_Asset/canal-river-high.obj
-  artifactKey: Guid(b93fc05869719474b88ff4a211320154) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/canal-river-high.obj using Guid(b93fc05869719474b88ff4a211320154) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '209827398acb48a20c4c8fa0c18250be') in 0.030488 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 2.279198 seconds.
-  path: Assets/RH_Asset/road-end-low.obj
-  artifactKey: Guid(9fb4d8a0e32512342bfb256ea8b8d62f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-end-low.obj using Guid(9fb4d8a0e32512342bfb256ea8b8d62f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '59166bdaec1ea480b10af8ae028a97a8') in 0.029967 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000040 seconds.
-  path: Assets/RH_Asset/road-tjunction-high.obj
-  artifactKey: Guid(5b7164fa794d73e4d88c7aecdccb7f79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-tjunction-high.obj using Guid(5b7164fa794d73e4d88c7aecdccb7f79) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'a5cee0315b881d20f4970af7298efa58') in 0.029988 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000800 seconds.
-  path: Assets/RH_Asset/road-tunnel-segment.obj
-  artifactKey: Guid(a85e05f0f06079a47bb5c2e6d48ffa2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/road-tunnel-segment.obj using Guid(a85e05f0f06079a47bb5c2e6d48ffa2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'b5f0c31066d018747bfe22bbb369a326') in 0.027840 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/RH_Asset/water.obj
-  artifactKey: Guid(cb0b9367501dc5442925363478ec0396) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/water.obj using Guid(cb0b9367501dc5442925363478ec0396) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'eac26f0eaa1a38dde81b09b6f82d7806') in 0.028327 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000066 seconds.
-  path: Assets/RH_Asset/water-beach-concave.obj
-  artifactKey: Guid(c3d0f4887eb10f748b0b7d7ed5456230) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/water-beach-concave.obj using Guid(c3d0f4887eb10f748b0b7d7ed5456230) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'cbf51848ae8a58568bb9e482895150d9') in 0.032298 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000038 seconds.
-  path: Assets/RH_Asset/water-bedding-straight.obj
-  artifactKey: Guid(1b893db74d1423a4ea3c5c041db83766) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/water-bedding-straight.obj using Guid(1b893db74d1423a4ea3c5c041db83766) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '03cefc354665e8a1320248192576673d') in 0.025982 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 2396.392013 seconds.
-  path: Assets/TutorialInfo/Icons/Mobile 3D.png
-  artifactKey: Guid(cbea0258d69fdef4ba73fa582f0e2004) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/TutorialInfo/Icons/Mobile 3D.png using Guid(cbea0258d69fdef4ba73fa582f0e2004) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'b10a1a3b0865440b87c23956e2b596f1') in 0.057918 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 2
-========================================================================
-Received Import Request.
-  Time since last request: 3428.518404 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/lot-border.obj
-  artifactKey: Guid(d7cfdf1d2c6410343bf305de016bde7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/lot-border.obj using Guid(d7cfdf1d2c6410343bf305de016bde7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '53eefa65f385e99f12ccf5cc9b38900f') in 0.060670 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000041 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/road-bridge-canal.obj
-  artifactKey: Guid(3d4610167b1c15c41948dbfaef98ffd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/road-bridge-canal.obj using Guid(3d4610167b1c15c41948dbfaef98ffd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '32d3548b305750f4a7e745f6f3522c7b') in 0.032868 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/road-bridge-water.obj
-  artifactKey: Guid(3011ce9d7142f35459c675bdb80b3227) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/road-bridge-water.obj using Guid(3011ce9d7142f35459c675bdb80b3227) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '753ea52cfce3d8661148131f7880573a') in 0.026070 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/road-hill.obj
-  artifactKey: Guid(d2e0a791fe3d5b648ada1c1cea758c0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/road-hill.obj using Guid(d2e0a791fe3d5b648ada1c1cea758c0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '9baa02760d9e4875eea1f5087b70c6e7') in 0.024606 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000019 seconds.
+  Time since last request: 0.000045 seconds.
   path: Assets/RH_Asset/landscape_asset_v2a/river-corner-low.obj
   artifactKey: Guid(305d8f83d183ba849bfaba0bb71c8489) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/river-corner-low.obj using Guid(305d8f83d183ba849bfaba0bb71c8489) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'b6d919de2f4820448c9fd025b4b611cc') in 0.025165 seconds
+Start importing Assets/RH_Asset/landscape_asset_v2a/river-corner-low.obj using Guid(305d8f83d183ba849bfaba0bb71c8489) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '898776112ecd19d844c039a86aa73bcf') in 0.077971 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
+Number of asset objects unloaded after import = 11
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/river-end-high.obj
-  artifactKey: Guid(e27fb0ed1ea160e42a8a8f1a6155e749) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/river-end-high.obj using Guid(e27fb0ed1ea160e42a8a8f1a6155e749) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '55d5d1d020788f1efd265fe4c321c96f') in 0.028312 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/water-beach-concave.obj
-  artifactKey: Guid(bce9ffe42df2eb649a05ca4e52442db6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/water-beach-concave.obj using Guid(bce9ffe42df2eb649a05ca4e52442db6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '518154d0878feb4ac7d8450b44a05704') in 0.026514 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/sand.obj
-  artifactKey: Guid(cdc846933cec0cf42bd8719c398a268f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/sand.obj using Guid(cdc846933cec0cf42bd8719c398a268f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'ce5e4680d5b5680d87c250e20de8cd98') in 0.024231 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/water-beddng-concave.obj
-  artifactKey: Guid(57f2463b225d5194ebeaf9bad2349dc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/water-beddng-concave.obj using Guid(57f2463b225d5194ebeaf9bad2349dc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '053dc48fb83bbdcd546a893a69444d29') in 0.024508 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/road-tunnel-entry.obj
-  artifactKey: Guid(be32de3e330b60149a3c02226f88140e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/road-tunnel-entry.obj using Guid(be32de3e330b60149a3c02226f88140e) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '7d84f9b3e2f35c3d5ccf63eb91a757d9') in 0.029110 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/road-corner-high.obj
-  artifactKey: Guid(15467a0ec56ac83448da31c89cca9ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/road-corner-high.obj using Guid(15467a0ec56ac83448da31c89cca9ae4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '14c0b24bd8b4e3627ef2846d164281c7') in 0.025059 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/road-crossing-high.obj
-  artifactKey: Guid(c42785f34c147344ea19b3962414f711) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/road-crossing-high.obj using Guid(c42785f34c147344ea19b3962414f711) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '051cbbd89b0b9b84719fa184ab5c6a8f') in 0.026454 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/road-crossing-low.obj
-  artifactKey: Guid(8b8d38be58af5464087fde54be1506d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/road-crossing-low.obj using Guid(8b8d38be58af5464087fde54be1506d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '202b2011888e67bc8381712857386bc9') in 0.026076 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/road-bridge-road.obj
-  artifactKey: Guid(d6413ff1298b54640ac404a7604b7fef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/road-bridge-road.obj using Guid(d6413ff1298b54640ac404a7604b7fef) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '9f6b780826a1b62990bb66f1adb5ecad') in 0.033628 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000015 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/road-bridge-hill.obj
-  artifactKey: Guid(1c9af022a2e3ee14992e15fd1007e30f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/road-bridge-hill.obj using Guid(1c9af022a2e3ee14992e15fd1007e30f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'a3b322e2e778da3deced3da0626dd4fb') in 0.025947 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000034 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/road-tjunction-low.obj
-  artifactKey: Guid(534ffa58f72476647b30488c26fd6e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/road-tjunction-low.obj using Guid(534ffa58f72476647b30488c26fd6e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'e1a6a298bd9ffb014cb91101f4f7bae5') in 0.025414 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/lot-parking.obj
-  artifactKey: Guid(0161fce07b6829842a107d60a881c418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/lot-parking.obj using Guid(0161fce07b6829842a107d60a881c418) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '999a86bbcd26af173f8aa5529c7577fc') in 0.025881 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000025 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/water-bedding-convex.obj
-  artifactKey: Guid(00f28c9bc3ca6954c92f0309a4062a5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/water-bedding-convex.obj using Guid(00f28c9bc3ca6954c92f0309a4062a5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'bf1017b9f23a8fd1048ac65f3fcce3b3') in 0.025534 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/road-bridge-coast.obj
-  artifactKey: Guid(16716ad3156b6574a8cfb0ec11d32f77) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/road-bridge-coast.obj using Guid(16716ad3156b6574a8cfb0ec11d32f77) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'd75a8d3fa56feb1fe8095fb2e8aca236') in 0.026015 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000021 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/road-bridge-grass.obj
-  artifactKey: Guid(c23803b96e36e3a43bd1667c7b612010) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/road-bridge-grass.obj using Guid(c23803b96e36e3a43bd1667c7b612010) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '4449183319ea8f02357fdbcef4a43d84') in 0.023481 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.680739 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/canal-corner-high.obj
-  artifactKey: Guid(f19d2f2e03c2a0a4cb010bc8d4d1f3f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/canal-corner-high.obj using Guid(f19d2f2e03c2a0a4cb010bc8d4d1f3f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '5198b9e16d59849176070bb1cc0755fa') in 0.027100 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/canal-straight-high.obj
-  artifactKey: Guid(1a385ef1cfdc4424990d6ea0b6a9bc85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/canal-straight-high.obj using Guid(1a385ef1cfdc4424990d6ea0b6a9bc85) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'b493a426eff3784995098f8f95b9c725') in 0.027991 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000027 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/canal-hill.obj
-  artifactKey: Guid(f5a6830d2e021364d8a947a10638f151) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/canal-hill.obj using Guid(f5a6830d2e021364d8a947a10638f151) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0157aaefb3a53a272fe584265887fcf5') in 0.029743 seconds
-Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-========================================================================
-Received Import Request.
-  Time since last request: 0.000022 seconds.
+  Time since last request: 0.000101 seconds.
   path: Assets/RH_Asset/landscape_asset_v2a/hill-corner-low.obj
   artifactKey: Guid(41a881c32f01a6d45a37f0622c5f05f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/hill-corner-low.obj using Guid(41a881c32f01a6d45a37f0622c5f05f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '0ecc75778c0a01ccb24bded101d17992') in 0.029216 seconds
+Start importing Assets/RH_Asset/landscape_asset_v2a/hill-corner-low.obj using Guid(41a881c32f01a6d45a37f0622c5f05f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '606535aa5eae51b7abf2def5f2c68b42') in 0.082692 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
+Number of asset objects unloaded after import = 11
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000050 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/canal-straight-low.obj
-  artifactKey: Guid(f7e658542e1a7d84fa82c316deb07b86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/canal-straight-low.obj using Guid(f7e658542e1a7d84fa82c316deb07b86) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'fc5fbe9e453f10adfad856f478429c02') in 0.028697 seconds
+  Time since last request: 0.000183 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/hill-ramp.obj
+  artifactKey: Guid(7fa6ce5f9342476429df2ece05196065) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/hill-ramp.obj using Guid(7fa6ce5f9342476429df2ece05196065) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd022ca8c711f95d5c0bf15034031e697') in 0.059781 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
+Number of asset objects unloaded after import = 11
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000026 seconds.
-  path: Assets/RH_Asset/landscape_asset_v2a/grass.obj
-  artifactKey: Guid(a523507b2d8b81a4dbd7aa2e33b7d3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/grass.obj using Guid(a523507b2d8b81a4dbd7aa2e33b7d3a0) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '4e1c6e8d274826bac314525102ac872e') in 0.026920 seconds
+  Time since last request: 0.000037 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/river-end-high.obj
+  artifactKey: Guid(e27fb0ed1ea160e42a8a8f1a6155e749) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/river-end-high.obj using Guid(e27fb0ed1ea160e42a8a8f1a6155e749) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a556094db83038a84ebc6daa3e812e64') in 0.078532 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
+Number of asset objects unloaded after import = 11
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000030 seconds.
+  Time since last request: 0.000048 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/lot-corner.obj
+  artifactKey: Guid(aa6e351e10944f640ba34e34a4e1dbe1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/lot-corner.obj using Guid(aa6e351e10944f640ba34e34a4e1dbe1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1a449bd391a1d151b07786b4401d90f8') in 0.083818 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/lot-parking.obj
+  artifactKey: Guid(0161fce07b6829842a107d60a881c418) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/lot-parking.obj using Guid(0161fce07b6829842a107d60a881c418) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '4f933f3601028c43437d7c47acd792bc') in 0.066827 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
   path: Assets/RH_Asset/landscape_asset_v2a/canal-corner-low.obj
   artifactKey: Guid(13f741aae97a3154a88316be40d2f0c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/canal-corner-low.obj using Guid(13f741aae97a3154a88316be40d2f0c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: '489aa150e17ccf181f415e3389905266') in 0.031137 seconds
+Start importing Assets/RH_Asset/landscape_asset_v2a/canal-corner-low.obj using Guid(13f741aae97a3154a88316be40d2f0c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1d1ca8aedfbebd3b6ea57c49da5f0eea') in 0.063476 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/canal-river-high.obj
+  artifactKey: Guid(1cf0f4c22a7f00648ad22d566dd8ab6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/canal-river-high.obj using Guid(1cf0f4c22a7f00648ad22d566dd8ab6a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '54eec6ebe09c10e121c0741b1baee705') in 0.062033 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
 ========================================================================
 Received Import Request.
   Time since last request: 0.000030 seconds.
   path: Assets/RH_Asset/landscape_asset_v2a/hill-corner-high.obj
   artifactKey: Guid(3b8ad25e8eb5ac54d9ea3d0b89765007) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/RH_Asset/landscape_asset_v2a/hill-corner-high.obj using Guid(3b8ad25e8eb5ac54d9ea3d0b89765007) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
-[PhysX] Initialized MultithreadedTaskDispatcher with 12 workers.
- -> (artifact id: 'd05a75d234348ff6a5b7fd8f298e2478') in 0.027367 seconds
+Start importing Assets/RH_Asset/landscape_asset_v2a/hill-corner-high.obj using Guid(3b8ad25e8eb5ac54d9ea3d0b89765007) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '303715997c4ee32476058eedcf04bfd6') in 0.082153 seconds
 Number of updated asset objects reloaded before import = 0
-Number of asset objects unloaded after import = 10
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-TcpMessagingSession - receive error: operation aborted. errorcode: 995, details: 스레드 종료 또는 응용 프로그램 요청 때문에 I/O 작업이 취소되었습니다.
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000085 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/lot-border.obj
+  artifactKey: Guid(d7cfdf1d2c6410343bf305de016bde7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/lot-border.obj using Guid(d7cfdf1d2c6410343bf305de016bde7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '0adc483b404afd169fefbae320451150') in 0.081683 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.210472 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/road-bridge-ramp.obj
+  artifactKey: Guid(f5a6822c55c0f754dada8021f54cf153) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/road-bridge-ramp.obj using Guid(f5a6822c55c0f754dada8021f54cf153) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '85cb1d25ee5a2fb2b86c9674fc05b622') in 0.080335 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000124 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/road-bridge-water.obj
+  artifactKey: Guid(3011ce9d7142f35459c675bdb80b3227) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/road-bridge-water.obj using Guid(3011ce9d7142f35459c675bdb80b3227) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '499a0c8eba04eade7eaec78b5bdb825a') in 0.070744 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/road-end-low.obj
+  artifactKey: Guid(405d9b582f34f7c4dbbeb91710968a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/road-end-low.obj using Guid(405d9b582f34f7c4dbbeb91710968a2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '91d7cdf3178629fcc6666efe1ad7226d') in 0.066890 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/road-crossing-low.obj
+  artifactKey: Guid(8b8d38be58af5464087fde54be1506d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/road-crossing-low.obj using Guid(8b8d38be58af5464087fde54be1506d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b8a59afec398f1c7c9df2b98d73ee1e4') in 0.065284 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000071 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/road-hill.obj
+  artifactKey: Guid(d2e0a791fe3d5b648ada1c1cea758c0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/road-hill.obj using Guid(d2e0a791fe3d5b648ada1c1cea758c0a) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '4f36d2fad51e104082a70e1dca9ebb00') in 0.088233 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/road-end-high.obj
+  artifactKey: Guid(d53b21e7c4565b0418becb9c9a8d4bc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/road-end-high.obj using Guid(d53b21e7c4565b0418becb9c9a8d4bc1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'fbca5a5de646480a22ad5ba8587e89b9') in 0.082673 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/water-beach-straight.obj
+  artifactKey: Guid(7f0e28362251a004cbe6dbb64c0a24b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/water-beach-straight.obj using Guid(7f0e28362251a004cbe6dbb64c0a24b1) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '89a71d74435699a7cfacc0ca2551bd76') in 0.057154 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/water-beddng-concave.obj
+  artifactKey: Guid(57f2463b225d5194ebeaf9bad2349dc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/water-beddng-concave.obj using Guid(57f2463b225d5194ebeaf9bad2349dc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '562949baa7f79b2ca26874d547273022') in 0.064157 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/road-tjunction-high.obj
+  artifactKey: Guid(d6e4147d54821fc418ca12f1824aca7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/road-tjunction-high.obj using Guid(d6e4147d54821fc418ca12f1824aca7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'fd768c199f93115db22dbffc504fe61e') in 0.058120 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/water-beach-concave.obj
+  artifactKey: Guid(bce9ffe42df2eb649a05ca4e52442db6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/water-beach-concave.obj using Guid(bce9ffe42df2eb649a05ca4e52442db6) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd7ba725ada5c85961977808f7a892fbb') in 0.075418 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/water-bedding-convex.obj
+  artifactKey: Guid(00f28c9bc3ca6954c92f0309a4062a5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/water-bedding-convex.obj using Guid(00f28c9bc3ca6954c92f0309a4062a5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '19053f8c573f19a8154464f1423fd156') in 0.082215 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000188 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/road-tunnel-segment.obj
+  artifactKey: Guid(f53a78096c7fdae4c9c94000c7be0dc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/road-tunnel-segment.obj using Guid(f53a78096c7fdae4c9c94000c7be0dc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '10263ec49b40ee8f4a454a935e7308bf') in 0.064285 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/RH_Asset/landscape_asset_v2a/sand.obj
+  artifactKey: Guid(cdc846933cec0cf42bd8719c398a268f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/landscape_asset_v2a/sand.obj using Guid(cdc846933cec0cf42bd8719c398a268f) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8aa05c7c1725ba1a19819cf8ede88c27') in 0.059846 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 11
+========================================================================
+Received Import Request.
+  Time since last request: 2.975758 seconds.
+  path: Assets/RH_Asset/suburb_assets_pt1
+  artifactKey: Guid(98b2a364efb522e4f88d44acfa165f3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RH_Asset/suburb_assets_pt1 using Guid(98b2a364efb522e4f88d44acfa165f3b) Importer(815301076,1909f56bfc062723c751e8b465ee728b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c5407895f8b65522f62656a0abb2e490') in 0.001038 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
