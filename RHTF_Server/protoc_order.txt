@@ -1,0 +1,13 @@
+protoc -I C:\Git\RHTF\RHTF_Server --cpp_out=C:\Git\RHTF\RHTF_Server C:\Git\RHTF\RHTF_Server\LogicPacket.proto
+
+
+예제의 protoc 명령에 대해서 간단히 설명 드리면
+
+ -I옵션은 proto파일을 검색할 경로를 지정합니다. 
+
+ --cpp_out 옵션은 proto파일을 cpp로 변환시켜주고 뒤에 생성 위치를 지정합니다. 
+
+ 아래와 그림과 같이 다양한 플랫폼의 소스파일을 생성할 수 있습니다.
+
+[출처]
+(https://jungwoong.tistory.com/70)
