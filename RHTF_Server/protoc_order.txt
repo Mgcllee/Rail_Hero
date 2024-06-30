@@ -1,4 +1,7 @@
-protoc -I C:\Git\RHTF\RHTF_Server --cpp_out=C:\Git\RHTF\RHTF_Server C:\Git\RHTF\RHTF_Server\LogicPacket.proto
+protoc -I . --cpp_out=. LogicPacket.proto
+
+protoc -I . --csharp_out=. LogicPacket.proto
+
 
 
 예제의 protoc 명령에 대해서 간단히 설명 드리면

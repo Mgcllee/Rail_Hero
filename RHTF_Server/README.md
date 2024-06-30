@@ -21,3 +21,9 @@ C++20 과 Boost 를 사용.
 따라서 RHTF_Server.sln (솔루션 파일)과 동일한 위치에  
 로컬에서 배치할 것.
 
+# ProtoBuf
+protoc version: [v25.3](https://github.com/protocolbuffers/protobuf/releases/tag/v25.3)  
+C++ project protobuf version: vcpkg protobuf:x64-windows 4.25.1  
+C# Nuget Google.Protobuf version: [3.27.2](https://www.nuget.org/packages/Google.Protobuf/3.27.2?_src=template)  
+C# Nuget protobuf-net version: [3.2.30](https://www.nuget.org/packages/protobuf-net/3.2.30?_src=template)  
+C# Nuget protobuf-net.Core version: [3.2.30](https://www.nuget.org/packages/protobuf-net.Core/3.2.30?_src=template)  

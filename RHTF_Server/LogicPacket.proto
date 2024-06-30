@@ -1,12 +1,11 @@
 syntax = "proto3";
-package examchatserverPacket;
 
 message C2SPCLoginUserReq {
   string UserID = 1;
 }
 
 message S2CPCLoginUserRes {
-  uint32  Result = 1;
-  uint32  UserSn = 2;
-  string  UserID = 3;
+  string  UserID	= 1;
+  string  UserName	= 2;
+  uint32  UserLevel	= 3;
 }

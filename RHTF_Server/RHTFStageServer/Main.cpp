@@ -2,6 +2,9 @@
 
 #include "stdafx.h"
 
+#include "../LogicPacket.pb.h"
+
+
 int main(int argc, char* argv[])
 {
 	printf("This is C++ base StageServer Program\n");
@@ -13,6 +16,7 @@ int main(int argc, char* argv[])
 	}
 	printf("\n");
 
+	C2SPCLoginUserReq c2slogin;
 
 	int n;
 	std::cin >> n;
