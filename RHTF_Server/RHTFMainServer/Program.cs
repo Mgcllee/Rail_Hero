@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
 using static System.Net.Mime.MediaTypeNames;
-using ProtoBuf;
-
+using System.Net;
+using System.Net.Sockets;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace RHTFMainServer
 {
@@ -19,28 +20,36 @@ namespace RHTFMainServer
             
             // 현재, 명령어의 띄어쓰기는 제거됨
             Process.Start(exe_name, "C#에서 보내는 명령어 모음\nUID: Mgcllee, leemc\nnewAddr:127.0.0.1:7777");
+            
+            IPEndPoint serverAddress = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 7777);
+            TcpListener server = new TcpListener(serverAddress);
+            server.Start();
 
-            Console.WriteLine("C# 프로그램 대기중...");
-            Console.ReadLine();
+            Console.WriteLine("[C# Main Server]");
 
-            // 모든 프로그램을 강.제.로. 종료시키는 반복문
-            // 따라서 특정 프로그램을 종료시켜야 할 필요 있음.
-            foreach (Process process in Process.GetProcesses())
+            while (true)
             {
-                // "exe_name"라는 이름을 가진 프로세스가 존재하면 true를 리턴한다.
-                if (process.ProcessName.StartsWith("RHTFStageServer"))
+                TcpClient client = server.AcceptTcpClient();
+
+                Console.WriteLine("새로운 클라이언트 접속");
+                Console.WriteLine("메시지 수신");
+
+                NetworkStream stream = client.GetStream();
+                
+                byte[] data = new byte[client.ReceiveBufferSize];
+                int bytesRead = stream.Read(data, 0, data.Length);
+
+                C2SPCLoginUserReq message;
+                using (MemoryStream ms = new MemoryStream(data, 0, bytesRead))
                 {
-                    // 프로세스를 죽이는 함수
-                    // Console.WriteLine("Kill!");
-                    // process.Kill();
-
-                    Console.WriteLine("Find!");
+                    message = C2SPCLoginUserReq.Parser.ParseFrom(ms);
                 }
+
+                Console.WriteLine("[Login Info]\nUserID: " + message.UserID);
+                
+
             }
-
-            Console.WriteLine("C# 프로그램 종료");
-
-
+            
             // Continue;
         }
     }

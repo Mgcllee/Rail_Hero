@@ -24,6 +24,10 @@ C++20 과 Boost 를 사용.
 # ProtoBuf
 protoc version: [v25.3](https://github.com/protocolbuffers/protobuf/releases/tag/v25.3)  
 C++ project protobuf version: vcpkg protobuf:x64-windows 4.25.1  
-C# Nuget Google.Protobuf version: [3.27.2](https://www.nuget.org/packages/Google.Protobuf/3.27.2?_src=template)  
+C# Nuget Google.Protobuf version: [3.25.3](https://www.nuget.org/packages/Google.Protobuf/3.25.3?_src=template)  
 C# Nuget protobuf-net version: [3.2.30](https://www.nuget.org/packages/protobuf-net/3.2.30?_src=template)  
 C# Nuget protobuf-net.Core version: [3.2.30](https://www.nuget.org/packages/protobuf-net.Core/3.2.30?_src=template)  
+
+[버전 확인 필수](https://protobuf.dev/support/version-support/)  
+
+> ProtoBuf 컴파일러인 **protoc**의 추출물은 절대 수정 금지.
