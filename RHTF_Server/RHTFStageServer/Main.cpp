@@ -29,16 +29,6 @@ int main(int argc, char* argv[])
 	}
 	printf("\n");
 
-    C2SPCLoginUserReq c2slogin;
-
-    std::string UID = "9785";
-	c2slogin.set_userid(UID);
-
-	std::string serialized_data;
-	c2slogin.SerializeToString(&serialized_data);
-
-    wait_func();
-
     WSADATA wsaData;
     WSAStartup(MAKEWORD(2, 2), &wsaData);
 
@@ -61,10 +51,43 @@ int main(int argc, char* argv[])
         return 1;
     }
 
+
+    std::string UID;
+    std::cin >> UID;
+
+    C2SPCLoginUserReq c2slogin;
+    c2slogin.set_userid(UID);
+
+    std::string serialized_data;
+    c2slogin.SerializeToString(&serialized_data);
+
     // Send the serialized data over the socket
     send(Sock, serialized_data.c_str(), serialized_data.size(), 0);
 
-    std::cout << "send protobuf";
+    std::cout << "[send protobuf]\n";
+    wait_func();
+
+    S2CPCLoginUserRes loginf_pack;
+    char* buffer = new char[sizeof(S2CPCLoginUserRes)];
+    int ret = recv(Sock, buffer, sizeof(S2CPCLoginUserRes), 0);
+
+    if (ret > 0)
+    {
+        // loginf_pack.ParseFromArray(&buffer, sizeof(S2CPCLoginUserRes));
+        loginf_pack.ParseFromString(buffer);
+
+        std::cout << "[User Info]\n";
+        std::cout << "ID: " << loginf_pack.userid() << '\n';
+        std::cout << "Name: " << loginf_pack.username() << '\n';
+        std::cout << "Level: " << loginf_pack.userlevel() << '\n';
+
+        std::cout << "[End C++ Program]\n";
+
+    }
+    else
+    {
+        std::cout << "\nrecv fail!\n";
+    }
 
     wait_func();
 
