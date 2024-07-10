@@ -10,31 +10,13 @@
 
 #include "../LogicPacket.pb.h"
 
-#define SERVER_ADDR "127.0.0.1"
-
-void wait_func()
-{
-    int N;
-    std::cin >> N;
-}
-
 int main(int argc, char* argv[])
 {
-	printf("This is C++ base StageServer Program\n");
-	
-	// argv[0]은 실행 경로이다.
-	for (int i = 1; i < argc; ++i)
-	{
-		printf("%s", argv[i]);
-	}
-	printf("\n");
-
     WSADATA wsaData;
     WSAStartup(MAKEWORD(2, 2), &wsaData);
 
-    // Open a socket
-    SOCKET Sock;
-    Sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+    // Open socket
+    SOCKET Sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
     if (Sock < 0) {
         std::cerr << "Error opening socket" << std::endl;
         return 1;
@@ -43,11 +25,19 @@ int main(int argc, char* argv[])
     // Connect to a server
     SOCKADDR_IN server_addr;
     server_addr.sin_family = AF_INET;
+    // server_addr.sin_port = htons(std::stoi(std::string(argv[2]))); // Port number
+    // inet_pton(AF_INET, argv[1], &server_addr.sin_addr);
     server_addr.sin_port = htons(7777); // Port number
     inet_pton(AF_INET, "127.0.0.1", &server_addr.sin_addr);
 
+    
+
     if (connect(Sock, (struct sockaddr*)&server_addr, sizeof(server_addr)) < 0) {
         std::cerr << "Error connecting to server" << std::endl;
+        std::cout << std::stoi(std::string(argv[2])) << ", " << typeid(std::stoi(std::string(argv[2]))).name() << '\n';
+        std::cout << argv[1] << ", " << typeid(argv[1]).name() << '\n';
+        wait_func();
+
         return 1;
     }
 
@@ -75,7 +65,7 @@ int main(int argc, char* argv[])
     {
         // loginf_pack.ParseFromArray(&buffer, sizeof(S2CPCLoginUserRes));
         loginf_pack.ParseFromString(buffer);
-
+         
         std::cout << "[User Info]\n";
         std::cout << "ID: " << loginf_pack.userid() << '\n';
         std::cout << "Name: " << loginf_pack.username() << '\n';
@@ -90,6 +80,7 @@ int main(int argc, char* argv[])
     }
 
     wait_func();
+    Sleep(100'000);
 
     WSACleanup();
 	return 0;
