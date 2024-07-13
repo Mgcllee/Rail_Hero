@@ -5,8 +5,6 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 
-
-
 #include "Windows/AllowWindowsPlatformTypes.h"
 #include "Windows/prewindowsapi.h"
 
@@ -15,7 +13,6 @@
 
 #include "Windows/PostWindowsApi.h"
 #include "Windows/HideWindowsPlatformTypes.h"
-
 
 #include "rh_client_network.generated.h"
 
