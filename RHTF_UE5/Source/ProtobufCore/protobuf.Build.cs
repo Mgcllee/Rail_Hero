@@ -1,6 +1,6 @@
-using UnrealBuildTool;
 using System;
 using System.IO;
+using UnrealBuildTool;
 
 public class protobuf : ModuleRules
 {
@@ -9,17 +9,12 @@ public class protobuf : ModuleRules
     {
         Type = ModuleType.External;
 
-        PublicSystemIncludePaths.Add(Path.Combine(ModuleDirectory, "include"));
-
-        switch (Target.Platform)
-        {
-            case UnrealTargetPlatform.Win64:
-                PublicLibraryPaths.Add(Path.Combine(ModuleDirectory, "lib", "Win64"));
-                PublicAdditionalLibraries.Add("libprotobuf.lib");
-                break;
-            default:
-                throw new Exception("Unsupported platform " + Target.Platform.ToString());
-        }
+        PublicSystemIncludePaths.Add(Path.Combine(ModuleDirectory, "ProtobufCore"));
+        PublicSystemIncludePaths.Add(Path.Combine(ModuleDirectory, "Include"));
+        PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "ProtobufCore"));
+        PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Include"));
+        PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "NetProtocol"));
+        PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Lib", "Win64", "libprotobuf.lib"));
 
         PublicDefinitions.Add("GOOGLE_PROTOBUF_NO_RTTI=1");
     }

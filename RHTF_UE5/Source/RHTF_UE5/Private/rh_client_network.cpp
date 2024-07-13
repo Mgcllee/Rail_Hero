@@ -3,6 +3,8 @@
 
 #include "rh_client_network.h"
 
+#include "ProtobufCore/NetProtocol/LogicPacket.pb.h"
+
 Urh_client_network::Urh_client_network()
 {
 }
@@ -25,6 +27,8 @@ bool Urh_client_network::connect_to_server(FString addr)
 	stServerAddr.sin_family = AF_INET;
 	stServerAddr.sin_port = htons(Port);
 	stServerAddr.sin_addr.s_addr = inet_addr(TCHAR_TO_UTF8(*addr));
+
+    C2SPCLoginUserReq login_req_pack;
 
 	// Á¢¼Ó
 	nRet = connect(Socket, (sockaddr*)&stServerAddr, sizeof(sockaddr));

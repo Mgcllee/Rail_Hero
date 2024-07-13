@@ -8,7 +8,7 @@ public class RHTF_UE5 : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore", "protobuf" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
