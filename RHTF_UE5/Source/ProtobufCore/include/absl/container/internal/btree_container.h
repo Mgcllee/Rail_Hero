@@ -221,7 +221,13 @@ class btree_container {
   // Utility routines.
   ABSL_ATTRIBUTE_REINITIALIZES void clear() { tree_.clear(); }
   void swap(btree_container &other) { tree_.swap(other.tree_); }
+#ifdef verify
+#undef verify
+#endif
   void verify() const { tree_.verify(); }
+#ifndef verify
+#define verify(expr)			UE_CHECK_IMPL(expr)  // copy from line 221 of /Engine/Source/Runtime/Core/Public/Misc/AssertionMacros.h
+#endif
 
   // Size routines.
   size_type size() const { return tree_.size(); }

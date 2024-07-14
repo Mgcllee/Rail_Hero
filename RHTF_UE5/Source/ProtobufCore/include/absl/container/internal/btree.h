@@ -1575,7 +1575,14 @@ class btree {
   }
 
   // Verifies the structure of the btree.
+#ifdef verify
+#undef verify
+#endif
+  // Verifies the structure of the btree.
   void verify() const;
+#ifndef verify
+#define verify(expr)			UE_CHECK_IMPL(expr)  // copy from line 221 of /Engine/Source/Runtime/Core/Public/Misc/AssertionMacros.h
+#endif
 
   // Size routines.
   size_type size() const { return size_; }
@@ -2599,17 +2606,23 @@ void btree<P>::swap(btree &other) {
   swap(size_, other.size_);
 }
 
+#ifdef verify
+#undef verify
+#endif
 template <typename P>
 void btree<P>::verify() const {
-  assert(root() != nullptr);
-  assert(leftmost() != nullptr);
-  assert(rightmost() != nullptr);
-  assert(empty() || size() == internal_verify(root(), nullptr, nullptr));
-  assert(leftmost() == (++const_iterator(root(), -1)).node_);
-  assert(rightmost() == (--const_iterator(root(), root()->finish())).node_);
-  assert(leftmost()->is_leaf());
-  assert(rightmost()->is_leaf());
+    assert(root() != nullptr);
+    assert(leftmost() != nullptr);
+    assert(rightmost() != nullptr);
+    assert(empty() || size() == internal_verify(root(), nullptr, nullptr));
+    assert(leftmost() == (++const_iterator(root(), -1)).node_);
+    assert(rightmost() == (--const_iterator(root(), root()->finish())).node_);
+    assert(leftmost()->is_leaf());
+    assert(rightmost()->is_leaf());
 }
+#ifndef verify
+#define verify(expr)			UE_CHECK_IMPL(expr)  // copy from line 221 of /Engine/Source/Runtime/Core/Public/Misc/AssertionMacros.h
+#endif
 
 template <typename P>
 void btree<P>::rebalance_or_split(iterator *iter) {
