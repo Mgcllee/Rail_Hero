@@ -22,15 +22,15 @@ C++20 과 Boost 를 사용.
 로컬에서 배치할 것.
 
 # ProtoBuf
-protoc version: [v25.3](https://github.com/protocolbuffers/protobuf/releases/tag/v25.3)  
-> UE5와 verify() 함수 중복 문제로 23.3 버전으로 변경 필요.
-> > C#, C++ 프로젝트도 .3 버전으로 변경 필요
+protoc version: [v25.1](https://github.com/protocolbuffers/protobuf/releases/tag/v25.3)  
 
 C++ project protobuf version: vcpkg protobuf:x64-windows 4.25.1  
-C# Nuget Google.Protobuf version: [3.25.3](https://www.nuget.org/packages/Google.Protobuf/3.25.3?_src=template)  
-C# Nuget protobuf-net version: [3.2.30](https://www.nuget.org/packages/protobuf-net/3.2.30?_src=template)  
-C# Nuget protobuf-net.Core version: [3.2.30](https://www.nuget.org/packages/protobuf-net.Core/3.2.30?_src=template)  
+C# Nuget Google.Protobuf version: [3.25.1](https://www.nuget.org/packages/Google.Protobuf/3.23.3?_src=template)  
 
+현재 버전: (protoc 기준)**25.1**  
 [버전 확인 필수](https://protobuf.dev/support/version-support/)  
+
+23.3버전을 사용해보았지만,  
+C++ vcpkg 에서 지원하지 않아 호환성 문제 때문에 다시 25.1 버전으로 돌아옴.  
 
 > ProtoBuf 컴파일러인 **protoc**의 추출물은 절대 수정 금지.

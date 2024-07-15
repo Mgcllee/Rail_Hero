@@ -6,12 +6,50 @@
 #include <WS2tcpip.h>
 // #include <WinSock2.h>
 
-#pragma comment(lib, "ws2_32");
+#pragma comment(lib, "ws2_32")
 
 #include "../LogicPacket.pb.h"
 
+void Server(int PORT_NUM)
+{
+    WSADATA WSAData;
+    int err = WSAStartup(MAKEWORD(2, 2), &WSAData);
+
+    SOCKET Sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+
+    SOCKADDR_IN server_addr;
+    memset(&server_addr, 0, sizeof(server_addr));
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(PORT_NUM);
+    server_addr.sin_addr.S_un.S_addr = INADDR_ANY;
+
+    bind(Sock, reinterpret_cast<sockaddr*>(&server_addr), sizeof(server_addr));
+    listen(Sock, SOMAXCONN);
+
+    SOCKADDR_IN cl_addr;
+    int addr_size = sizeof(cl_addr);
+
+    accept(Sock, (struct sockaddr*)&server_addr, (socklen_t*)&server_addr);
+
+    C2SPCLoginUserReq loginf_pack;
+    char* buffer = new char[sizeof(C2SPCLoginUserReq)];
+    int ret = recv(Sock, buffer, sizeof(C2SPCLoginUserReq), 0);
+    loginf_pack.ParseFromString(buffer);
+
+    std::cout << "userID: " << loginf_pack.userid();
+
+    int n;
+    std::cin >> n;
+}
+
 int main(int argc, char* argv[])
 {
+    Server(7777);
+    return 0;
+
+
+
+
     WSADATA wsaData;
     WSAStartup(MAKEWORD(2, 2), &wsaData);
 
@@ -36,11 +74,8 @@ int main(int argc, char* argv[])
         std::cerr << "Error connecting to server" << std::endl;
         std::cout << std::stoi(std::string(argv[2])) << ", " << typeid(std::stoi(std::string(argv[2]))).name() << '\n';
         std::cout << argv[1] << ", " << typeid(argv[1]).name() << '\n';
-        wait_func();
-
         return 1;
     }
-
 
     std::string UID;
     std::cin >> UID;
@@ -55,12 +90,12 @@ int main(int argc, char* argv[])
     send(Sock, serialized_data.c_str(), serialized_data.size(), 0);
 
     std::cout << "[send protobuf]\n";
-    wait_func();
+    Sleep(2'000);
 
     S2CPCLoginUserRes loginf_pack;
     char* buffer = new char[sizeof(S2CPCLoginUserRes)];
     int ret = recv(Sock, buffer, sizeof(S2CPCLoginUserRes), 0);
-
+    
     if (ret > 0)
     {
         // loginf_pack.ParseFromArray(&buffer, sizeof(S2CPCLoginUserRes));
@@ -72,6 +107,7 @@ int main(int argc, char* argv[])
         std::cout << "Level: " << loginf_pack.userlevel() << '\n';
 
         std::cout << "[End C++ Program]\n";
+        Sleep(2'000);
 
     }
     else
@@ -79,8 +115,12 @@ int main(int argc, char* argv[])
         std::cout << "\nrecv fail!\n";
     }
 
-    wait_func();
-    Sleep(100'000);
+    Sleep(2'000);
+
+
+    // server 역할일 때,
+    
+
 
     WSACleanup();
 	return 0;

@@ -140,11 +140,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\LogicPacket.pb.cc" />
+    <ClCompile Include="..\LogicPacket.pb.cc">
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpp17</LanguageStandard>
+    </ClCompile>
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\LogicPacket.pb.h" />
+    <ClCompile Include="..\LogicPacket.pb.h">
+      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpp17</LanguageStandard>
+    </ClCompile>
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Thread.h" />
   </ItemGroup>

@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Google.Protobuf;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
-using Google.Protobuf;
 
 namespace RHTFMainServer
 {
@@ -31,11 +31,11 @@ namespace RHTFMainServer
 
             // new client network stream
             NetworkStream stream = client.GetStream();
-
             
             // recv client send packet
             byte[] data = new byte[client.ReceiveBufferSize];
             int bytesRead = stream.Read(data, 0, data.Length);
+
             C2SPCLoginUserReq message;
             using (MemoryStream ms = new MemoryStream(data, 0, bytesRead))
             {
