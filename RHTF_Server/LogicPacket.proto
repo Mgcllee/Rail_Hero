@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package User;
+
 message C2SPCLoginUserReq {
   string UserID = 1;
 }

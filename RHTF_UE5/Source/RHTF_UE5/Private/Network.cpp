@@ -13,8 +13,3 @@ Network::~Network()
 {
 
 }
-
-bool Network::connect_to_server(std::string addr)
-{
-	return false;
-}

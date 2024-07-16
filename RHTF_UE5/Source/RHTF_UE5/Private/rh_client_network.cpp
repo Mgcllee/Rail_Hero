@@ -1,15 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
+#pragma once
 
 #include "rh_client_network.h"
 
-#ifdef _MSC_VER
-#pragma warning(disable: 4800)
-#pragma warning(disable: 4459)
-#pragma warning(disable: 4125)
-#endif
+#include "RHTF_UE5/LogicPacket.pb.h"
+class User::C2SPCLoginUserReq;
 
-// #include "ProtobufCore/NetProtocol/LogicPacket.pb.h"
 
 Urh_client_network::Urh_client_network()
 {
@@ -21,26 +18,12 @@ Urh_client_network::~Urh_client_network()
 
 bool Urh_client_network::connect_to_server(FString addr)
 {
-	int nRet = WSAStartup(MAKEWORD(2, 2), &wsaData);	// Winsock 초기화
-	if (nRet != 0) return false;
+    User::C2SPCLoginUserReq packet;
 
-	// 소켓 생성
-	Socket = WSASocket(AF_INET, SOCK_STREAM, 0, NULL, 0, WSA_FLAG_OVERLAPPED);
-	if (Socket == INVALID_SOCKET) return false;
+    std::string user_id = "9785";
+    packet.set_userid(user_id);
 
-	// IP, Port 정보 입력
-	SOCKADDR_IN stServerAddr;
-	stServerAddr.sin_family = AF_INET;
-	stServerAddr.sin_port = htons(Port);
-	stServerAddr.sin_addr.s_addr = inet_addr(TCHAR_TO_UTF8(*addr));
-
-    // C2SPCLoginUserReq login_req_pack;
 
 	// 접속
-	nRet = connect(Socket, (sockaddr*)&stServerAddr, sizeof(sockaddr));
-
-	if (nRet == SOCKET_ERROR)
-		return false;
-	else
-		return true;
+    return true;
 }

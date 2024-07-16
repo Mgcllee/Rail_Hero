@@ -9,8 +9,8 @@ public class ProtobufCore : ModuleRules
 
         PublicSystemIncludePaths.Add(Path.Combine(ModuleDirectory, "Include"));
         PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Include"));
-        PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Lib", "Win64", "libprotobuf.lib"));
-
+        PublicAdditionalLibraries.Add(Path.Combine(ModuleDirectory, "Lib", "libprotobuf.lib"));
+        
         PublicDefinitions.Add("GOOGLE_PROTOBUF_NO_RTTI=1");
     }
 }

@@ -20,6 +20,7 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace _pb = ::google::protobuf;
 namespace _pbi = ::google::protobuf::internal;
 namespace _fl = ::google::protobuf::internal::field_layout;
+namespace User {
 
 inline constexpr S2CPCLoginUserRes::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -66,6 +67,7 @@ struct C2SPCLoginUserReqDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 C2SPCLoginUserReqDefaultTypeInternal _C2SPCLoginUserReq_default_instance_;
+}  // namespace User
 static ::_pb::Metadata file_level_metadata_LogicPacket_2eproto[2];
 static constexpr const ::_pb::EnumDescriptor**
     file_level_enum_descriptors_LogicPacket_2eproto = nullptr;
@@ -74,48 +76,48 @@ static constexpr const ::_pb::ServiceDescriptor**
 const ::uint32_t TableStruct_LogicPacket_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
     protodesc_cold) = {
     ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::C2SPCLoginUserReq, _internal_metadata_),
+    PROTOBUF_FIELD_OFFSET(::User::C2SPCLoginUserReq, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
     ~0u,  // no _weak_field_map_
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::C2SPCLoginUserReq, _impl_.userid_),
+    PROTOBUF_FIELD_OFFSET(::User::C2SPCLoginUserReq, _impl_.userid_),
     ~0u,  // no _has_bits_
-    PROTOBUF_FIELD_OFFSET(::S2CPCLoginUserRes, _internal_metadata_),
+    PROTOBUF_FIELD_OFFSET(::User::S2CPCLoginUserRes, _internal_metadata_),
     ~0u,  // no _extensions_
     ~0u,  // no _oneof_case_
     ~0u,  // no _weak_field_map_
     ~0u,  // no _inlined_string_donated_
     ~0u,  // no _split_
     ~0u,  // no sizeof(Split)
-    PROTOBUF_FIELD_OFFSET(::S2CPCLoginUserRes, _impl_.userid_),
-    PROTOBUF_FIELD_OFFSET(::S2CPCLoginUserRes, _impl_.username_),
-    PROTOBUF_FIELD_OFFSET(::S2CPCLoginUserRes, _impl_.userlevel_),
+    PROTOBUF_FIELD_OFFSET(::User::S2CPCLoginUserRes, _impl_.userid_),
+    PROTOBUF_FIELD_OFFSET(::User::S2CPCLoginUserRes, _impl_.username_),
+    PROTOBUF_FIELD_OFFSET(::User::S2CPCLoginUserRes, _impl_.userlevel_),
 };
 
 static const ::_pbi::MigrationSchema
     schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::C2SPCLoginUserReq)},
-        {9, -1, -1, sizeof(::S2CPCLoginUserRes)},
+        {0, -1, -1, sizeof(::User::C2SPCLoginUserReq)},
+        {9, -1, -1, sizeof(::User::S2CPCLoginUserRes)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-    &::_C2SPCLoginUserReq_default_instance_._instance,
-    &::_S2CPCLoginUserRes_default_instance_._instance,
+    &::User::_C2SPCLoginUserReq_default_instance_._instance,
+    &::User::_S2CPCLoginUserRes_default_instance_._instance,
 };
 const char descriptor_table_protodef_LogicPacket_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n\021LogicPacket.proto\"#\n\021C2SPCLoginUserReq"
-    "\022\016\n\006UserID\030\001 \001(\t\"H\n\021S2CPCLoginUserRes\022\016\n"
-    "\006UserID\030\001 \001(\t\022\020\n\010UserName\030\002 \001(\t\022\021\n\tUserL"
-    "evel\030\003 \001(\rb\006proto3"
+    "\n\021LogicPacket.proto\022\004User\"#\n\021C2SPCLoginU"
+    "serReq\022\016\n\006UserID\030\001 \001(\t\"H\n\021S2CPCLoginUser"
+    "Res\022\016\n\006UserID\030\001 \001(\t\022\020\n\010UserName\030\002 \001(\t\022\021\n"
+    "\tUserLevel\030\003 \001(\rb\006proto3"
 };
 static ::absl::once_flag descriptor_table_LogicPacket_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_LogicPacket_2eproto = {
     false,
     false,
-    138,
+    144,
     descriptor_table_protodef_LogicPacket_2eproto,
     "LogicPacket.proto",
     &descriptor_table_LogicPacket_2eproto_once,
@@ -147,6 +149,7 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_LogicPac
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_LogicPacket_2eproto(&descriptor_table_LogicPacket_2eproto);
+namespace User {
 // ===================================================================
 
 class C2SPCLoginUserReq::_Internal {
@@ -156,7 +159,7 @@ class C2SPCLoginUserReq::_Internal {
 C2SPCLoginUserReq::C2SPCLoginUserReq(::google::protobuf::Arena* arena)
     : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:C2SPCLoginUserReq)
+  // @@protoc_insertion_point(arena_constructor:User.C2SPCLoginUserReq)
 }
 inline PROTOBUF_NDEBUG_INLINE C2SPCLoginUserReq::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
@@ -174,7 +177,7 @@ C2SPCLoginUserReq::C2SPCLoginUserReq(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
 
-  // @@protoc_insertion_point(copy_constructor:C2SPCLoginUserReq)
+  // @@protoc_insertion_point(copy_constructor:User.C2SPCLoginUserReq)
 }
 inline PROTOBUF_NDEBUG_INLINE C2SPCLoginUserReq::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
@@ -186,7 +189,7 @@ inline void C2SPCLoginUserReq::SharedCtor(::_pb::Arena* arena) {
   new (&_impl_) Impl_(internal_visibility(), arena);
 }
 C2SPCLoginUserReq::~C2SPCLoginUserReq() {
-  // @@protoc_insertion_point(destructor:C2SPCLoginUserReq)
+  // @@protoc_insertion_point(destructor:User.C2SPCLoginUserReq)
   _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
@@ -197,7 +200,7 @@ inline void C2SPCLoginUserReq::SharedDtor() {
 }
 
 PROTOBUF_NOINLINE void C2SPCLoginUserReq::Clear() {
-// @@protoc_insertion_point(message_clear_start:C2SPCLoginUserReq)
+// @@protoc_insertion_point(message_clear_start:User.C2SPCLoginUserReq)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
@@ -215,7 +218,7 @@ const char* C2SPCLoginUserReq::_InternalParse(
 
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<0, 1, 0, 32, 2> C2SPCLoginUserReq::_table_ = {
+const ::_pbi::TcParseTable<0, 1, 0, 37, 2> C2SPCLoginUserReq::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
@@ -241,8 +244,8 @@ const ::_pbi::TcParseTable<0, 1, 0, 32, 2> C2SPCLoginUserReq::_table_ = {
   }},
   // no aux_entries
   {{
-    "\21\6\0\0\0\0\0\0"
-    "C2SPCLoginUserReq"
+    "\26\6\0\0\0\0\0\0"
+    "User.C2SPCLoginUserReq"
     "UserID"
   }},
 };
@@ -250,7 +253,7 @@ const ::_pbi::TcParseTable<0, 1, 0, 32, 2> C2SPCLoginUserReq::_table_ = {
 ::uint8_t* C2SPCLoginUserReq::_InternalSerialize(
     ::uint8_t* target,
     ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:C2SPCLoginUserReq)
+  // @@protoc_insertion_point(serialize_to_array_start:User.C2SPCLoginUserReq)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
@@ -258,7 +261,7 @@ const ::_pbi::TcParseTable<0, 1, 0, 32, 2> C2SPCLoginUserReq::_table_ = {
   if (!this->_internal_userid().empty()) {
     const std::string& _s = this->_internal_userid();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "C2SPCLoginUserReq.UserID");
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "User.C2SPCLoginUserReq.UserID");
     target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
@@ -267,12 +270,12 @@ const ::_pbi::TcParseTable<0, 1, 0, 32, 2> C2SPCLoginUserReq::_table_ = {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:C2SPCLoginUserReq)
+  // @@protoc_insertion_point(serialize_to_array_end:User.C2SPCLoginUserReq)
   return target;
 }
 
 ::size_t C2SPCLoginUserReq::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:C2SPCLoginUserReq)
+// @@protoc_insertion_point(message_byte_size_start:User.C2SPCLoginUserReq)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits = 0;
@@ -299,7 +302,7 @@ const ::google::protobuf::Message::ClassData* C2SPCLoginUserReq::GetClassData() 
 void C2SPCLoginUserReq::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<C2SPCLoginUserReq*>(&to_msg);
   auto& from = static_cast<const C2SPCLoginUserReq&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:C2SPCLoginUserReq)
+  // @@protoc_insertion_point(class_specific_merge_from_start:User.C2SPCLoginUserReq)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -311,7 +314,7 @@ void C2SPCLoginUserReq::MergeImpl(::google::protobuf::Message& to_msg, const ::g
 }
 
 void C2SPCLoginUserReq::CopyFrom(const C2SPCLoginUserReq& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:C2SPCLoginUserReq)
+// @@protoc_insertion_point(class_specific_copy_from_start:User.C2SPCLoginUserReq)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -346,7 +349,7 @@ class S2CPCLoginUserRes::_Internal {
 S2CPCLoginUserRes::S2CPCLoginUserRes(::google::protobuf::Arena* arena)
     : ::google::protobuf::Message(arena) {
   SharedCtor(arena);
-  // @@protoc_insertion_point(arena_constructor:S2CPCLoginUserRes)
+  // @@protoc_insertion_point(arena_constructor:User.S2CPCLoginUserRes)
 }
 inline PROTOBUF_NDEBUG_INLINE S2CPCLoginUserRes::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
@@ -366,7 +369,7 @@ S2CPCLoginUserRes::S2CPCLoginUserRes(
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
   _impl_.userlevel_ = from._impl_.userlevel_;
 
-  // @@protoc_insertion_point(copy_constructor:S2CPCLoginUserRes)
+  // @@protoc_insertion_point(copy_constructor:User.S2CPCLoginUserRes)
 }
 inline PROTOBUF_NDEBUG_INLINE S2CPCLoginUserRes::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
@@ -380,7 +383,7 @@ inline void S2CPCLoginUserRes::SharedCtor(::_pb::Arena* arena) {
   _impl_.userlevel_ = {};
 }
 S2CPCLoginUserRes::~S2CPCLoginUserRes() {
-  // @@protoc_insertion_point(destructor:S2CPCLoginUserRes)
+  // @@protoc_insertion_point(destructor:User.S2CPCLoginUserRes)
   _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
   SharedDtor();
 }
@@ -392,7 +395,7 @@ inline void S2CPCLoginUserRes::SharedDtor() {
 }
 
 PROTOBUF_NOINLINE void S2CPCLoginUserRes::Clear() {
-// @@protoc_insertion_point(message_clear_start:S2CPCLoginUserRes)
+// @@protoc_insertion_point(message_clear_start:User.S2CPCLoginUserRes)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
@@ -412,7 +415,7 @@ const char* S2CPCLoginUserRes::_InternalParse(
 
 
 PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
-const ::_pbi::TcParseTable<2, 3, 0, 40, 2> S2CPCLoginUserRes::_table_ = {
+const ::_pbi::TcParseTable<2, 3, 0, 45, 2> S2CPCLoginUserRes::_table_ = {
   {
     0,  // no _has_bits_
     0, // no _extensions_
@@ -451,8 +454,8 @@ const ::_pbi::TcParseTable<2, 3, 0, 40, 2> S2CPCLoginUserRes::_table_ = {
   }},
   // no aux_entries
   {{
-    "\21\6\10\0\0\0\0\0"
-    "S2CPCLoginUserRes"
+    "\26\6\10\0\0\0\0\0"
+    "User.S2CPCLoginUserRes"
     "UserID"
     "UserName"
   }},
@@ -461,7 +464,7 @@ const ::_pbi::TcParseTable<2, 3, 0, 40, 2> S2CPCLoginUserRes::_table_ = {
 ::uint8_t* S2CPCLoginUserRes::_InternalSerialize(
     ::uint8_t* target,
     ::google::protobuf::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:S2CPCLoginUserRes)
+  // @@protoc_insertion_point(serialize_to_array_start:User.S2CPCLoginUserRes)
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
@@ -469,7 +472,7 @@ const ::_pbi::TcParseTable<2, 3, 0, 40, 2> S2CPCLoginUserRes::_table_ = {
   if (!this->_internal_userid().empty()) {
     const std::string& _s = this->_internal_userid();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "S2CPCLoginUserRes.UserID");
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "User.S2CPCLoginUserRes.UserID");
     target = stream->WriteStringMaybeAliased(1, _s, target);
   }
 
@@ -477,7 +480,7 @@ const ::_pbi::TcParseTable<2, 3, 0, 40, 2> S2CPCLoginUserRes::_table_ = {
   if (!this->_internal_username().empty()) {
     const std::string& _s = this->_internal_username();
     ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
-        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "S2CPCLoginUserRes.UserName");
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "User.S2CPCLoginUserRes.UserName");
     target = stream->WriteStringMaybeAliased(2, _s, target);
   }
 
@@ -493,12 +496,12 @@ const ::_pbi::TcParseTable<2, 3, 0, 40, 2> S2CPCLoginUserRes::_table_ = {
         ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
             _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:S2CPCLoginUserRes)
+  // @@protoc_insertion_point(serialize_to_array_end:User.S2CPCLoginUserRes)
   return target;
 }
 
 ::size_t S2CPCLoginUserRes::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:S2CPCLoginUserRes)
+// @@protoc_insertion_point(message_byte_size_start:User.S2CPCLoginUserRes)
   ::size_t total_size = 0;
 
   ::uint32_t cached_has_bits = 0;
@@ -537,7 +540,7 @@ const ::google::protobuf::Message::ClassData* S2CPCLoginUserRes::GetClassData() 
 void S2CPCLoginUserRes::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<S2CPCLoginUserRes*>(&to_msg);
   auto& from = static_cast<const S2CPCLoginUserRes&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:S2CPCLoginUserRes)
+  // @@protoc_insertion_point(class_specific_merge_from_start:User.S2CPCLoginUserRes)
   ABSL_DCHECK_NE(&from, _this);
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -555,7 +558,7 @@ void S2CPCLoginUserRes::MergeImpl(::google::protobuf::Message& to_msg, const ::g
 }
 
 void S2CPCLoginUserRes::CopyFrom(const S2CPCLoginUserRes& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:S2CPCLoginUserRes)
+// @@protoc_insertion_point(class_specific_copy_from_start:User.S2CPCLoginUserRes)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -584,6 +587,7 @@ void S2CPCLoginUserRes::InternalSwap(S2CPCLoginUserRes* PROTOBUF_RESTRICT other)
       file_level_metadata_LogicPacket_2eproto[1]);
 }
 // @@protoc_insertion_point(namespace_scope)
+}  // namespace User
 namespace google {
 namespace protobuf {
 }  // namespace protobuf
