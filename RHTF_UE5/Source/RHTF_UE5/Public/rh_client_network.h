@@ -5,6 +5,10 @@
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 
+#include "Sockets.h"
+#include "SocketSubsystem.h"
+#include "Interfaces/IPv4/IPv4Address.h"
+
 #include "rh_client_network.generated.h"
 
 
@@ -20,9 +24,9 @@ public:
 	Urh_client_network();
 	virtual ~Urh_client_network();
 
-	UFUNCTION(BlueprintCallable, Category="Socket")
-		bool connect_to_server(FString addr);
+	UFUNCTION(BlueprintCallable, Category="Server")
+		bool connect_to_server(FString server_addr);
 
 private:
-
+    FSocket* socket;
 };
