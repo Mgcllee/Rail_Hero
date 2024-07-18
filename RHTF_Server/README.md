@@ -27,10 +27,10 @@ protoc version: [v25.1](https://github.com/protocolbuffers/protobuf/releases/tag
 C++ project protobuf version: vcpkg protobuf:x64-windows 4.25.1  
 C# Nuget Google.Protobuf version: [3.25.1](https://www.nuget.org/packages/Google.Protobuf/3.23.3?_src=template)  
 
+Unreal Engine 5.3.2 Protobuf version : C++ protobuf:x64-windows 4.25.1 (vcpkg version)  
+Unity Protobuf version : C# Nuget Google.Protobuf 3.25.1 + @  
+
 현재 버전: (protoc 기준)**25.1**  
 [버전 확인 필수](https://protobuf.dev/support/version-support/)  
-
-23.3버전을 사용해보았지만,  
-C++ vcpkg 에서 지원하지 않아 호환성 문제 때문에 다시 25.1 버전으로 돌아옴.  
 
 > ProtoBuf 컴파일러인 **protoc**의 추출물은 절대 수정 금지.
