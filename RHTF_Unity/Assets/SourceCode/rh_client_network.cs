@@ -36,8 +36,8 @@ public class rh_network_ : MonoBehaviour
         }
 
         C2SPCLoginUserReq login_pack = new C2SPCLoginUserReq()
-        { 
-            UserID = "9785"
+        {
+            UserID = "Unity Client 9785"
         };
 
         NetworkStream stream = client.GetStream();
