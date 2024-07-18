@@ -4,7 +4,7 @@
 #include <fstream>
 
 #include <WS2tcpip.h>
-// #include <WinSock2.h>
+#include <WinSock2.h>
 
 #pragma comment(lib, "ws2_32")
 
@@ -15,7 +15,7 @@ void Server(int PORT_NUM)
     WSADATA WSAData;
     int err = WSAStartup(MAKEWORD(2, 2), &WSAData);
 
-    SOCKET Sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
+    SOCKET Listen_Sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);
 
     SOCKADDR_IN server_addr;
     memset(&server_addr, 0, sizeof(server_addr));
@@ -23,20 +23,30 @@ void Server(int PORT_NUM)
     server_addr.sin_port = htons(PORT_NUM);
     server_addr.sin_addr.S_un.S_addr = INADDR_ANY;
 
-    bind(Sock, reinterpret_cast<sockaddr*>(&server_addr), sizeof(server_addr));
-    listen(Sock, SOMAXCONN);
+    printf("Listen...\n");
+    bind(Listen_Sock, (sockaddr*)(&server_addr), sizeof(server_addr));
+    listen(Listen_Sock, SOMAXCONN);
 
     SOCKADDR_IN cl_addr;
     int addr_size = sizeof(cl_addr);
 
-    accept(Sock, (struct sockaddr*)&server_addr, (socklen_t*)&server_addr);
+    printf("Accept...\n");
+    SOCKET new_client = accept(Listen_Sock, (struct sockaddr*)&server_addr, (socklen_t*)&server_addr);
 
-    C2SPCLoginUserReq loginf_pack;
-    char* buffer = new char[sizeof(C2SPCLoginUserReq)];
-    int ret = recv(Sock, buffer, sizeof(C2SPCLoginUserReq), 0);
-    loginf_pack.ParseFromString(buffer);
+    User::C2SPCLoginUserReq loginf_pack;
+    char* buffer = new char[sizeof(User::C2SPCLoginUserReq)];
+    int ret = recv(new_client, buffer, sizeof(User::C2SPCLoginUserReq), 0);
 
-    std::cout << "userID: " << loginf_pack.userid();
+    if (ret > 0)
+    {
+        loginf_pack.ParseFromString(buffer);
+
+        std::cout << "userID: " << loginf_pack.userid() << '\n';
+    }
+    else
+    {
+        std::cout << "\nrecv fail!\n";
+    }
 
     int n;
     std::cin >> n;
@@ -80,7 +90,7 @@ int main(int argc, char* argv[])
     std::string UID;
     std::cin >> UID;
 
-    C2SPCLoginUserReq c2slogin;
+    User::C2SPCLoginUserReq c2slogin;
     c2slogin.set_userid(UID);
 
     std::string serialized_data;
@@ -92,9 +102,9 @@ int main(int argc, char* argv[])
     std::cout << "[send protobuf]\n";
     Sleep(2'000);
 
-    S2CPCLoginUserRes loginf_pack;
-    char* buffer = new char[sizeof(S2CPCLoginUserRes)];
-    int ret = recv(Sock, buffer, sizeof(S2CPCLoginUserRes), 0);
+    User::S2CPCLoginUserRes loginf_pack;
+    char* buffer = new char[sizeof(User::S2CPCLoginUserRes)];
+    int ret = recv(Sock, buffer, sizeof(User::S2CPCLoginUserRes), 0);
     
     if (ret > 0)
     {
