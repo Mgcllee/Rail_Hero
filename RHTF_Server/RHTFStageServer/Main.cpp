@@ -20,7 +20,8 @@ Winsock은 version 1과 2가 있으며, 1 에서 기능이 추가된 것이 2 이다.
 OVERLAPPED 구조체에 WSA 접두어를 붙인 것이
 WSAOVERLAPPED 구조체이다. 정의를 찾아보면 같다.
 */
-#include <WS2tcpip.h>
+//#include <Winsock2.h>
+ #include <WS2tcpip.h>
 
 #pragma comment(lib, "ws2_32")
 
@@ -73,13 +74,13 @@ int main(int argc, char* argv[])
         
         User::C2SPCLoginUserReq loginf_pack;
         char* buffer = new char[sizeof(User::C2SPCLoginUserReq)];
-        int ret = recv(client[ticket], buffer, sizeof(User::C2SPCLoginUserReq), 0);
+        int ret = recv(client[ticket], (char*)buffer, sizeof(User::C2SPCLoginUserReq), 0);
 
         if (ret > 0)
         {
-            loginf_pack.ParseFromString(buffer);
+            loginf_pack.ParseFromString((char*)buffer);
             std::string buf = loginf_pack.userid();
-            printf("[New Client] userID : %s\n", buf.c_str());
+            printf("[New Client] userID : %s [size: %d]\n", buf.c_str(), ret);
             ++ticket;
         }
         else

@@ -40,13 +40,13 @@ bool Urh_client_network::connect_to_server(FString server_addr)
     User::C2SPCLoginUserReq packet;
 
     std::string user_id = "Unreal Client 9785";
-    packet.set_userid(user_id);
+    packet.set_userid(user_id.c_str());
 
     uint8* buffer = new uint8[sizeof(User::C2SPCLoginUserReq)];
-    packet.SerializeToArray(buffer, sizeof(User::C2SPCLoginUserReq));
+    packet.SerializeToArray(buffer, sizeof(packet));
 
     int32 bytesent = 0;
-    bool send_ret = socket->Send(buffer, sizeof(buffer), bytesent);
+    bool send_ret = socket->Send(buffer, sizeof(User::C2SPCLoginUserReq), bytesent);
 
 	// Á¢¼Ó
     return send_ret;
