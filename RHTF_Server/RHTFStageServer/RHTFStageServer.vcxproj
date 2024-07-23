@@ -144,13 +144,15 @@
       <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpp17</LanguageStandard>
     </ClCompile>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="worker.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\LogicPacket.pb.h">
       <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpp17</LanguageStandard>
     </ClCompile>
+    <ClInclude Include="Network.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="Thread.h" />
+    <ClInclude Include="worker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />

@@ -27,12 +27,18 @@
     <ClCompile Include="..\LogicPacket.pb.h">
       <Filter>Protocol</Filter>
     </ClCompile>
+    <ClCompile Include="worker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Thread.h">
+    <ClInclude Include="Network.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="worker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
