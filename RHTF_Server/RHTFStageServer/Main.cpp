@@ -29,7 +29,6 @@ int main(int argc, char* argv[])
 
     IOCP::h_iocp = CreateIoCompletionPort(INVALID_HANDLE_VALUE, 0, 0, 0);
     CreateIoCompletionPort(reinterpret_cast<HANDLE>(IOCP::g_s_socket), IOCP::h_iocp, 0, 0);
-   
 
     IOCP::g_c_socket = WSASocket(AF_INET, SOCK_STREAM, 0, NULL, 0, WSA_FLAG_OVERLAPPED);
     IOCP::g_over.curr_type = IOCP::TYPE::ACCEPT;

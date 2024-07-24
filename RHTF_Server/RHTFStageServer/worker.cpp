@@ -12,7 +12,8 @@ void worker_thread(HANDLE h_iocp)
 
 		// IOCP의 I/O Completion Queue에서 데이터가 입력될 때까지 [[무한 대기]] 합니다.
 		BOOL ret
-			= GetQueuedCompletionStatus(
+			= GetQueuedCompletionStatus
+            (
 				h_iocp,		// 대기중인 iocp 객체
 				&num_bytes,	// 송/수신된 Byte 수
 				&key,		// 
@@ -50,11 +51,17 @@ void worker_thread(HANDLE h_iocp)
         case IOCP::ACCEPT:
         {
             // 새로운 클라이언트의 고유 ID 발급 필요!
+            // 병목 현상을 최대한 해결해줄 발급기가 필요
             int new_c_id = -1;
 
             if (-1 != new_c_id)
             {
-                // 클라이언트 객체 초기화.
+                // [[클라이언트 객체 초기화]]
+                Client new_c_info(IOCP::g_c_socket); // g_~ 객체 atomic 필요
+
+
+                // Clients.insert(std::make_pair(new_c_id, new_c_info));
+                Clients[new_c_id] = new_c_info;
 
                 CreateIoCompletionPort(reinterpret_cast<HANDLE>(IOCP::g_c_socket), h_iocp, new_c_id, 0);
                 // clients[new_c_id].do_recv();
@@ -75,8 +82,45 @@ void worker_thread(HANDLE h_iocp)
         }
             break;
         case IOCP::RECV:
+        {
+            int amount_packet
+                = num_bytes + Clients[key].get_session().get_prev_rest_packet();
 
-            break;
+            // 읽어온 WSAOVERLAPPED 구조체 변환.
+            char* recv_packet = ex_over->_send_buf;
+            
+            while (amount_packet > 0)
+            {
+                int packet_size = recv_packet[0];
+
+                if (packet_size <= amount_packet)
+                {
+                    process_packet(static_cast<int>(key), recv_packet);
+
+                    // 패킷 크기만큼 읽어오기.
+                    recv_packet += packet_size;
+
+                    // 현재 남아있는 패킷 줄이기.
+                    amount_packet -= packet_size;
+                }
+                else
+                {
+                    break;
+                }
+
+                // 남아버린 버퍼 크기를 다음을 위해 저장해두기
+                Clients[key].get_session().set_prev_rest_packet(amount_packet);
+
+                if (amount_packet > 0)
+                {
+                    memcpy(ex_over->_send_buf, recv_packet, amount_packet);
+                }
+
+                // do_recv() 호출이 필수인가?
+                Clients[key].get_session().do_recv();
+            }
+        }
+        break;
         case IOCP::SEND:
 
             break;

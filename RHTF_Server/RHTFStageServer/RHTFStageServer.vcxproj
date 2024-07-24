@@ -143,6 +143,7 @@
     <ClCompile Include="..\LogicPacket.pb.cc">
       <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpp17</LanguageStandard>
     </ClCompile>
+    <ClCompile Include="Client.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="worker.cpp" />
   </ItemGroup>
@@ -150,6 +151,7 @@
     <ClCompile Include="..\LogicPacket.pb.h">
       <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpp17</LanguageStandard>
     </ClCompile>
+    <ClInclude Include="Client.h" />
     <ClInclude Include="Network.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="worker.h" />
