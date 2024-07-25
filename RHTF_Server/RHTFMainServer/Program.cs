@@ -16,7 +16,7 @@ namespace RHTFMainServer
             string stage_server_addr = "127.0.0.1";
             int stage_server_port = 7777;
 
-            ProcessStartInfo startInfo = new ProcessStartInfo(exe_name);
+            ProcessStartInfo startInfo = new ProcessStartInfo(exe_name)
             startInfo.WindowStyle = ProcessWindowStyle.Minimized;
             startInfo.Arguments = stage_server_addr + " " + stage_server_port.ToString() + " " + "UID Mgcllee leemc";
             Process.Start(startInfo);
@@ -54,6 +54,7 @@ namespace RHTFMainServer
                 UserLevel = 10
             };
 
+            
             byte[] send_data = s2CPCLoginUserRes.ToByteArray();
             stream.Write(send_data, 0, send_data.Length);
 

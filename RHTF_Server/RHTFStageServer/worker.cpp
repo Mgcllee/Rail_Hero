@@ -132,39 +132,26 @@ void process_packet(int c_id, char* packet)
 {
     switch (packet[1])
     {
-    // case C2S...: (C2S만 존재)
-    
-    // 참고용 임시 주석
-    default:
+    case User::NUM::C2SLoginUserReq:
     {
-        /*
- // send protobuf C++ version
- User::C2SPCLoginUserReq c2slogin;
- c2slogin.set_userid(UID);
- std::string serialized_data;
- c2slogin.SerializeToString(&serialized_data);
- send(Sock, serialized_data.c_str(), serialized_data.size(), 0);
- */
+        User::S2CPCLoginUserRes login_pack;
+        login_pack.ParseFromString(packet);
 
- /*
- // recv protobuf C++ version
- User::S2CPCLoginUserRes loginf_pack;
- char* buffer = new char[sizeof(User::S2CPCLoginUserRes)];
- int ret = recv(Sock, buffer, sizeof(User::S2CPCLoginUserRes), 0);
- if (ret > 0)
- {
-     loginf_pack.ParseFromString(buffer);
+        std::cout << "[User Info]\n";
+        std::cout << "ID: " << login_pack.userid() << '\n';
+        std::cout << "Name: " << login_pack.username() << '\n';
+        std::cout << "Level: " << login_pack.userlevel() << '\n';
+    }
+    break;
+    case User::NUM::S2SLoginUserReq:
+    {
+        User::C2SPCLoginUserReq c2slogin;
+        c2slogin.set_userid(9785);
+        std::string serialized_data;
+        c2slogin.SerializeToString(&serialized_data);
 
-     std::cout << "[User Info]\n";
-     std::cout << "ID: " << loginf_pack.userid() << '\n';
-     std::cout << "Name: " << loginf_pack.username() << '\n';
-     std::cout << "Level: " << loginf_pack.userlevel() << '\n';
- }
- else
- {
-     std::cout << "\nrecv fail!\n";
- }
- */
+        // send(Sock, serialized_data.c_str(), serialized_data.size(), 0);
+        Clients[c_id].get_session().do_send(&serialized_data);
     }
     break;
     }

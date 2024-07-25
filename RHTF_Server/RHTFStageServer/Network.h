@@ -21,12 +21,15 @@ WS2tcpip.h 헤더는 Winsock2.h에서 업데이트된 헤더.
 
 #pragma warning( disable : 4251 )
 #pragma warning( disable : 4244 )
+
 #include "../LogicPacket.pb.h"
+
 #pragma warning( default : 4251 )
 #pragma warning( default : 4244 )
 
 #define PORT_NUM 7777
 #define BUF_SIZE 256
+
 
 namespace IOCP
 {
