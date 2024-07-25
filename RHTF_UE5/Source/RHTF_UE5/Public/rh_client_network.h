@@ -27,6 +27,9 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Server")
 		bool connect_to_server(FString server_addr);
 
+    UFUNCTION(BlueprintCallable, Category = "Server")
+        bool send_client_info(FString name);
+
 private:
     FSocket* socket;
 };

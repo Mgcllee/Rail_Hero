@@ -2,6 +2,16 @@
 
 #include "worker.h"
 
+#pragma warning( disable : 4251 )
+#pragma warning( disable : 4244 )
+
+#include "../LogicPacket.pb.h"
+
+#pragma warning( default : 4251 )
+#pragma warning( default : 4244 )
+
+std::atomic<int> next_client_id;
+
 void worker_thread(HANDLE h_iocp)
 {
     while (true)
@@ -36,55 +46,56 @@ void worker_thread(HANDLE h_iocp)
 		IOCP::OVER_EXT* ex_over = reinterpret_cast<IOCP::OVER_EXT*>(over);
         
         // 오류 검출기
-        if ((0 == num_bytes) && (ex_over->curr_type == IOCP::RECV)) continue;
-        else if (FALSE == ret) {
-            // Queue에 작업이 있으나, 유효하게 꺼내오지 못 하였다.
-            // (작업이 없으면 GetQueuedCompletionStatus 함수 자체에서 대기함.
-            // 즉, 작업이 있었기에 ret 변수로 값이 반환된 것.)
-
-            if (ex_over->curr_type == IOCP::ACCEPT) std::cout << "Accept Error";
-            else continue;
+        // error 검출기
+        if (FALSE == ret) {
+            if (ex_over->curr_type == IOCP::TYPE::ACCEPT)
+            {
+                std::cout << "Accept error\n";
+            }
+            else {
+                std::cout << "\nGQCS Error on client[" << key << "]\n\n";
+                // disconnect client
+            }
         }
-        
+        if ((0 == num_bytes) && (ex_over->curr_type == IOCP::TYPE::RECV)) continue;
+
         switch (ex_over->curr_type)
         {
         case IOCP::ACCEPT:
         {
             // 새로운 클라이언트의 고유 ID 발급 필요!
             // 병목 현상을 최대한 해결해줄 발급기가 필요
-            int new_c_id = -1;
+            int new_c_id = (++next_client_id);
 
             if (-1 != new_c_id)
             {
+                printf("Accept New Client!\n");
                 // [[클라이언트 객체 초기화]]
                 Client new_c_info(IOCP::g_c_socket); // g_~ 객체 atomic 필요
-
 
                 // Clients.insert(std::make_pair(new_c_id, new_c_info));
                 Clients[new_c_id] = new_c_info;
 
                 CreateIoCompletionPort(reinterpret_cast<HANDLE>(IOCP::g_c_socket), h_iocp, new_c_id, 0);
-                // clients[new_c_id].do_recv();
+                // Clients[new_c_id].get_session().do_recv();
                 
                 // Global Client Socket 다시 원상복귀 초기화 (다음 새로운 클라이언트 준비)
                 IOCP::g_c_socket = WSASocket(AF_INET, SOCK_STREAM, 0, NULL, 0, WSA_FLAG_OVERLAPPED);
-                
-                // Accept new client!
             }
             else
             {
-                // Accept Error!
+                printf("Accept Error!\n");
             }
 
             ZeroMemory(&IOCP::g_over._over, sizeof(IOCP::g_over._over));
             int addr_size = sizeof(SOCKADDR_IN);
             AcceptEx(IOCP::g_s_socket, IOCP::g_c_socket, IOCP::g_over._send_buf, 0, addr_size + 16, addr_size + 16, 0, &IOCP::g_over._over);
         }
-            break;
+        break;
         case IOCP::RECV:
         {
-            int amount_packet
-                = num_bytes + Clients[key].get_session().get_prev_rest_packet();
+            unsigned int c_id = static_cast<int>(key);
+            int amount_packet = num_bytes + (Clients[c_id].get_session().get_prev_rest_packet());
 
             // 읽어온 WSAOVERLAPPED 구조체 변환.
             char* recv_packet = ex_over->_send_buf;
@@ -95,7 +106,7 @@ void worker_thread(HANDLE h_iocp)
 
                 if (packet_size <= amount_packet)
                 {
-                    process_packet(static_cast<int>(key), recv_packet);
+                    process_packet(c_id, recv_packet);
 
                     // 패킷 크기만큼 읽어오기.
                     recv_packet += packet_size;
@@ -109,7 +120,7 @@ void worker_thread(HANDLE h_iocp)
                 }
 
                 // 남아버린 버퍼 크기를 다음을 위해 저장해두기
-                Clients[key].get_session().set_prev_rest_packet(amount_packet);
+                Clients[c_id].get_session().set_prev_rest_packet(amount_packet);
 
                 if (amount_packet > 0)
                 {
@@ -117,13 +128,15 @@ void worker_thread(HANDLE h_iocp)
                 }
 
                 // do_recv() 호출이 필수인가?
-                Clients[key].get_session().do_recv();
+                Clients[c_id].get_session().do_recv();
             }
         }
         break;
         case IOCP::SEND:
+        {
 
-            break;
+        }
+        break;
         }
     }
 }

@@ -27,8 +27,8 @@ namespace User {
             "ChFMb2dpY1BhY2tldC5wcm90bxIEVXNlciIvCgdEZWZhdWx0EgwKBFNpemUY",
             "ASABKA0SFgoDTnVtGAIgASgOMgkuVXNlci5OVU0iQAoRQzJTUENMb2dpblVz",
             "ZXJSZXESGwoEaW5mbxgBIAEoCzINLlVzZXIuRGVmYXVsdBIOCgZVc2VySUQY",
-            "AiABKAkiZQoRUzJDUENMb2dpblVzZXJSZXMSGwoEaW5mbxgBIAEoCzINLlVz",
-            "ZXIuRGVmYXVsdBIOCgZVc2VySUQYAiABKAkSEAoIVXNlck5hbWUYAyABKAkS",
+            "AiABKA0iZQoRUzJDUENMb2dpblVzZXJSZXMSGwoEaW5mbxgBIAEoCzINLlVz",
+            "ZXIuRGVmYXVsdBIOCgZVc2VySUQYAiABKA0SEAoIVXNlck5hbWUYAyABKAkS",
             "EQoJVXNlckxldmVsGAQgASgNKi8KA05VTRITCg9DMlNMb2dpblVzZXJSZXEQ",
             "ABITCg9TMlNMb2dpblVzZXJSZXEQAWIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
@@ -338,13 +338,13 @@ namespace User {
 
     /// <summary>Field number for the "UserID" field.</summary>
     public const int UserIDFieldNumber = 2;
-    private string userID_ = "";
+    private uint userID_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string UserID {
+    public uint UserID {
       get { return userID_; }
       set {
-        userID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        userID_ = value;
       }
     }
 
@@ -373,7 +373,7 @@ namespace User {
     public override int GetHashCode() {
       int hash = 1;
       if (info_ != null) hash ^= Info.GetHashCode();
-      if (UserID.Length != 0) hash ^= UserID.GetHashCode();
+      if (UserID != 0) hash ^= UserID.GetHashCode();
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -396,9 +396,9 @@ namespace User {
         output.WriteRawTag(10);
         output.WriteMessage(Info);
       }
-      if (UserID.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(UserID);
+      if (UserID != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(UserID);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(output);
@@ -414,9 +414,9 @@ namespace User {
         output.WriteRawTag(10);
         output.WriteMessage(Info);
       }
-      if (UserID.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(UserID);
+      if (UserID != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(UserID);
       }
       if (_unknownFields != null) {
         _unknownFields.WriteTo(ref output);
@@ -431,8 +431,8 @@ namespace User {
       if (info_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Info);
       }
-      if (UserID.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(UserID);
+      if (UserID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UserID);
       }
       if (_unknownFields != null) {
         size += _unknownFields.CalculateSize();
@@ -452,7 +452,7 @@ namespace User {
         }
         Info.MergeFrom(other.Info);
       }
-      if (other.UserID.Length != 0) {
+      if (other.UserID != 0) {
         UserID = other.UserID;
       }
       _unknownFields = pb::UnknownFieldSet.MergeFrom(_unknownFields, other._unknownFields);
@@ -477,8 +477,8 @@ namespace User {
             input.ReadMessage(Info);
             break;
           }
-          case 18: {
-            UserID = input.ReadString();
+          case 16: {
+            UserID = input.ReadUInt32();
             break;
           }
         }
@@ -503,8 +503,8 @@ namespace User {
             input.ReadMessage(Info);
             break;
           }
-          case 18: {
-            UserID = input.ReadString();
+          case 16: {
+            UserID = input.ReadUInt32();
             break;
           }
         }
@@ -576,13 +576,13 @@ namespace User {
 
     /// <summary>Field number for the "UserID" field.</summary>
     public const int UserIDFieldNumber = 2;
-    private string userID_ = "";
+    private uint userID_;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public string UserID {
+    public uint UserID {
       get { return userID_; }
       set {
-        userID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+        userID_ = value;
       }
     }
 
@@ -637,7 +637,7 @@ namespace User {
     public override int GetHashCode() {
       int hash = 1;
       if (info_ != null) hash ^= Info.GetHashCode();
-      if (UserID.Length != 0) hash ^= UserID.GetHashCode();
+      if (UserID != 0) hash ^= UserID.GetHashCode();
       if (UserName.Length != 0) hash ^= UserName.GetHashCode();
       if (UserLevel != 0) hash ^= UserLevel.GetHashCode();
       if (_unknownFields != null) {
@@ -662,9 +662,9 @@ namespace User {
         output.WriteRawTag(10);
         output.WriteMessage(Info);
       }
-      if (UserID.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(UserID);
+      if (UserID != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(UserID);
       }
       if (UserName.Length != 0) {
         output.WriteRawTag(26);
@@ -688,9 +688,9 @@ namespace User {
         output.WriteRawTag(10);
         output.WriteMessage(Info);
       }
-      if (UserID.Length != 0) {
-        output.WriteRawTag(18);
-        output.WriteString(UserID);
+      if (UserID != 0) {
+        output.WriteRawTag(16);
+        output.WriteUInt32(UserID);
       }
       if (UserName.Length != 0) {
         output.WriteRawTag(26);
@@ -713,8 +713,8 @@ namespace User {
       if (info_ != null) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(Info);
       }
-      if (UserID.Length != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeStringSize(UserID);
+      if (UserID != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeUInt32Size(UserID);
       }
       if (UserName.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(UserName);
@@ -740,7 +740,7 @@ namespace User {
         }
         Info.MergeFrom(other.Info);
       }
-      if (other.UserID.Length != 0) {
+      if (other.UserID != 0) {
         UserID = other.UserID;
       }
       if (other.UserName.Length != 0) {
@@ -771,8 +771,8 @@ namespace User {
             input.ReadMessage(Info);
             break;
           }
-          case 18: {
-            UserID = input.ReadString();
+          case 16: {
+            UserID = input.ReadUInt32();
             break;
           }
           case 26: {
@@ -805,8 +805,8 @@ namespace User {
             input.ReadMessage(Info);
             break;
           }
-          case 18: {
-            UserID = input.ReadString();
+          case 16: {
+            UserID = input.ReadUInt32();
             break;
           }
           case 26: {

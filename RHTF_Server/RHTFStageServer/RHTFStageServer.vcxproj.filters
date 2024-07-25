@@ -21,17 +21,14 @@
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\LogicPacket.pb.cc">
-      <Filter>Protocol</Filter>
-    </ClCompile>
-    <ClCompile Include="..\LogicPacket.pb.h">
-      <Filter>Protocol</Filter>
-    </ClCompile>
     <ClCompile Include="worker.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Client.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\LogicPacket.pb.cc">
+      <Filter>Protocol</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +43,9 @@
     </ClInclude>
     <ClInclude Include="Client.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\LogicPacket.pb.h">
+      <Filter>Protocol</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

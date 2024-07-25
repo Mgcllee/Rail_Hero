@@ -15,21 +15,13 @@ WS2tcpip.h 헤더는 Winsock2.h에서 업데이트된 헤더.
 */
 #include <WS2tcpip.h>
 #include <MSWSock.h>
+#include <atomic>
 
 #pragma comment(lib, "ws2_32")
 #pragma comment(lib, "MSWSock.lib")
 
-#pragma warning( disable : 4251 )
-#pragma warning( disable : 4244 )
-
-#include "../LogicPacket.pb.h"
-
-#pragma warning( default : 4251 )
-#pragma warning( default : 4244 )
-
 #define PORT_NUM 7777
 #define BUF_SIZE 256
-
 
 namespace IOCP
 {
@@ -40,6 +32,8 @@ namespace IOCP
 	extern SOCKET g_s_socket;
 	extern SOCKET g_c_socket;
 	extern OVER_EXT g_over;
+
+	
 
 	// WSAOVERLAPPED extension class
 	class OVER_EXT {
@@ -86,7 +80,7 @@ namespace IOCP
 			// std::fill은 iterator를 사용해야 하므로 부적절.
 			// Zeromem
 			// [기존] memset(&_recv_over._over, 0, sizeof(_recv_over._over)); 
-			ZeroMemory(&_recv_over._over, 0, sizeof(_recv_over._over));
+			ZeroMemory(&_recv_over._over, sizeof(_recv_over._over));
 			
 			_recv_over._wsabuf.len = BUF_SIZE - _prev_rest_packet;
 			_recv_over._wsabuf.buf = _recv_over._send_buf + _prev_rest_packet;
@@ -107,9 +101,9 @@ namespace IOCP
 
 		bool do_send(void* sending_packet)
 		{
-			OVER_EXT* packet = new OVER_EXT(reinterpret_cast<char*>(packet));
+			OVER_EXT* packet = new OVER_EXT(reinterpret_cast<char*>(sending_packet));
 			
-			WSASend
+			int ret = WSASend
 			(
 				_socket,
 				&packet->_wsabuf,
@@ -119,6 +113,8 @@ namespace IOCP
 				&packet->_over,
 				0
 			);
+
+			return (ret == ERROR_IO_PENDING ? true : false);
 		}
 
 		bool _disconnect()

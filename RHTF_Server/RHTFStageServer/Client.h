@@ -7,12 +7,22 @@
 class Client 
 {
 public:
+	Client() : _session(NULL) { }
 	Client(IOCP::SESSION _session);
 
 	bool Disconnect();
 	IOCP::SESSION& get_session()
 	{
 		return _session;
+	}
+
+	void set_name(std::string& _in)
+	{
+		_name = _in;
+	}
+	inline std::string get_name()
+	{
+		return _name;
 	}
 
 private:
@@ -25,9 +35,8 @@ public:
 
 
 private:
-
+	std::string _name;
 
 };
 
-// Á¤·ÄÀÌ 
-std::unordered_map<int, Client> Clients;
+extern std::unordered_map<int, Client> Clients;

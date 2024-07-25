@@ -130,6 +130,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,17 +141,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\LogicPacket.pb.cc">
-      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpp17</LanguageStandard>
-    </ClCompile>
+    <ClCompile Include="..\LogicPacket.pb.cc" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="worker.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\LogicPacket.pb.h">
-      <LanguageStandard Condition="'$(Configuration)|$(Platform)'=='Release|x64'">stdcpp17</LanguageStandard>
-    </ClCompile>
+    <ClInclude Include="..\LogicPacket.pb.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Network.h" />
     <ClInclude Include="stdafx.h" />

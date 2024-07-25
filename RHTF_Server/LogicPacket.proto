@@ -14,12 +14,12 @@ message Default {
 
 message C2SPCLoginUserReq {
 	Default info = 1;
-	string UserID = 2;
+	uint32 UserID = 2;
 }
 
 message S2CPCLoginUserRes {
 	Default info		= 1;
-	string  UserID		= 2;
+	uint32  UserID		= 2;
 	string  UserName	= 3;
 	uint32  UserLevel	= 4;
 }

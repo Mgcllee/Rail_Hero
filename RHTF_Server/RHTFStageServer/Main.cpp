@@ -7,6 +7,7 @@ HANDLE IOCP::h_iocp;
 SOCKET IOCP::g_s_socket;
 SOCKET IOCP::g_c_socket;
 IOCP::OVER_EXT IOCP::g_over;
+std::unordered_map<int, Client> Clients;
 
 int main(int argc, char* argv[])
 {
