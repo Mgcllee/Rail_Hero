@@ -1,6 +1,9 @@
 #pragma once
 
 #include <thread>
+#include <mutex>
+#include <unordered_set>
+#include <concurrent_priority_queue.h>
 
 #include "Network.h"
 #include "Client.h"

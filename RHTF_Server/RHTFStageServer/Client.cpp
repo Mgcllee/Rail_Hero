@@ -1,6 +1,6 @@
 #include "Client.h"
 
-Client::Client(IOCP::SESSION _new_session)
+Client::Client(SESSION _new_session)
 	: _session(_new_session)
 {
 	

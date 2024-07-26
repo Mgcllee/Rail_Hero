@@ -11,57 +11,37 @@
 #pragma warning( default : 4244 )
 
 std::atomic<int> next_client_id;
-
+ 
 void worker_thread(HANDLE h_iocp)
 {
     while (true)
     {
-        DWORD num_bytes;
-		ULONG_PTR key;
+        DWORD num_bytes = 0;
+        ULONG_PTR key = 0;
 		WSAOVERLAPPED* over = nullptr;
 
-		// IOCP의 I/O Completion Queue에서 데이터가 입력될 때까지 [[무한 대기]] 합니다.
-		BOOL ret
-			= GetQueuedCompletionStatus
-            (
-				h_iocp,		// 대기중인 iocp 객체
-				&num_bytes,	// 송/수신된 Byte 수
-				&key,		// 
-				&over,		// OVERLAPPED 객체 (WSAOVERLAPPED 구조체와 같다.)
-				INFINITE	// 무한 대기
-			);
+		BOOL ret = GetQueuedCompletionStatus(h_iocp, &num_bytes, &key, &over, INFINITE);
 		
-		/*
-		- GetQueuedCompletionStatus function() -
-		1. [CompletionPort] : 대기를 수행할 IOCP 핸들
-		2. [lpNumberOfBytesTransferred] : 송/수신된 Byte 수
-		3. [lpCompletionKey] : 비동기 I/O 요청이 발생한 디바이스의 CompletionKey
-		4. [lpOverlapped] : 비동기 호출시 전달한 Overlapped 구조체 주소
-		5. [dwMilliseconds] : 대기를 수행할 시간(ms)
-		
-		반환 값이 true이면 성공, false이면 실패
-		*/
-		
-        // WSAOVERLAPPED 구조체 읽어오기.
-		IOCP::OVER_EXT* ex_over = reinterpret_cast<IOCP::OVER_EXT*>(over);
+		OVER_EXT* ex_over = reinterpret_cast<OVER_EXT*>(over);
         
-        // 오류 검출기
-        // error 검출기
-        if (FALSE == ret) {
-            if (ex_over->curr_type == IOCP::TYPE::ACCEPT)
+        if (FALSE == ret) 
+        {
+            if (ex_over->curr_type == TYPE::ACCEPT)
             {
-                std::cout << "Accept error\n";
+                printf("[Accept error]\n");
+                std::cout << GetLastError() << '\n';
+                closesocket(g_c_socket);
             }
-            else {
-                std::cout << "\nGQCS Error on client[" << key << "]\n\n";
-                // disconnect client
-            }
+            else continue;
         }
-        if ((0 == num_bytes) && (ex_over->curr_type == IOCP::TYPE::RECV)) continue;
+        if ((0 == num_bytes) && (ex_over->curr_type == TYPE::RECV)) 
+        {
+            continue;
+        }
 
         switch (ex_over->curr_type)
         {
-        case IOCP::ACCEPT:
+        case ACCEPT:
         {
             // 새로운 클라이언트의 고유 ID 발급 필요!
             // 병목 현상을 최대한 해결해줄 발급기가 필요
@@ -71,28 +51,28 @@ void worker_thread(HANDLE h_iocp)
             {
                 printf("Accept New Client!\n");
                 // [[클라이언트 객체 초기화]]
-                Client new_c_info(IOCP::g_c_socket); // g_~ 객체 atomic 필요
+                Client new_c_info(g_c_socket); // g_~ 객체 atomic 필요
 
                 // Clients.insert(std::make_pair(new_c_id, new_c_info));
                 Clients[new_c_id] = new_c_info;
 
-                CreateIoCompletionPort(reinterpret_cast<HANDLE>(IOCP::g_c_socket), h_iocp, new_c_id, 0);
+                CreateIoCompletionPort(reinterpret_cast<HANDLE>(g_c_socket), h_iocp, new_c_id, 0);
                 // Clients[new_c_id].get_session().do_recv();
                 
                 // Global Client Socket 다시 원상복귀 초기화 (다음 새로운 클라이언트 준비)
-                IOCP::g_c_socket = WSASocket(AF_INET, SOCK_STREAM, 0, NULL, 0, WSA_FLAG_OVERLAPPED);
+                g_c_socket = WSASocket(AF_INET, SOCK_STREAM, 0, NULL, 0, WSA_FLAG_OVERLAPPED);
             }
             else
             {
                 printf("Accept Error!\n");
             }
 
-            ZeroMemory(&IOCP::g_over._over, sizeof(IOCP::g_over._over));
+            ZeroMemory(&g_over._over, sizeof(g_over._over));
             int addr_size = sizeof(SOCKADDR_IN);
-            AcceptEx(IOCP::g_s_socket, IOCP::g_c_socket, IOCP::g_over._send_buf, 0, addr_size + 16, addr_size + 16, 0, &IOCP::g_over._over);
+            AcceptEx(g_s_socket, g_c_socket, g_over._send_buf, 0, addr_size + 16, addr_size + 16, 0, &g_over._over);
         }
         break;
-        case IOCP::RECV:
+        case RECV:
         {
             unsigned int c_id = static_cast<int>(key);
             int amount_packet = num_bytes + (Clients[c_id].get_session().get_prev_rest_packet());
@@ -132,7 +112,7 @@ void worker_thread(HANDLE h_iocp)
             }
         }
         break;
-        case IOCP::SEND:
+        case SEND:
         {
 
         }
