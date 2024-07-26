@@ -57,7 +57,7 @@ void worker_thread(HANDLE h_iocp)
                 Clients[new_c_id] = new_c_info;
 
                 CreateIoCompletionPort(reinterpret_cast<HANDLE>(g_c_socket), h_iocp, new_c_id, 0);
-                // Clients[new_c_id].get_session().do_recv();
+                Clients[new_c_id].get_session().do_recv();
                 
                 // Global Client Socket 다시 원상복귀 초기화 (다음 새로운 클라이언트 준비)
                 g_c_socket = WSASocket(AF_INET, SOCK_STREAM, 0, NULL, 0, WSA_FLAG_OVERLAPPED);
@@ -123,28 +123,35 @@ void worker_thread(HANDLE h_iocp)
 
 void process_packet(int c_id, char* packet)
 {
-    switch (packet[1])
+    User::Default buffer;
+    int packet_type = buffer.ParseFromArray(packet, 2);
+
+    switch (packet_type)
     {
     case User::NUM::C2SLoginUserReq:
     {
-        User::S2CPCLoginUserRes login_pack;
+        User::C2SPCLoginUserReq login_pack;
         login_pack.ParseFromString(packet);
 
-        std::cout << "[User Info]\n";
-        std::cout << "ID: " << login_pack.userid() << '\n';
-        std::cout << "Name: " << login_pack.username() << '\n';
-        std::cout << "Level: " << login_pack.userlevel() << '\n';
+        printf("[Recv User Info]\nID: %d\n", login_pack.userid());
     }
     break;
     case User::NUM::S2SLoginUserReq:
     {
-        User::C2SPCLoginUserReq c2slogin;
+        User::S2CPCLoginUserRes c2slogin;
+        
         c2slogin.set_userid(9785);
+        c2slogin.set_userlevel(7);
+        c2slogin.set_username("Mgcllee");
+
         std::string serialized_data;
         c2slogin.SerializeToString(&serialized_data);
-
-        // send(Sock, serialized_data.c_str(), serialized_data.size(), 0);
         Clients[c_id].get_session().do_send(&serialized_data);
+    }
+    break;
+    default:
+    {
+        printf("Invalid packet!\n");
     }
     break;
     }
