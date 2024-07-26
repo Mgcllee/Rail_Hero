@@ -124,7 +124,8 @@ void worker_thread(HANDLE h_iocp)
 void process_packet(int c_id, char* packet)
 {
     User::Default buffer;
-    int packet_type = buffer.ParseFromArray(packet, 2);
+    buffer.ParseFromString(packet);
+    User::NUM packet_type = buffer.type();
 
     switch (packet_type)
     {
@@ -151,7 +152,7 @@ void process_packet(int c_id, char* packet)
     break;
     default:
     {
-        printf("Invalid packet!\n");
+        printf("Invalid packet! [%d]\n", packet_type);
     }
     break;
     }

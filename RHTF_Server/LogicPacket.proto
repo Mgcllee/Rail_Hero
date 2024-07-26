@@ -9,17 +9,19 @@ enum NUM {
 
 message Default {
 	uint32 Size = 1;
-	NUM Num = 2;
+	NUM Type	= 2;
 }
 
 message C2SPCLoginUserReq {
-	Default info = 1;
-	uint32 UserID = 2;
+	uint32	Size	= 1;
+	NUM		Type	= 2;
+	uint32 UserID	= 3;
 }
 
 message S2CPCLoginUserRes {
-	Default info		= 1;
-	uint32  UserID		= 2;
-	string  UserName	= 3;
-	uint32  UserLevel	= 4;
+	uint32	Size		= 1;
+	NUM		Type		= 2;
+	uint32  UserID		= 3;
+	string  UserName	= 4;
+	uint32  UserLevel	= 5;
 }

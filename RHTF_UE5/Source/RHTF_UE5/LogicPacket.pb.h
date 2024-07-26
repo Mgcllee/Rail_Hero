@@ -112,6 +112,235 @@ inline bool NUM_Parse(absl::string_view name, NUM* value) {
 
 // -------------------------------------------------------------------
 
+class S2CPCLoginUserRes final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.S2CPCLoginUserRes) */ {
+ public:
+  inline S2CPCLoginUserRes() : S2CPCLoginUserRes(nullptr) {}
+  ~S2CPCLoginUserRes() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR S2CPCLoginUserRes(::google::protobuf::internal::ConstantInitialized);
+
+  inline S2CPCLoginUserRes(const S2CPCLoginUserRes& from)
+      : S2CPCLoginUserRes(nullptr, from) {}
+  S2CPCLoginUserRes(S2CPCLoginUserRes&& from) noexcept
+    : S2CPCLoginUserRes() {
+    *this = ::std::move(from);
+  }
+
+  inline S2CPCLoginUserRes& operator=(const S2CPCLoginUserRes& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline S2CPCLoginUserRes& operator=(S2CPCLoginUserRes&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const S2CPCLoginUserRes& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const S2CPCLoginUserRes* internal_default_instance() {
+    return reinterpret_cast<const S2CPCLoginUserRes*>(
+               &_S2CPCLoginUserRes_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(S2CPCLoginUserRes& a, S2CPCLoginUserRes& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(S2CPCLoginUserRes* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(S2CPCLoginUserRes* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  S2CPCLoginUserRes* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<S2CPCLoginUserRes>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const S2CPCLoginUserRes& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const S2CPCLoginUserRes& from) {
+    S2CPCLoginUserRes::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(S2CPCLoginUserRes* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "User.S2CPCLoginUserRes";
+  }
+  protected:
+  explicit S2CPCLoginUserRes(::google::protobuf::Arena* arena);
+  S2CPCLoginUserRes(::google::protobuf::Arena* arena, const S2CPCLoginUserRes& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kUserNameFieldNumber = 4,
+    kSizeFieldNumber = 1,
+    kTypeFieldNumber = 2,
+    kUserIDFieldNumber = 3,
+    kUserLevelFieldNumber = 5,
+  };
+  // string UserName = 4;
+  void clear_username() ;
+  const std::string& username() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_username(Arg_&& arg, Args_... args);
+  std::string* mutable_username();
+  PROTOBUF_NODISCARD std::string* release_username();
+  void set_allocated_username(std::string* value);
+
+  private:
+  const std::string& _internal_username() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_username(
+      const std::string& value);
+  std::string* _internal_mutable_username();
+
+  public:
+  // uint32 Size = 1;
+  void clear_size() ;
+  ::uint32_t size() const;
+  void set_size(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_size() const;
+  void _internal_set_size(::uint32_t value);
+
+  public:
+  // .User.NUM Type = 2;
+  void clear_type() ;
+  ::User::NUM type() const;
+  void set_type(::User::NUM value);
+
+  private:
+  ::User::NUM _internal_type() const;
+  void _internal_set_type(::User::NUM value);
+
+  public:
+  // uint32 UserID = 3;
+  void clear_userid() ;
+  ::uint32_t userid() const;
+  void set_userid(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_userid() const;
+  void _internal_set_userid(::uint32_t value);
+
+  public:
+  // uint32 UserLevel = 5;
+  void clear_userlevel() ;
+  ::uint32_t userlevel() const;
+  void set_userlevel(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_userlevel() const;
+  void _internal_set_userlevel(::uint32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:User.S2CPCLoginUserRes)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      3, 5, 0,
+      39, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::internal::ArenaStringPtr username_;
+    ::uint32_t size_;
+    int type_;
+    ::uint32_t userid_;
+    ::uint32_t userlevel_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_LogicPacket_2eproto;
+};// -------------------------------------------------------------------
+
 class Default final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.Default) */ {
  public:
@@ -245,7 +474,7 @@ class Default final :
 
   enum : int {
     kSizeFieldNumber = 1,
-    kNumFieldNumber = 2,
+    kTypeFieldNumber = 2,
   };
   // uint32 Size = 1;
   void clear_size() ;
@@ -257,14 +486,14 @@ class Default final :
   void _internal_set_size(::uint32_t value);
 
   public:
-  // .User.NUM Num = 2;
-  void clear_num() ;
-  ::User::NUM num() const;
-  void set_num(::User::NUM value);
+  // .User.NUM Type = 2;
+  void clear_type() ;
+  ::User::NUM type() const;
+  void set_type(::User::NUM value);
 
   private:
-  ::User::NUM _internal_num() const;
-  void _internal_set_num(::User::NUM value);
+  ::User::NUM _internal_type() const;
+  void _internal_set_type(::User::NUM value);
 
   public:
   // @@protoc_insertion_point(class_scope:User.Default)
@@ -291,231 +520,8 @@ class Default final :
         inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                               ::google::protobuf::Arena* arena, const Impl_& from);
     ::uint32_t size_;
-    int num_;
+    int type_;
     mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    PROTOBUF_TSAN_DECLARE_MEMBER
-  };
-  union { Impl_ _impl_; };
-  friend struct ::TableStruct_LogicPacket_2eproto;
-};// -------------------------------------------------------------------
-
-class S2CPCLoginUserRes final :
-    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.S2CPCLoginUserRes) */ {
- public:
-  inline S2CPCLoginUserRes() : S2CPCLoginUserRes(nullptr) {}
-  ~S2CPCLoginUserRes() override;
-  template<typename = void>
-  explicit PROTOBUF_CONSTEXPR S2CPCLoginUserRes(::google::protobuf::internal::ConstantInitialized);
-
-  inline S2CPCLoginUserRes(const S2CPCLoginUserRes& from)
-      : S2CPCLoginUserRes(nullptr, from) {}
-  S2CPCLoginUserRes(S2CPCLoginUserRes&& from) noexcept
-    : S2CPCLoginUserRes() {
-    *this = ::std::move(from);
-  }
-
-  inline S2CPCLoginUserRes& operator=(const S2CPCLoginUserRes& from) {
-    CopyFrom(from);
-    return *this;
-  }
-  inline S2CPCLoginUserRes& operator=(S2CPCLoginUserRes&& from) noexcept {
-    if (this == &from) return *this;
-    if (GetArena() == from.GetArena()
-  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
-        && GetArena() != nullptr
-  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
-    ) {
-      InternalSwap(&from);
-    } else {
-      CopyFrom(from);
-    }
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
-  }
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
-      ABSL_ATTRIBUTE_LIFETIME_BOUND {
-    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor() {
-    return GetDescriptor();
-  }
-  static const ::google::protobuf::Descriptor* GetDescriptor() {
-    return default_instance().GetMetadata().descriptor;
-  }
-  static const ::google::protobuf::Reflection* GetReflection() {
-    return default_instance().GetMetadata().reflection;
-  }
-  static const S2CPCLoginUserRes& default_instance() {
-    return *internal_default_instance();
-  }
-  static inline const S2CPCLoginUserRes* internal_default_instance() {
-    return reinterpret_cast<const S2CPCLoginUserRes*>(
-               &_S2CPCLoginUserRes_default_instance_);
-  }
-  static constexpr int kIndexInFileMessages =
-    2;
-
-  friend void swap(S2CPCLoginUserRes& a, S2CPCLoginUserRes& b) {
-    a.Swap(&b);
-  }
-  inline void Swap(S2CPCLoginUserRes* other) {
-    if (other == this) return;
-  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() != nullptr &&
-        GetArena() == other->GetArena()) {
-   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
-    if (GetArena() == other->GetArena()) {
-  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
-      InternalSwap(other);
-    } else {
-      ::google::protobuf::internal::GenericSwap(this, other);
-    }
-  }
-  void UnsafeArenaSwap(S2CPCLoginUserRes* other) {
-    if (other == this) return;
-    ABSL_DCHECK(GetArena() == other->GetArena());
-    InternalSwap(other);
-  }
-
-  // implements Message ----------------------------------------------
-
-  S2CPCLoginUserRes* New(::google::protobuf::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<S2CPCLoginUserRes>(arena);
-  }
-  using ::google::protobuf::Message::CopyFrom;
-  void CopyFrom(const S2CPCLoginUserRes& from);
-  using ::google::protobuf::Message::MergeFrom;
-  void MergeFrom( const S2CPCLoginUserRes& from) {
-    S2CPCLoginUserRes::MergeImpl(*this, from);
-  }
-  private:
-  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
-  public:
-  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
-  bool IsInitialized() const final;
-
-  ::size_t ByteSizeLong() const final;
-  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
-  ::uint8_t* _InternalSerialize(
-      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
-  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
-
-  private:
-  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
-  void SharedCtor(::google::protobuf::Arena* arena);
-  void SharedDtor();
-  void InternalSwap(S2CPCLoginUserRes* other);
-
-  private:
-  friend class ::google::protobuf::internal::AnyMetadata;
-  static ::absl::string_view FullMessageName() {
-    return "User.S2CPCLoginUserRes";
-  }
-  protected:
-  explicit S2CPCLoginUserRes(::google::protobuf::Arena* arena);
-  S2CPCLoginUserRes(::google::protobuf::Arena* arena, const S2CPCLoginUserRes& from);
-  public:
-
-  static const ClassData _class_data_;
-  const ::google::protobuf::Message::ClassData*GetClassData() const final;
-
-  ::google::protobuf::Metadata GetMetadata() const final;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  enum : int {
-    kUserNameFieldNumber = 3,
-    kInfoFieldNumber = 1,
-    kUserIDFieldNumber = 2,
-    kUserLevelFieldNumber = 4,
-  };
-  // string UserName = 3;
-  void clear_username() ;
-  const std::string& username() const;
-  template <typename Arg_ = const std::string&, typename... Args_>
-  void set_username(Arg_&& arg, Args_... args);
-  std::string* mutable_username();
-  PROTOBUF_NODISCARD std::string* release_username();
-  void set_allocated_username(std::string* value);
-
-  private:
-  const std::string& _internal_username() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_username(
-      const std::string& value);
-  std::string* _internal_mutable_username();
-
-  public:
-  // .User.Default info = 1;
-  bool has_info() const;
-  void clear_info() ;
-  const ::User::Default& info() const;
-  PROTOBUF_NODISCARD ::User::Default* release_info();
-  ::User::Default* mutable_info();
-  void set_allocated_info(::User::Default* value);
-  void unsafe_arena_set_allocated_info(::User::Default* value);
-  ::User::Default* unsafe_arena_release_info();
-
-  private:
-  const ::User::Default& _internal_info() const;
-  ::User::Default* _internal_mutable_info();
-
-  public:
-  // uint32 UserID = 2;
-  void clear_userid() ;
-  ::uint32_t userid() const;
-  void set_userid(::uint32_t value);
-
-  private:
-  ::uint32_t _internal_userid() const;
-  void _internal_set_userid(::uint32_t value);
-
-  public:
-  // uint32 UserLevel = 4;
-  void clear_userlevel() ;
-  ::uint32_t userlevel() const;
-  void set_userlevel(::uint32_t value);
-
-  private:
-  ::uint32_t _internal_userlevel() const;
-  void _internal_set_userlevel(::uint32_t value);
-
-  public:
-  // @@protoc_insertion_point(class_scope:User.S2CPCLoginUserRes)
- private:
-  class _Internal;
-
-  friend class ::google::protobuf::internal::TcParser;
-  static const ::google::protobuf::internal::TcParseTable<
-      2, 4, 1,
-      39, 2>
-      _table_;
-  friend class ::google::protobuf::MessageLite;
-  friend class ::google::protobuf::Arena;
-  template <typename T>
-  friend class ::google::protobuf::Arena::InternalHelper;
-  using InternalArenaConstructable_ = void;
-  using DestructorSkippable_ = void;
-  struct Impl_ {
-
-        inline explicit constexpr Impl_(
-            ::google::protobuf::internal::ConstantInitialized) noexcept;
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena);
-        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
-                              ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    ::google::protobuf::internal::ArenaStringPtr username_;
-    ::User::Default* info_;
-    ::uint32_t userid_;
-    ::uint32_t userlevel_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -654,25 +660,31 @@ class C2SPCLoginUserReq final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kInfoFieldNumber = 1,
-    kUserIDFieldNumber = 2,
+    kSizeFieldNumber = 1,
+    kTypeFieldNumber = 2,
+    kUserIDFieldNumber = 3,
   };
-  // .User.Default info = 1;
-  bool has_info() const;
-  void clear_info() ;
-  const ::User::Default& info() const;
-  PROTOBUF_NODISCARD ::User::Default* release_info();
-  ::User::Default* mutable_info();
-  void set_allocated_info(::User::Default* value);
-  void unsafe_arena_set_allocated_info(::User::Default* value);
-  ::User::Default* unsafe_arena_release_info();
+  // uint32 Size = 1;
+  void clear_size() ;
+  ::uint32_t size() const;
+  void set_size(::uint32_t value);
 
   private:
-  const ::User::Default& _internal_info() const;
-  ::User::Default* _internal_mutable_info();
+  ::uint32_t _internal_size() const;
+  void _internal_set_size(::uint32_t value);
 
   public:
-  // uint32 UserID = 2;
+  // .User.NUM Type = 2;
+  void clear_type() ;
+  ::User::NUM type() const;
+  void set_type(::User::NUM value);
+
+  private:
+  ::User::NUM _internal_type() const;
+  void _internal_set_type(::User::NUM value);
+
+  public:
+  // uint32 UserID = 3;
   void clear_userid() ;
   ::uint32_t userid() const;
   void set_userid(::uint32_t value);
@@ -688,7 +700,7 @@ class C2SPCLoginUserReq final :
 
   friend class ::google::protobuf::internal::TcParser;
   static const ::google::protobuf::internal::TcParseTable<
-      1, 2, 1,
+      2, 3, 0,
       0, 2>
       _table_;
   friend class ::google::protobuf::MessageLite;
@@ -705,10 +717,10 @@ class C2SPCLoginUserReq final :
                               ::google::protobuf::Arena* arena);
         inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
                               ::google::protobuf::Arena* arena, const Impl_& from);
-    ::google::protobuf::internal::HasBits<1> _has_bits_;
-    mutable ::google::protobuf::internal::CachedSize _cached_size_;
-    ::User::Default* info_;
+    ::uint32_t size_;
+    int type_;
     ::uint32_t userid_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
     PROTOBUF_TSAN_DECLARE_MEMBER
   };
   union { Impl_ _impl_; };
@@ -754,130 +766,80 @@ inline void Default::_internal_set_size(::uint32_t value) {
   _impl_.size_ = value;
 }
 
-// .User.NUM Num = 2;
-inline void Default::clear_num() {
+// .User.NUM Type = 2;
+inline void Default::clear_type() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_.num_ = 0;
+  _impl_.type_ = 0;
 }
-inline ::User::NUM Default::num() const {
-  // @@protoc_insertion_point(field_get:User.Default.Num)
-  return _internal_num();
+inline ::User::NUM Default::type() const {
+  // @@protoc_insertion_point(field_get:User.Default.Type)
+  return _internal_type();
 }
-inline void Default::set_num(::User::NUM value) {
-  _internal_set_num(value);
-  // @@protoc_insertion_point(field_set:User.Default.Num)
+inline void Default::set_type(::User::NUM value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:User.Default.Type)
 }
-inline ::User::NUM Default::_internal_num() const {
+inline ::User::NUM Default::_internal_type() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  return static_cast<::User::NUM>(_impl_.num_);
+  return static_cast<::User::NUM>(_impl_.type_);
 }
-inline void Default::_internal_set_num(::User::NUM value) {
+inline void Default::_internal_set_type(::User::NUM value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ;
-  _impl_.num_ = value;
+  _impl_.type_ = value;
 }
 
 // -------------------------------------------------------------------
 
 // C2SPCLoginUserReq
 
-// .User.Default info = 1;
-inline bool C2SPCLoginUserReq::has_info() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.info_ != nullptr);
-  return value;
-}
-inline void C2SPCLoginUserReq::clear_info() {
+// uint32 Size = 1;
+inline void C2SPCLoginUserReq::clear_size() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (_impl_.info_ != nullptr) _impl_.info_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  _impl_.size_ = 0u;
 }
-inline const ::User::Default& C2SPCLoginUserReq::_internal_info() const {
+inline ::uint32_t C2SPCLoginUserReq::size() const {
+  // @@protoc_insertion_point(field_get:User.C2SPCLoginUserReq.Size)
+  return _internal_size();
+}
+inline void C2SPCLoginUserReq::set_size(::uint32_t value) {
+  _internal_set_size(value);
+  // @@protoc_insertion_point(field_set:User.C2SPCLoginUserReq.Size)
+}
+inline ::uint32_t C2SPCLoginUserReq::_internal_size() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  const ::User::Default* p = _impl_.info_;
-  return p != nullptr ? *p : reinterpret_cast<const ::User::Default&>(::User::_Default_default_instance_);
+  return _impl_.size_;
 }
-inline const ::User::Default& C2SPCLoginUserReq::info() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:User.C2SPCLoginUserReq.info)
-  return _internal_info();
-}
-inline void C2SPCLoginUserReq::unsafe_arena_set_allocated_info(::User::Default* value) {
+inline void C2SPCLoginUserReq::_internal_set_size(::uint32_t value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.info_);
-  }
-  _impl_.info_ = reinterpret_cast<::User::Default*>(value);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:User.C2SPCLoginUserReq.info)
-}
-inline ::User::Default* C2SPCLoginUserReq::release_info() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  ::User::Default* released = _impl_.info_;
-  _impl_.info_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-  released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-  if (GetArena() == nullptr) {
-    delete old;
-  }
-#else   // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArena() != nullptr) {
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return released;
-}
-inline ::User::Default* C2SPCLoginUserReq::unsafe_arena_release_info() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  // @@protoc_insertion_point(field_release:User.C2SPCLoginUserReq.info)
-
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  ::User::Default* temp = _impl_.info_;
-  _impl_.info_ = nullptr;
-  return temp;
-}
-inline ::User::Default* C2SPCLoginUserReq::_internal_mutable_info() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  if (_impl_.info_ == nullptr) {
-    auto* p = CreateMaybeMessage<::User::Default>(GetArena());
-    _impl_.info_ = reinterpret_cast<::User::Default*>(p);
-  }
-  return _impl_.info_;
-}
-inline ::User::Default* C2SPCLoginUserReq::mutable_info() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::User::Default* _msg = _internal_mutable_info();
-  // @@protoc_insertion_point(field_mutable:User.C2SPCLoginUserReq.info)
-  return _msg;
-}
-inline void C2SPCLoginUserReq::set_allocated_info(::User::Default* value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::User::Default*>(_impl_.info_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::User::Default*>(value)->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-
-  _impl_.info_ = reinterpret_cast<::User::Default*>(value);
-  // @@protoc_insertion_point(field_set_allocated:User.C2SPCLoginUserReq.info)
+  ;
+  _impl_.size_ = value;
 }
 
-// uint32 UserID = 2;
+// .User.NUM Type = 2;
+inline void C2SPCLoginUserReq::clear_type() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.type_ = 0;
+}
+inline ::User::NUM C2SPCLoginUserReq::type() const {
+  // @@protoc_insertion_point(field_get:User.C2SPCLoginUserReq.Type)
+  return _internal_type();
+}
+inline void C2SPCLoginUserReq::set_type(::User::NUM value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:User.C2SPCLoginUserReq.Type)
+}
+inline ::User::NUM C2SPCLoginUserReq::_internal_type() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return static_cast<::User::NUM>(_impl_.type_);
+}
+inline void C2SPCLoginUserReq::_internal_set_type(::User::NUM value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.type_ = value;
+}
+
+// uint32 UserID = 3;
 inline void C2SPCLoginUserReq::clear_userid() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.userid_ = 0u;
@@ -904,103 +866,53 @@ inline void C2SPCLoginUserReq::_internal_set_userid(::uint32_t value) {
 
 // S2CPCLoginUserRes
 
-// .User.Default info = 1;
-inline bool S2CPCLoginUserRes::has_info() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
-  PROTOBUF_ASSUME(!value || _impl_.info_ != nullptr);
-  return value;
-}
-inline void S2CPCLoginUserRes::clear_info() {
+// uint32 Size = 1;
+inline void S2CPCLoginUserRes::clear_size() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (_impl_.info_ != nullptr) _impl_.info_->Clear();
-  _impl_._has_bits_[0] &= ~0x00000001u;
+  _impl_.size_ = 0u;
 }
-inline const ::User::Default& S2CPCLoginUserRes::_internal_info() const {
+inline ::uint32_t S2CPCLoginUserRes::size() const {
+  // @@protoc_insertion_point(field_get:User.S2CPCLoginUserRes.Size)
+  return _internal_size();
+}
+inline void S2CPCLoginUserRes::set_size(::uint32_t value) {
+  _internal_set_size(value);
+  // @@protoc_insertion_point(field_set:User.S2CPCLoginUserRes.Size)
+}
+inline ::uint32_t S2CPCLoginUserRes::_internal_size() const {
   PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
-  const ::User::Default* p = _impl_.info_;
-  return p != nullptr ? *p : reinterpret_cast<const ::User::Default&>(::User::_Default_default_instance_);
+  return _impl_.size_;
 }
-inline const ::User::Default& S2CPCLoginUserRes::info() const ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  // @@protoc_insertion_point(field_get:User.S2CPCLoginUserRes.info)
-  return _internal_info();
-}
-inline void S2CPCLoginUserRes::unsafe_arena_set_allocated_info(::User::Default* value) {
+inline void S2CPCLoginUserRes::_internal_set_size(::uint32_t value) {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (GetArena() == nullptr) {
-    delete reinterpret_cast<::google::protobuf::MessageLite*>(_impl_.info_);
-  }
-  _impl_.info_ = reinterpret_cast<::User::Default*>(value);
-  if (value != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:User.S2CPCLoginUserRes.info)
-}
-inline ::User::Default* S2CPCLoginUserRes::release_info() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  ::User::Default* released = _impl_.info_;
-  _impl_.info_ = nullptr;
-#ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
-  auto* old = reinterpret_cast<::google::protobuf::MessageLite*>(released);
-  released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-  if (GetArena() == nullptr) {
-    delete old;
-  }
-#else   // PROTOBUF_FORCE_COPY_IN_RELEASE
-  if (GetArena() != nullptr) {
-    released = ::google::protobuf::internal::DuplicateIfNonNull(released);
-  }
-#endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
-  return released;
-}
-inline ::User::Default* S2CPCLoginUserRes::unsafe_arena_release_info() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  // @@protoc_insertion_point(field_release:User.S2CPCLoginUserRes.info)
-
-  _impl_._has_bits_[0] &= ~0x00000001u;
-  ::User::Default* temp = _impl_.info_;
-  _impl_.info_ = nullptr;
-  return temp;
-}
-inline ::User::Default* S2CPCLoginUserRes::_internal_mutable_info() {
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  _impl_._has_bits_[0] |= 0x00000001u;
-  if (_impl_.info_ == nullptr) {
-    auto* p = CreateMaybeMessage<::User::Default>(GetArena());
-    _impl_.info_ = reinterpret_cast<::User::Default*>(p);
-  }
-  return _impl_.info_;
-}
-inline ::User::Default* S2CPCLoginUserRes::mutable_info() ABSL_ATTRIBUTE_LIFETIME_BOUND {
-  ::User::Default* _msg = _internal_mutable_info();
-  // @@protoc_insertion_point(field_mutable:User.S2CPCLoginUserRes.info)
-  return _msg;
-}
-inline void S2CPCLoginUserRes::set_allocated_info(::User::Default* value) {
-  ::google::protobuf::Arena* message_arena = GetArena();
-  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  if (message_arena == nullptr) {
-    delete reinterpret_cast<::User::Default*>(_impl_.info_);
-  }
-
-  if (value != nullptr) {
-    ::google::protobuf::Arena* submessage_arena = reinterpret_cast<::User::Default*>(value)->GetArena();
-    if (message_arena != submessage_arena) {
-      value = ::google::protobuf::internal::GetOwnedMessage(message_arena, value, submessage_arena);
-    }
-    _impl_._has_bits_[0] |= 0x00000001u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000001u;
-  }
-
-  _impl_.info_ = reinterpret_cast<::User::Default*>(value);
-  // @@protoc_insertion_point(field_set_allocated:User.S2CPCLoginUserRes.info)
+  ;
+  _impl_.size_ = value;
 }
 
-// uint32 UserID = 2;
+// .User.NUM Type = 2;
+inline void S2CPCLoginUserRes::clear_type() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.type_ = 0;
+}
+inline ::User::NUM S2CPCLoginUserRes::type() const {
+  // @@protoc_insertion_point(field_get:User.S2CPCLoginUserRes.Type)
+  return _internal_type();
+}
+inline void S2CPCLoginUserRes::set_type(::User::NUM value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:User.S2CPCLoginUserRes.Type)
+}
+inline ::User::NUM S2CPCLoginUserRes::_internal_type() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return static_cast<::User::NUM>(_impl_.type_);
+}
+inline void S2CPCLoginUserRes::_internal_set_type(::User::NUM value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.type_ = value;
+}
+
+// uint32 UserID = 3;
 inline void S2CPCLoginUserRes::clear_userid() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.userid_ = 0u;
@@ -1023,7 +935,7 @@ inline void S2CPCLoginUserRes::_internal_set_userid(::uint32_t value) {
   _impl_.userid_ = value;
 }
 
-// string UserName = 3;
+// string UserName = 4;
 inline void S2CPCLoginUserRes::clear_username() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.username_.ClearToEmpty();
@@ -1076,7 +988,7 @@ inline void S2CPCLoginUserRes::set_allocated_username(std::string* value) {
   // @@protoc_insertion_point(field_set_allocated:User.S2CPCLoginUserRes.UserName)
 }
 
-// uint32 UserLevel = 4;
+// uint32 UserLevel = 5;
 inline void S2CPCLoginUserRes::clear_userlevel() {
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   _impl_.userlevel_ = 0u;
