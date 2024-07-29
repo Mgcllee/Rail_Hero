@@ -43,10 +43,12 @@ bool Urh_client_network::connect_to_server(FString server_addr)
 
 bool Urh_client_network::send_client_info(FString name)
 {
-    User::C2SPCLoginUserReq packet;
+    User::C2SPCLoginUserReq* login_info = new User::C2SPCLoginUserReq();
+    login_info->set_userid(9785);
 
-    packet.set_userid(9785);
-
+    User::PacketType packet;
+    packet.set_allocated_c2sloginuserreq(login_info);
+   
     uint8* buffer = new uint8[sizeof(User::C2SPCLoginUserReq)];
     packet.SerializeToArray(buffer, sizeof(packet));
 
@@ -54,4 +56,20 @@ bool Urh_client_network::send_client_info(FString name)
     bool send_ret = socket->Send(buffer, sizeof(User::C2SPCLoginUserReq), bytesent);
 
     return send_ret;
+}
+
+int Urh_client_network::recv_stage_info()
+{
+    unsigned char* buffer = new unsigned char[sizeof(User::S2CPCLoginUserRes)];
+    int32 bytesent = 0;
+    bool recv_ret = socket->Recv(buffer, sizeof(User::S2CPCLoginUserRes), bytesent);
+    std::string str = reinterpret_cast<char*>(buffer);
+    
+    User::PacketType recv_packet;
+    recv_packet.ParseFromString(str);
+
+    if (recv_ret == true)
+        return recv_packet.s2cloginuserres().userlevel();
+    else
+        return 0;
 }

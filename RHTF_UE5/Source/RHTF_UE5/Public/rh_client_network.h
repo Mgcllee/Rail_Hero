@@ -30,6 +30,9 @@ public:
     UFUNCTION(BlueprintCallable, Category = "Server")
         bool send_client_info(FString name);
 
+    UFUNCTION(BlueprintCallable, Category = "Server")
+        int recv_stage_info();
+
 private:
     FSocket* socket;
 };

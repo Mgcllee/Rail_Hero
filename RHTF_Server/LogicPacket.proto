@@ -2,26 +2,19 @@ syntax = "proto3";
 
 package User;
 
-enum NUM {
-	C2SLoginUserReq = 0;
-	S2SLoginUserReq = 1;
-}
-
-message Default {
-	uint32 Size = 1;
-	NUM Type	= 2;
+message PacketType {
+	oneof Type {
+		C2SPCLoginUserReq C2SLoginUserReq = 1;
+		S2CPCLoginUserRes S2CLoginUserRes = 2;
+	}
 }
 
 message C2SPCLoginUserReq {
-	uint32	Size	= 1;
-	NUM		Type	= 2;
-	uint32 UserID	= 3;
+	uint32 UserID	= 1;
 }
 
 message S2CPCLoginUserRes {
-	uint32	Size		= 1;
-	NUM		Type		= 2;
-	uint32  UserID		= 3;
-	string  UserName	= 4;
-	uint32  UserLevel	= 5;
+	uint32  UserID		= 1;
+	string  UserName	= 2;
+	uint32  UserLevel	= 3;
 }

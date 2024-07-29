@@ -123,21 +123,30 @@ void worker_thread(HANDLE h_iocp)
 
 void process_packet(int c_id, char* packet)
 {
-    User::Default buffer;
-    buffer.ParseFromString(packet);
-    User::NUM packet_type = buffer.type();
+    User::PacketType packet_type;
+    packet_type.ParseFromString(packet);
+    User::PacketType::TypeCase type = packet_type.Type_case();
 
-    switch (packet_type)
+    switch (type)
     {
-    case User::NUM::C2SLoginUserReq:
+    case User::PacketType::kC2SLoginUserReq:
     {
-        User::C2SPCLoginUserReq login_pack;
-        login_pack.ParseFromString(packet);
+        printf("[Recv User Info]\nID: %d\n", packet_type.c2sloginuserreq().userid());
 
-        printf("[Recv User Info]\nID: %d\n", login_pack.userid());
+        User::S2CPCLoginUserRes* c2slogin = new User::S2CPCLoginUserRes();
+        c2slogin->set_userid(4);
+        c2slogin->set_userlevel(4);
+        c2slogin->set_username("Mgcllee");
+
+        User::PacketType packet;
+        packet.set_allocated_s2cloginuserres(c2slogin);
+
+        std::string serialized_data;
+        packet.SerializeToString(&serialized_data);
+        Clients[c_id].get_session().do_send(&serialized_data);
     }
     break;
-    case User::NUM::S2SLoginUserReq:
+    case User::PacketType::kS2CLoginUserRes:
     {
         User::S2CPCLoginUserRes c2slogin;
         
@@ -152,7 +161,7 @@ void process_packet(int c_id, char* packet)
     break;
     default:
     {
-        printf("Invalid packet! [%d]\n", packet_type);
+        printf("Invalid packet!\n");
     }
     break;
     }
