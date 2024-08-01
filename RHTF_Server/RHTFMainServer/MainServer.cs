@@ -1,13 +1,9 @@
 ﻿using Google.Protobuf;
-using Google.Protobuf.Reflection;
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Net.Sockets;
-using System.Runtime.InteropServices;
-using System.Security.Principal;
 using System.Threading.Tasks;
 using User;
 
@@ -36,6 +32,7 @@ namespace RHTFMainServer
             server = new TcpListener(serverAddress);
 
             server.Start();
+
             worker_thread();
             while (true)
             {
@@ -55,10 +52,11 @@ namespace RHTFMainServer
                 NetworkStream stream = test_client.GetStream();
 
                 byte[] data = new byte[test_client.ReceiveBufferSize];
-                int bytesRead = stream.Read(data.ToArray(), 0, data.Length);
+                System.Array.Clear(data, 0, data.Length);
+                int bytesRead = stream.Read(data, 0, data.Length);
 
                 PacketType message;
-                using (MemoryStream ms = new MemoryStream(data.ToArray(), 0, bytesRead))
+                using (MemoryStream ms = new MemoryStream(data, 0, bytesRead))
                 {
                     message = PacketType.Parser.ParseFrom(ms);
                 }
@@ -67,14 +65,20 @@ namespace RHTFMainServer
                 {
                     case PacketType.TypeOneofCase.C2SLoginUserReq:
                         {
-                            Console.WriteLine("[Login Info]\nUserID: " + message.C2SLoginUserReq.UserID);
+                            Console.WriteLine
+                            (
+                                "[Login Info]\nUserID: "
+                                + message.C2SLoginUserReq.UserID
+                            );
 
-                            S2CPCLoginUserRes packet = new S2CPCLoginUserRes()
+                            PacketType packet = new PacketType();
+                            packet.S2CLoginUserRes = new S2CPCLoginUserRes()
                             {
                                 UserID = 4,
                                 UserLevel = 4,
                                 UserName = "Mgcllee"
                             };
+
                             byte[] send_data = packet.ToByteArray();
                             stream.Write(send_data, 0, send_data.Length);
                         }

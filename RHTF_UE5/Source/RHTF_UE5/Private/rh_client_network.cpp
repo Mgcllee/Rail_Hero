@@ -43,17 +43,17 @@ bool Urh_client_network::connect_to_server(FString server_addr)
 
 bool Urh_client_network::send_client_info(FString name)
 {
-    User::C2SPCLoginUserReq* login_info = new User::C2SPCLoginUserReq();
-    login_info->set_userid(9785);
-
     User::PacketType packet;
-    packet.set_allocated_c2sloginuserreq(login_info);
+    User::C2SPCLoginUserReq* login_info = packet.mutable_c2sloginuserreq();
+    login_info->set_userid(9785);
    
-    uint8* buffer = new uint8[sizeof(User::C2SPCLoginUserReq)];
-    packet.SerializeToArray(buffer, sizeof(packet));
+    std::string buffer_str;
+    packet.SerializeToString(&buffer_str);
+
+    const uint8* buffer = reinterpret_cast<const uint8*>(&buffer_str);
 
     int32 bytesent = 0;
-    bool send_ret = socket->Send(buffer, sizeof(User::C2SPCLoginUserReq), bytesent);
+    bool send_ret = socket->Send((uint8*)buffer_str.c_str(), buffer_str.length(), bytesent);
 
     return send_ret;
 }

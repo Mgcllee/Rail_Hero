@@ -24,16 +24,17 @@ namespace User {
     static LogicPacketReflection() {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           string.Concat(
-            "ChFMb2dpY1BhY2tldC5wcm90bxIEVXNlciJ8CgpQYWNrZXRUeXBlEjIKD0My",
-            "U0xvZ2luVXNlclJlcRgBIAEoCzIXLlVzZXIuQzJTUENMb2dpblVzZXJSZXFI",
-            "ABIyCg9TMkNMb2dpblVzZXJSZXMYAiABKAsyFy5Vc2VyLlMyQ1BDTG9naW5V",
-            "c2VyUmVzSABCBgoEVHlwZSIjChFDMlNQQ0xvZ2luVXNlclJlcRIOCgZVc2Vy",
-            "SUQYASABKA0iSAoRUzJDUENMb2dpblVzZXJSZXMSDgoGVXNlcklEGAEgASgN",
-            "EhAKCFVzZXJOYW1lGAIgASgJEhEKCVVzZXJMZXZlbBgDIAEoDWIGcHJvdG8z"));
+            "ChFMb2dpY1BhY2tldC5wcm90bxIEVXNlciKCAQoKUGFja2V0VHlwZRIyCg9D",
+            "MlNMb2dpblVzZXJSZXEYASABKAsyFy5Vc2VyLkMyU1BDTG9naW5Vc2VyUmVx",
+            "SAASMgoPUzJDTG9naW5Vc2VyUmVzGAIgASgLMhcuVXNlci5TMkNQQ0xvZ2lu",
+            "VXNlclJlc0gAQgwKClR5cGVfb25lb2YiIwoRQzJTUENMb2dpblVzZXJSZXES",
+            "DgoGVXNlcklEGAEgASgNIkgKEVMyQ1BDTG9naW5Vc2VyUmVzEg4KBlVzZXJJ",
+            "RBgBIAEoDRIQCghVc2VyTmFtZRgCIAEoCRIRCglVc2VyTGV2ZWwYAyABKA1i",
+            "BnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(null, null, new pbr::GeneratedClrTypeInfo[] {
-            new pbr::GeneratedClrTypeInfo(typeof(global::User.PacketType), global::User.PacketType.Parser, new[]{ "C2SLoginUserReq", "S2CLoginUserRes" }, new[]{ "Type" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::User.PacketType), global::User.PacketType.Parser, new[]{ "C2SLoginUserReq", "S2CLoginUserRes" }, new[]{ "TypeOneof" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::User.C2SPCLoginUserReq), global::User.C2SPCLoginUserReq.Parser, new[]{ "UserID" }, null, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::User.S2CPCLoginUserRes), global::User.S2CPCLoginUserRes.Parser, new[]{ "UserID", "UserName", "UserLevel" }, null, null, null, null)
           }));
@@ -77,11 +78,11 @@ namespace User {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public PacketType(PacketType other) : this() {
-      switch (other.TypeCase) {
-        case TypeOneofCase.C2SLoginUserReq:
+      switch (other.TypeOneofCase) {
+        case TypeOneofOneofCase.C2SLoginUserReq:
           C2SLoginUserReq = other.C2SLoginUserReq.Clone();
           break;
-        case TypeOneofCase.S2CLoginUserRes:
+        case TypeOneofOneofCase.S2CLoginUserRes:
           S2CLoginUserRes = other.S2CLoginUserRes.Clone();
           break;
       }
@@ -100,10 +101,10 @@ namespace User {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::User.C2SPCLoginUserReq C2SLoginUserReq {
-      get { return typeCase_ == TypeOneofCase.C2SLoginUserReq ? (global::User.C2SPCLoginUserReq) type_ : null; }
+      get { return typeOneofCase_ == TypeOneofOneofCase.C2SLoginUserReq ? (global::User.C2SPCLoginUserReq) typeOneof_ : null; }
       set {
-        type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.C2SLoginUserReq;
+        typeOneof_ = value;
+        typeOneofCase_ = value == null ? TypeOneofOneofCase.None : TypeOneofOneofCase.C2SLoginUserReq;
       }
     }
 
@@ -112,32 +113,32 @@ namespace User {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public global::User.S2CPCLoginUserRes S2CLoginUserRes {
-      get { return typeCase_ == TypeOneofCase.S2CLoginUserRes ? (global::User.S2CPCLoginUserRes) type_ : null; }
+      get { return typeOneofCase_ == TypeOneofOneofCase.S2CLoginUserRes ? (global::User.S2CPCLoginUserRes) typeOneof_ : null; }
       set {
-        type_ = value;
-        typeCase_ = value == null ? TypeOneofCase.None : TypeOneofCase.S2CLoginUserRes;
+        typeOneof_ = value;
+        typeOneofCase_ = value == null ? TypeOneofOneofCase.None : TypeOneofOneofCase.S2CLoginUserRes;
       }
     }
 
-    private object type_;
-    /// <summary>Enum of possible cases for the "Type" oneof.</summary>
-    public enum TypeOneofCase {
+    private object typeOneof_;
+    /// <summary>Enum of possible cases for the "Type_oneof" oneof.</summary>
+    public enum TypeOneofOneofCase {
       None = 0,
       C2SLoginUserReq = 1,
       S2CLoginUserRes = 2,
     }
-    private TypeOneofCase typeCase_ = TypeOneofCase.None;
+    private TypeOneofOneofCase typeOneofCase_ = TypeOneofOneofCase.None;
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public TypeOneofCase TypeCase {
-      get { return typeCase_; }
+    public TypeOneofOneofCase TypeOneofCase {
+      get { return typeOneofCase_; }
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
-    public void ClearType() {
-      typeCase_ = TypeOneofCase.None;
-      type_ = null;
+    public void ClearTypeOneof() {
+      typeOneofCase_ = TypeOneofOneofCase.None;
+      typeOneof_ = null;
     }
 
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
@@ -157,7 +158,7 @@ namespace User {
       }
       if (!object.Equals(C2SLoginUserReq, other.C2SLoginUserReq)) return false;
       if (!object.Equals(S2CLoginUserRes, other.S2CLoginUserRes)) return false;
-      if (TypeCase != other.TypeCase) return false;
+      if (TypeOneofCase != other.TypeOneofCase) return false;
       return Equals(_unknownFields, other._unknownFields);
     }
 
@@ -165,9 +166,9 @@ namespace User {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public override int GetHashCode() {
       int hash = 1;
-      if (typeCase_ == TypeOneofCase.C2SLoginUserReq) hash ^= C2SLoginUserReq.GetHashCode();
-      if (typeCase_ == TypeOneofCase.S2CLoginUserRes) hash ^= S2CLoginUserRes.GetHashCode();
-      hash ^= (int) typeCase_;
+      if (typeOneofCase_ == TypeOneofOneofCase.C2SLoginUserReq) hash ^= C2SLoginUserReq.GetHashCode();
+      if (typeOneofCase_ == TypeOneofOneofCase.S2CLoginUserRes) hash ^= S2CLoginUserRes.GetHashCode();
+      hash ^= (int) typeOneofCase_;
       if (_unknownFields != null) {
         hash ^= _unknownFields.GetHashCode();
       }
@@ -186,11 +187,11 @@ namespace User {
     #if !GOOGLE_PROTOBUF_REFSTRUCT_COMPATIBILITY_MODE
       output.WriteRawMessage(this);
     #else
-      if (typeCase_ == TypeOneofCase.C2SLoginUserReq) {
+      if (typeOneofCase_ == TypeOneofOneofCase.C2SLoginUserReq) {
         output.WriteRawTag(10);
         output.WriteMessage(C2SLoginUserReq);
       }
-      if (typeCase_ == TypeOneofCase.S2CLoginUserRes) {
+      if (typeOneofCase_ == TypeOneofOneofCase.S2CLoginUserRes) {
         output.WriteRawTag(18);
         output.WriteMessage(S2CLoginUserRes);
       }
@@ -204,11 +205,11 @@ namespace User {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute]
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     void pb::IBufferMessage.InternalWriteTo(ref pb::WriteContext output) {
-      if (typeCase_ == TypeOneofCase.C2SLoginUserReq) {
+      if (typeOneofCase_ == TypeOneofOneofCase.C2SLoginUserReq) {
         output.WriteRawTag(10);
         output.WriteMessage(C2SLoginUserReq);
       }
-      if (typeCase_ == TypeOneofCase.S2CLoginUserRes) {
+      if (typeOneofCase_ == TypeOneofOneofCase.S2CLoginUserRes) {
         output.WriteRawTag(18);
         output.WriteMessage(S2CLoginUserRes);
       }
@@ -222,10 +223,10 @@ namespace User {
     [global::System.CodeDom.Compiler.GeneratedCode("protoc", null)]
     public int CalculateSize() {
       int size = 0;
-      if (typeCase_ == TypeOneofCase.C2SLoginUserReq) {
+      if (typeOneofCase_ == TypeOneofOneofCase.C2SLoginUserReq) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(C2SLoginUserReq);
       }
-      if (typeCase_ == TypeOneofCase.S2CLoginUserRes) {
+      if (typeOneofCase_ == TypeOneofOneofCase.S2CLoginUserRes) {
         size += 1 + pb::CodedOutputStream.ComputeMessageSize(S2CLoginUserRes);
       }
       if (_unknownFields != null) {
@@ -240,14 +241,14 @@ namespace User {
       if (other == null) {
         return;
       }
-      switch (other.TypeCase) {
-        case TypeOneofCase.C2SLoginUserReq:
+      switch (other.TypeOneofCase) {
+        case TypeOneofOneofCase.C2SLoginUserReq:
           if (C2SLoginUserReq == null) {
             C2SLoginUserReq = new global::User.C2SPCLoginUserReq();
           }
           C2SLoginUserReq.MergeFrom(other.C2SLoginUserReq);
           break;
-        case TypeOneofCase.S2CLoginUserRes:
+        case TypeOneofOneofCase.S2CLoginUserRes:
           if (S2CLoginUserRes == null) {
             S2CLoginUserRes = new global::User.S2CPCLoginUserRes();
           }
@@ -272,7 +273,7 @@ namespace User {
             break;
           case 10: {
             global::User.C2SPCLoginUserReq subBuilder = new global::User.C2SPCLoginUserReq();
-            if (typeCase_ == TypeOneofCase.C2SLoginUserReq) {
+            if (typeOneofCase_ == TypeOneofOneofCase.C2SLoginUserReq) {
               subBuilder.MergeFrom(C2SLoginUserReq);
             }
             input.ReadMessage(subBuilder);
@@ -281,7 +282,7 @@ namespace User {
           }
           case 18: {
             global::User.S2CPCLoginUserRes subBuilder = new global::User.S2CPCLoginUserRes();
-            if (typeCase_ == TypeOneofCase.S2CLoginUserRes) {
+            if (typeOneofCase_ == TypeOneofOneofCase.S2CLoginUserRes) {
               subBuilder.MergeFrom(S2CLoginUserRes);
             }
             input.ReadMessage(subBuilder);
@@ -305,7 +306,7 @@ namespace User {
             break;
           case 10: {
             global::User.C2SPCLoginUserReq subBuilder = new global::User.C2SPCLoginUserReq();
-            if (typeCase_ == TypeOneofCase.C2SLoginUserReq) {
+            if (typeOneofCase_ == TypeOneofOneofCase.C2SLoginUserReq) {
               subBuilder.MergeFrom(C2SLoginUserReq);
             }
             input.ReadMessage(subBuilder);
@@ -314,7 +315,7 @@ namespace User {
           }
           case 18: {
             global::User.S2CPCLoginUserRes subBuilder = new global::User.S2CPCLoginUserRes();
-            if (typeCase_ == TypeOneofCase.S2CLoginUserRes) {
+            if (typeOneofCase_ == TypeOneofOneofCase.S2CLoginUserRes) {
               subBuilder.MergeFrom(S2CLoginUserRes);
             }
             input.ReadMessage(subBuilder);

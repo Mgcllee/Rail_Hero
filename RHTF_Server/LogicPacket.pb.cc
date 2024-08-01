@@ -66,7 +66,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
 
 inline constexpr PacketType::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
-      : Type_{},
+      : Type_oneof_{},
         _cached_size_{0},
         _oneof_case_{} {}
 
@@ -101,7 +101,7 @@ const ::uint32_t TableStruct_LogicPacket_2eproto::offsets[] PROTOBUF_SECTION_VAR
     ~0u,  // no sizeof(Split)
     ::_pbi::kInvalidFieldOffsetTag,
     ::_pbi::kInvalidFieldOffsetTag,
-    PROTOBUF_FIELD_OFFSET(::User::PacketType, _impl_.Type_),
+    PROTOBUF_FIELD_OFFSET(::User::PacketType, _impl_.Type_oneof_),
     ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::User::C2SPCLoginUserReq, _internal_metadata_),
     ~0u,  // no _extensions_
@@ -137,19 +137,19 @@ static const ::_pb::Message* const file_default_instances[] = {
     &::User::_S2CPCLoginUserRes_default_instance_._instance,
 };
 const char descriptor_table_protodef_LogicPacket_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n\021LogicPacket.proto\022\004User\"|\n\nPacketType\022"
-    "2\n\017C2SLoginUserReq\030\001 \001(\0132\027.User.C2SPCLog"
-    "inUserReqH\000\0222\n\017S2CLoginUserRes\030\002 \001(\0132\027.U"
-    "ser.S2CPCLoginUserResH\000B\006\n\004Type\"#\n\021C2SPC"
-    "LoginUserReq\022\016\n\006UserID\030\001 \001(\r\"H\n\021S2CPCLog"
-    "inUserRes\022\016\n\006UserID\030\001 \001(\r\022\020\n\010UserName\030\002 "
-    "\001(\t\022\021\n\tUserLevel\030\003 \001(\rb\006proto3"
+    "\n\021LogicPacket.proto\022\004User\"\202\001\n\nPacketType"
+    "\0222\n\017C2SLoginUserReq\030\001 \001(\0132\027.User.C2SPCLo"
+    "ginUserReqH\000\0222\n\017S2CLoginUserRes\030\002 \001(\0132\027."
+    "User.S2CPCLoginUserResH\000B\014\n\nType_oneof\"#"
+    "\n\021C2SPCLoginUserReq\022\016\n\006UserID\030\001 \001(\r\"H\n\021S"
+    "2CPCLoginUserRes\022\016\n\006UserID\030\001 \001(\r\022\020\n\010User"
+    "Name\030\002 \001(\t\022\021\n\tUserLevel\030\003 \001(\rb\006proto3"
 };
 static ::absl::once_flag descriptor_table_LogicPacket_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_LogicPacket_2eproto = {
     false,
     false,
-    270,
+    277,
     descriptor_table_protodef_LogicPacket_2eproto,
     "LogicPacket.proto",
     &descriptor_table_LogicPacket_2eproto_once,
@@ -193,34 +193,34 @@ class PacketType::_Internal {
 };
 
 const ::User::C2SPCLoginUserReq& PacketType::_Internal::c2sloginuserreq(const PacketType* msg) {
-  return *msg->_impl_.Type_.c2sloginuserreq_;
+  return *msg->_impl_.Type_oneof_.c2sloginuserreq_;
 }
 const ::User::S2CPCLoginUserRes& PacketType::_Internal::s2cloginuserres(const PacketType* msg) {
-  return *msg->_impl_.Type_.s2cloginuserres_;
+  return *msg->_impl_.Type_oneof_.s2cloginuserres_;
 }
 void PacketType::set_allocated_c2sloginuserreq(::User::C2SPCLoginUserReq* c2sloginuserreq) {
   ::google::protobuf::Arena* message_arena = GetArena();
-  clear_Type();
+  clear_Type_oneof();
   if (c2sloginuserreq) {
     ::google::protobuf::Arena* submessage_arena = c2sloginuserreq->GetArena();
     if (message_arena != submessage_arena) {
       c2sloginuserreq = ::google::protobuf::internal::GetOwnedMessage(message_arena, c2sloginuserreq, submessage_arena);
     }
     set_has_c2sloginuserreq();
-    _impl_.Type_.c2sloginuserreq_ = c2sloginuserreq;
+    _impl_.Type_oneof_.c2sloginuserreq_ = c2sloginuserreq;
   }
   // @@protoc_insertion_point(field_set_allocated:User.PacketType.C2SLoginUserReq)
 }
 void PacketType::set_allocated_s2cloginuserres(::User::S2CPCLoginUserRes* s2cloginuserres) {
   ::google::protobuf::Arena* message_arena = GetArena();
-  clear_Type();
+  clear_Type_oneof();
   if (s2cloginuserres) {
     ::google::protobuf::Arena* submessage_arena = s2cloginuserres->GetArena();
     if (message_arena != submessage_arena) {
       s2cloginuserres = ::google::protobuf::internal::GetOwnedMessage(message_arena, s2cloginuserres, submessage_arena);
     }
     set_has_s2cloginuserres();
-    _impl_.Type_.s2cloginuserres_ = s2cloginuserres;
+    _impl_.Type_oneof_.s2cloginuserres_ = s2cloginuserres;
   }
   // @@protoc_insertion_point(field_set_allocated:User.PacketType.S2CLoginUserRes)
 }
@@ -232,7 +232,7 @@ PacketType::PacketType(::google::protobuf::Arena* arena)
 inline PROTOBUF_NDEBUG_INLINE PacketType::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
     const Impl_& from)
-      : Type_{},
+      : Type_oneof_{},
         _cached_size_{0},
         _oneof_case_{from._oneof_case_[0]} {}
 
@@ -245,14 +245,14 @@ PacketType::PacketType(
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
   new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
-  switch (Type_case()) {
-    case TYPE_NOT_SET:
+  switch (Type_oneof_case()) {
+    case TYPE_ONEOF_NOT_SET:
       break;
       case kC2SLoginUserReq:
-        _impl_.Type_.c2sloginuserreq_ = CreateMaybeMessage<::User::C2SPCLoginUserReq>(arena, *from._impl_.Type_.c2sloginuserreq_);
+        _impl_.Type_oneof_.c2sloginuserreq_ = CreateMaybeMessage<::User::C2SPCLoginUserReq>(arena, *from._impl_.Type_oneof_.c2sloginuserreq_);
         break;
       case kS2CLoginUserRes:
-        _impl_.Type_.s2cloginuserres_ = CreateMaybeMessage<::User::S2CPCLoginUserRes>(arena, *from._impl_.Type_.s2cloginuserres_);
+        _impl_.Type_oneof_.s2cloginuserres_ = CreateMaybeMessage<::User::S2CPCLoginUserRes>(arena, *from._impl_.Type_oneof_.s2cloginuserres_);
         break;
   }
 
@@ -261,7 +261,7 @@ PacketType::PacketType(
 inline PROTOBUF_NDEBUG_INLINE PacketType::Impl_::Impl_(
     ::google::protobuf::internal::InternalVisibility visibility,
     ::google::protobuf::Arena* arena)
-      : Type_{},
+      : Type_oneof_{},
         _cached_size_{0},
         _oneof_case_{} {}
 
@@ -275,33 +275,33 @@ PacketType::~PacketType() {
 }
 inline void PacketType::SharedDtor() {
   ABSL_DCHECK(GetArena() == nullptr);
-  if (has_Type()) {
-    clear_Type();
+  if (has_Type_oneof()) {
+    clear_Type_oneof();
   }
   _impl_.~Impl_();
 }
 
-void PacketType::clear_Type() {
+void PacketType::clear_Type_oneof() {
 // @@protoc_insertion_point(one_of_clear_start:User.PacketType)
   PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
-  switch (Type_case()) {
+  switch (Type_oneof_case()) {
     case kC2SLoginUserReq: {
       if (GetArena() == nullptr) {
-        delete _impl_.Type_.c2sloginuserreq_;
+        delete _impl_.Type_oneof_.c2sloginuserreq_;
       }
       break;
     }
     case kS2CLoginUserRes: {
       if (GetArena() == nullptr) {
-        delete _impl_.Type_.s2cloginuserres_;
+        delete _impl_.Type_oneof_.s2cloginuserres_;
       }
       break;
     }
-    case TYPE_NOT_SET: {
+    case TYPE_ONEOF_NOT_SET: {
       break;
     }
   }
-  _impl_._oneof_case_[0] = TYPE_NOT_SET;
+  _impl_._oneof_case_[0] = TYPE_ONEOF_NOT_SET;
 }
 
 
@@ -312,7 +312,7 @@ PROTOBUF_NOINLINE void PacketType::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  clear_Type();
+  clear_Type_oneof();
   _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
 }
 
@@ -343,10 +343,10 @@ const ::_pbi::TcParseTable<0, 2, 2, 0, 2> PacketType::_table_ = {
     65535, 65535
   }}, {{
     // .User.C2SPCLoginUserReq C2SLoginUserReq = 1;
-    {PROTOBUF_FIELD_OFFSET(PacketType, _impl_.Type_.c2sloginuserreq_), _Internal::kOneofCaseOffset + 0, 0,
+    {PROTOBUF_FIELD_OFFSET(PacketType, _impl_.Type_oneof_.c2sloginuserreq_), _Internal::kOneofCaseOffset + 0, 0,
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
     // .User.S2CPCLoginUserRes S2CLoginUserRes = 2;
-    {PROTOBUF_FIELD_OFFSET(PacketType, _impl_.Type_.s2cloginuserres_), _Internal::kOneofCaseOffset + 0, 1,
+    {PROTOBUF_FIELD_OFFSET(PacketType, _impl_.Type_oneof_.s2cloginuserres_), _Internal::kOneofCaseOffset + 0, 1,
     (0 | ::_fl::kFcOneof | ::_fl::kMessage | ::_fl::kTvTable)},
   }}, {{
     {::_pbi::TcParser::GetTable<::User::C2SPCLoginUserReq>()},
@@ -362,7 +362,7 @@ const ::_pbi::TcParseTable<0, 2, 2, 0, 2> PacketType::_table_ = {
   ::uint32_t cached_has_bits = 0;
   (void)cached_has_bits;
 
-  switch (Type_case()) {
+  switch (Type_oneof_case()) {
     case kC2SLoginUserReq: {
       target = ::google::protobuf::internal::WireFormatLite::InternalWriteMessage(
           1, _Internal::c2sloginuserreq(this),
@@ -395,20 +395,20 @@ const ::_pbi::TcParseTable<0, 2, 2, 0, 2> PacketType::_table_ = {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  switch (Type_case()) {
+  switch (Type_oneof_case()) {
     // .User.C2SPCLoginUserReq C2SLoginUserReq = 1;
     case kC2SLoginUserReq: {
       total_size +=
-          1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.Type_.c2sloginuserreq_);
+          1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.Type_oneof_.c2sloginuserreq_);
       break;
     }
     // .User.S2CPCLoginUserRes S2CLoginUserRes = 2;
     case kS2CLoginUserRes: {
       total_size +=
-          1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.Type_.s2cloginuserres_);
+          1 + ::google::protobuf::internal::WireFormatLite::MessageSize(*_impl_.Type_oneof_.s2cloginuserres_);
       break;
     }
-    case TYPE_NOT_SET: {
+    case TYPE_ONEOF_NOT_SET: {
       break;
     }
   }
@@ -431,7 +431,7 @@ void PacketType::MergeImpl(::google::protobuf::Message& to_msg, const ::google::
   ::uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  switch (from.Type_case()) {
+  switch (from.Type_oneof_case()) {
     case kC2SLoginUserReq: {
       _this->_internal_mutable_c2sloginuserreq()->::User::C2SPCLoginUserReq::MergeFrom(
           from._internal_c2sloginuserreq());
@@ -442,7 +442,7 @@ void PacketType::MergeImpl(::google::protobuf::Message& to_msg, const ::google::
           from._internal_s2cloginuserres());
       break;
     }
-    case TYPE_NOT_SET: {
+    case TYPE_ONEOF_NOT_SET: {
       break;
     }
   }
@@ -466,7 +466,7 @@ PROTOBUF_NOINLINE bool PacketType::IsInitialized() const {
 void PacketType::InternalSwap(PacketType* PROTOBUF_RESTRICT other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_.Type_, other->_impl_.Type_);
+  swap(_impl_.Type_oneof_, other->_impl_.Type_oneof_);
   swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
 }
 

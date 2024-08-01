@@ -3,7 +3,7 @@ syntax = "proto3";
 package User;
 
 message PacketType {
-	oneof Type {
+	oneof Type_oneof {
 		C2SPCLoginUserReq C2SLoginUserReq = 1;
 		S2CPCLoginUserRes S2CLoginUserRes = 2;
 	}

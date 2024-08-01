@@ -11,6 +11,9 @@ std::unordered_map<int, Client> Clients;
 
 int main(int argc, char* argv[])
 {
+	test_client();
+	return 0;
+
 	WSADATA WSAData;
 	int err = WSAStartup(MAKEWORD(2, 2), &WSAData);
 
