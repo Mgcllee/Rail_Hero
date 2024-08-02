@@ -3,6 +3,11 @@ protoc -I . --cpp_out=. LogicPacket.proto
 protoc -I . --csharp_out=. LogicPacket.proto
 
 
+protoc -I. --plugin=protoc-gen-grpc="C:\Git\vcpkg\installed\x64-windows\tools\grpc\grpc_cpp_plugin.exe" --grpc_out=. LogicPacket.proto
+
+protoc -I. --plugin=protoc-gen-grpc="C:\Git\vcpkg\installed\x64-windows\tools\grpc\grpc_csharp_plugin.exe" --grpc_out=. LogicPacket.proto
+
+
 
 예제의 protoc 명령에 대해서 간단히 설명 드리면
 

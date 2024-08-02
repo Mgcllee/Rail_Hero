@@ -6,6 +6,7 @@
 #pragma warning( disable : 4244 )
 
 #include "../LogicPacket.pb.h"
+#include "../LogicPacket.grpc.pb.h"
 
 #pragma warning( default : 4251 )
 #pragma warning( default : 4244 )
@@ -39,6 +40,14 @@ void test_client()
 
     send(hSocket, buffer.c_str(), buffer.length(), 0);
     
+
+    User::C2STestInfoReq message;
+    message.set_reqnum(4045);
+
+    User::ReqInfo::Service req;
+    req.GetInfo()
+    
+
     closesocket(hSocket);
     WSACleanup();
 }

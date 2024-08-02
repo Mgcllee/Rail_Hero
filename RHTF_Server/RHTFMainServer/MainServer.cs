@@ -61,9 +61,9 @@ namespace RHTFMainServer
                     message = PacketType.Parser.ParseFrom(ms);
                 }
 
-                switch (message.TypeCase)
+                switch (message.TypeOneofCase)
                 {
-                    case PacketType.TypeOneofCase.C2SLoginUserReq:
+                    case PacketType.TypeOneofOneofCase.C2SLoginUserReq:
                         {
                             Console.WriteLine
                             (
@@ -81,6 +81,9 @@ namespace RHTFMainServer
 
                             byte[] send_data = packet.ToByteArray();
                             stream.Write(send_data, 0, send_data.Length);
+
+                            ReqInfo.ReqInfoClient req;
+                            
                         }
                         break;
                 }

@@ -59,12 +59,18 @@ namespace User {
 class C2SPCLoginUserReq;
 struct C2SPCLoginUserReqDefaultTypeInternal;
 extern C2SPCLoginUserReqDefaultTypeInternal _C2SPCLoginUserReq_default_instance_;
+class C2STestInfoReq;
+struct C2STestInfoReqDefaultTypeInternal;
+extern C2STestInfoReqDefaultTypeInternal _C2STestInfoReq_default_instance_;
 class PacketType;
 struct PacketTypeDefaultTypeInternal;
 extern PacketTypeDefaultTypeInternal _PacketType_default_instance_;
 class S2CPCLoginUserRes;
 struct S2CPCLoginUserResDefaultTypeInternal;
 extern S2CPCLoginUserResDefaultTypeInternal _S2CPCLoginUserRes_default_instance_;
+class S2CTestInfoRes;
+struct S2CTestInfoResDefaultTypeInternal;
+extern S2CTestInfoResDefaultTypeInternal _S2CTestInfoRes_default_instance_;
 }  // namespace User
 namespace google {
 namespace protobuf {
@@ -77,6 +83,187 @@ namespace User {
 
 
 // -------------------------------------------------------------------
+
+class S2CTestInfoRes final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.S2CTestInfoRes) */ {
+ public:
+  inline S2CTestInfoRes() : S2CTestInfoRes(nullptr) {}
+  ~S2CTestInfoRes() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR S2CTestInfoRes(::google::protobuf::internal::ConstantInitialized);
+
+  inline S2CTestInfoRes(const S2CTestInfoRes& from)
+      : S2CTestInfoRes(nullptr, from) {}
+  S2CTestInfoRes(S2CTestInfoRes&& from) noexcept
+    : S2CTestInfoRes() {
+    *this = ::std::move(from);
+  }
+
+  inline S2CTestInfoRes& operator=(const S2CTestInfoRes& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline S2CTestInfoRes& operator=(S2CTestInfoRes&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const S2CTestInfoRes& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const S2CTestInfoRes* internal_default_instance() {
+    return reinterpret_cast<const S2CTestInfoRes*>(
+               &_S2CTestInfoRes_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(S2CTestInfoRes& a, S2CTestInfoRes& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(S2CTestInfoRes* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(S2CTestInfoRes* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  S2CTestInfoRes* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<S2CTestInfoRes>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const S2CTestInfoRes& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const S2CTestInfoRes& from) {
+    S2CTestInfoRes::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(S2CTestInfoRes* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "User.S2CTestInfoRes";
+  }
+  protected:
+  explicit S2CTestInfoRes(::google::protobuf::Arena* arena);
+  S2CTestInfoRes(::google::protobuf::Arena* arena, const S2CTestInfoRes& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kResStrFieldNumber = 1,
+  };
+  // string ResStr = 1;
+  void clear_resstr() ;
+  const std::string& resstr() const;
+  template <typename Arg_ = const std::string&, typename... Args_>
+  void set_resstr(Arg_&& arg, Args_... args);
+  std::string* mutable_resstr();
+  PROTOBUF_NODISCARD std::string* release_resstr();
+  void set_allocated_resstr(std::string* value);
+
+  private:
+  const std::string& _internal_resstr() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_resstr(
+      const std::string& value);
+  std::string* _internal_mutable_resstr();
+
+  public:
+  // @@protoc_insertion_point(class_scope:User.S2CTestInfoRes)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      0, 1, 0,
+      34, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::google::protobuf::internal::ArenaStringPtr resstr_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_LogicPacket_2eproto;
+};// -------------------------------------------------------------------
 
 class S2CPCLoginUserRes final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.S2CPCLoginUserRes) */ {
@@ -137,7 +324,7 @@ class S2CPCLoginUserRes final :
                &_S2CPCLoginUserRes_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    2;
+    4;
 
   friend void swap(S2CPCLoginUserRes& a, S2CPCLoginUserRes& b) {
     a.Swap(&b);
@@ -283,6 +470,181 @@ class S2CPCLoginUserRes final :
   friend struct ::TableStruct_LogicPacket_2eproto;
 };// -------------------------------------------------------------------
 
+class C2STestInfoReq final :
+    public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.C2STestInfoReq) */ {
+ public:
+  inline C2STestInfoReq() : C2STestInfoReq(nullptr) {}
+  ~C2STestInfoReq() override;
+  template<typename = void>
+  explicit PROTOBUF_CONSTEXPR C2STestInfoReq(::google::protobuf::internal::ConstantInitialized);
+
+  inline C2STestInfoReq(const C2STestInfoReq& from)
+      : C2STestInfoReq(nullptr, from) {}
+  C2STestInfoReq(C2STestInfoReq&& from) noexcept
+    : C2STestInfoReq() {
+    *this = ::std::move(from);
+  }
+
+  inline C2STestInfoReq& operator=(const C2STestInfoReq& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline C2STestInfoReq& operator=(C2STestInfoReq&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetArena() == from.GetArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance);
+  }
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields()
+      ABSL_ATTRIBUTE_LIFETIME_BOUND {
+    return _internal_metadata_.mutable_unknown_fields<::google::protobuf::UnknownFieldSet>();
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::google::protobuf::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::google::protobuf::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const C2STestInfoReq& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const C2STestInfoReq* internal_default_instance() {
+    return reinterpret_cast<const C2STestInfoReq*>(
+               &_C2STestInfoReq_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    0;
+
+  friend void swap(C2STestInfoReq& a, C2STestInfoReq& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(C2STestInfoReq* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() != nullptr &&
+        GetArena() == other->GetArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetArena() == other->GetArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::google::protobuf::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(C2STestInfoReq* other) {
+    if (other == this) return;
+    ABSL_DCHECK(GetArena() == other->GetArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  C2STestInfoReq* New(::google::protobuf::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<C2STestInfoReq>(arena);
+  }
+  using ::google::protobuf::Message::CopyFrom;
+  void CopyFrom(const C2STestInfoReq& from);
+  using ::google::protobuf::Message::MergeFrom;
+  void MergeFrom( const C2STestInfoReq& from) {
+    C2STestInfoReq::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  ::size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::google::protobuf::internal::ParseContext* ctx) final;
+  ::uint8_t* _InternalSerialize(
+      ::uint8_t* target, ::google::protobuf::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const { return _impl_._cached_size_.Get(); }
+
+  private:
+  ::google::protobuf::internal::CachedSize* AccessCachedSize() const final;
+  void SharedCtor(::google::protobuf::Arena* arena);
+  void SharedDtor();
+  void InternalSwap(C2STestInfoReq* other);
+
+  private:
+  friend class ::google::protobuf::internal::AnyMetadata;
+  static ::absl::string_view FullMessageName() {
+    return "User.C2STestInfoReq";
+  }
+  protected:
+  explicit C2STestInfoReq(::google::protobuf::Arena* arena);
+  C2STestInfoReq(::google::protobuf::Arena* arena, const C2STestInfoReq& from);
+  public:
+
+  static const ClassData _class_data_;
+  const ::google::protobuf::Message::ClassData*GetClassData() const final;
+
+  ::google::protobuf::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kReqNumFieldNumber = 1,
+  };
+  // uint32 ReqNum = 1;
+  void clear_reqnum() ;
+  ::uint32_t reqnum() const;
+  void set_reqnum(::uint32_t value);
+
+  private:
+  ::uint32_t _internal_reqnum() const;
+  void _internal_set_reqnum(::uint32_t value);
+
+  public:
+  // @@protoc_insertion_point(class_scope:User.C2STestInfoReq)
+ private:
+  class _Internal;
+
+  friend class ::google::protobuf::internal::TcParser;
+  static const ::google::protobuf::internal::TcParseTable<
+      0, 1, 0,
+      0, 2>
+      _table_;
+  friend class ::google::protobuf::MessageLite;
+  friend class ::google::protobuf::Arena;
+  template <typename T>
+  friend class ::google::protobuf::Arena::InternalHelper;
+  using InternalArenaConstructable_ = void;
+  using DestructorSkippable_ = void;
+  struct Impl_ {
+
+        inline explicit constexpr Impl_(
+            ::google::protobuf::internal::ConstantInitialized) noexcept;
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena);
+        inline explicit Impl_(::google::protobuf::internal::InternalVisibility visibility,
+                              ::google::protobuf::Arena* arena, const Impl_& from);
+    ::uint32_t reqnum_;
+    mutable ::google::protobuf::internal::CachedSize _cached_size_;
+    PROTOBUF_TSAN_DECLARE_MEMBER
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_LogicPacket_2eproto;
+};// -------------------------------------------------------------------
+
 class C2SPCLoginUserReq final :
     public ::google::protobuf::Message /* @@protoc_insertion_point(class_definition:User.C2SPCLoginUserReq) */ {
  public:
@@ -342,7 +704,7 @@ class C2SPCLoginUserReq final :
                &_C2SPCLoginUserReq_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    1;
+    3;
 
   friend void swap(C2SPCLoginUserReq& a, C2SPCLoginUserReq& b) {
     a.Swap(&b);
@@ -523,7 +885,7 @@ class PacketType final :
                &_PacketType_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    0;
+    2;
 
   friend void swap(PacketType& a, PacketType& b) {
     a.Swap(&b);
@@ -694,6 +1056,90 @@ class PacketType final :
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// C2STestInfoReq
+
+// uint32 ReqNum = 1;
+inline void C2STestInfoReq::clear_reqnum() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.reqnum_ = 0u;
+}
+inline ::uint32_t C2STestInfoReq::reqnum() const {
+  // @@protoc_insertion_point(field_get:User.C2STestInfoReq.ReqNum)
+  return _internal_reqnum();
+}
+inline void C2STestInfoReq::set_reqnum(::uint32_t value) {
+  _internal_set_reqnum(value);
+  // @@protoc_insertion_point(field_set:User.C2STestInfoReq.ReqNum)
+}
+inline ::uint32_t C2STestInfoReq::_internal_reqnum() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.reqnum_;
+}
+inline void C2STestInfoReq::_internal_set_reqnum(::uint32_t value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.reqnum_ = value;
+}
+
+// -------------------------------------------------------------------
+
+// S2CTestInfoRes
+
+// string ResStr = 1;
+inline void S2CTestInfoRes::clear_resstr() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.resstr_.ClearToEmpty();
+}
+inline const std::string& S2CTestInfoRes::resstr() const
+    ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  // @@protoc_insertion_point(field_get:User.S2CTestInfoRes.ResStr)
+  return _internal_resstr();
+}
+template <typename Arg_, typename... Args_>
+inline PROTOBUF_ALWAYS_INLINE void S2CTestInfoRes::set_resstr(Arg_&& arg,
+                                                     Args_... args) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.resstr_.Set(static_cast<Arg_&&>(arg), args..., GetArena());
+  // @@protoc_insertion_point(field_set:User.S2CTestInfoRes.ResStr)
+}
+inline std::string* S2CTestInfoRes::mutable_resstr() ABSL_ATTRIBUTE_LIFETIME_BOUND {
+  std::string* _s = _internal_mutable_resstr();
+  // @@protoc_insertion_point(field_mutable:User.S2CTestInfoRes.ResStr)
+  return _s;
+}
+inline const std::string& S2CTestInfoRes::_internal_resstr() const {
+  PROTOBUF_TSAN_READ(&_impl_._tsan_detect_race);
+  return _impl_.resstr_.Get();
+}
+inline void S2CTestInfoRes::_internal_set_resstr(const std::string& value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  _impl_.resstr_.Set(value, GetArena());
+}
+inline std::string* S2CTestInfoRes::_internal_mutable_resstr() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ;
+  return _impl_.resstr_.Mutable( GetArena());
+}
+inline std::string* S2CTestInfoRes::release_resstr() {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  // @@protoc_insertion_point(field_release:User.S2CTestInfoRes.ResStr)
+  return _impl_.resstr_.Release();
+}
+inline void S2CTestInfoRes::set_allocated_resstr(std::string* value) {
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  _impl_.resstr_.SetAllocated(value, GetArena());
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+        if (_impl_.resstr_.IsDefault()) {
+          _impl_.resstr_.Set("", GetArena());
+        }
+  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:User.S2CTestInfoRes.ResStr)
+}
+
 // -------------------------------------------------------------------
 
 // PacketType

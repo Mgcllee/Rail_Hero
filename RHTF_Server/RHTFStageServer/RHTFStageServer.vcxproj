@@ -141,12 +141,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\LogicPacket.grpc.pb.cc" />
     <ClCompile Include="..\LogicPacket.pb.cc" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="worker.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\LogicPacket.grpc.pb.h" />
     <ClInclude Include="..\LogicPacket.pb.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="Network.h" />

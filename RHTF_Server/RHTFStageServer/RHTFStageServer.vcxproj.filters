@@ -27,6 +27,9 @@
     <ClCompile Include="Client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\LogicPacket.grpc.pb.cc">
+      <Filter>Protocol</Filter>
+    </ClCompile>
     <ClCompile Include="..\LogicPacket.pb.cc">
       <Filter>Protocol</Filter>
     </ClCompile>
@@ -38,11 +41,14 @@
     <ClInclude Include="Network.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="worker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Client.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="..\LogicPacket.grpc.pb.h">
+      <Filter>Protocol</Filter>
     </ClInclude>
     <ClInclude Include="..\LogicPacket.pb.h">
       <Filter>Protocol</Filter>

@@ -22,6 +22,27 @@ namespace _pbi = ::google::protobuf::internal;
 namespace _fl = ::google::protobuf::internal::field_layout;
 namespace User {
 
+inline constexpr S2CTestInfoRes::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : resstr_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR S2CTestInfoRes::S2CTestInfoRes(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct S2CTestInfoResDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR S2CTestInfoResDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~S2CTestInfoResDefaultTypeInternal() {}
+  union {
+    S2CTestInfoRes _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 S2CTestInfoResDefaultTypeInternal _S2CTestInfoRes_default_instance_;
+
 inline constexpr S2CPCLoginUserRes::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
       : username_(
@@ -44,6 +65,25 @@ struct S2CPCLoginUserResDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 S2CPCLoginUserResDefaultTypeInternal _S2CPCLoginUserRes_default_instance_;
+
+inline constexpr C2STestInfoReq::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : reqnum_{0u},
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR C2STestInfoReq::C2STestInfoReq(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct C2STestInfoReqDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR C2STestInfoReqDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~C2STestInfoReqDefaultTypeInternal() {}
+  union {
+    C2STestInfoReq _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 C2STestInfoReqDefaultTypeInternal _C2STestInfoReq_default_instance_;
 
 inline constexpr C2SPCLoginUserReq::Impl_::Impl_(
     ::_pbi::ConstantInitialized) noexcept
@@ -84,13 +124,31 @@ struct PacketTypeDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 PacketTypeDefaultTypeInternal _PacketType_default_instance_;
 }  // namespace User
-static ::_pb::Metadata file_level_metadata_LogicPacket_2eproto[3];
+static ::_pb::Metadata file_level_metadata_LogicPacket_2eproto[5];
 static constexpr const ::_pb::EnumDescriptor**
     file_level_enum_descriptors_LogicPacket_2eproto = nullptr;
 static constexpr const ::_pb::ServiceDescriptor**
     file_level_service_descriptors_LogicPacket_2eproto = nullptr;
 const ::uint32_t TableStruct_LogicPacket_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(
     protodesc_cold) = {
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::User::C2STestInfoReq, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::User::C2STestInfoReq, _impl_.reqnum_),
+    ~0u,  // no _has_bits_
+    PROTOBUF_FIELD_OFFSET(::User::S2CTestInfoRes, _internal_metadata_),
+    ~0u,  // no _extensions_
+    ~0u,  // no _oneof_case_
+    ~0u,  // no _weak_field_map_
+    ~0u,  // no _inlined_string_donated_
+    ~0u,  // no _split_
+    ~0u,  // no sizeof(Split)
+    PROTOBUF_FIELD_OFFSET(::User::S2CTestInfoRes, _impl_.resstr_),
     ~0u,  // no _has_bits_
     PROTOBUF_FIELD_OFFSET(::User::PacketType, _internal_metadata_),
     ~0u,  // no _extensions_
@@ -126,36 +184,44 @@ const ::uint32_t TableStruct_LogicPacket_2eproto::offsets[] PROTOBUF_SECTION_VAR
 
 static const ::_pbi::MigrationSchema
     schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-        {0, -1, -1, sizeof(::User::PacketType)},
-        {11, -1, -1, sizeof(::User::C2SPCLoginUserReq)},
-        {20, -1, -1, sizeof(::User::S2CPCLoginUserRes)},
+        {0, -1, -1, sizeof(::User::C2STestInfoReq)},
+        {9, -1, -1, sizeof(::User::S2CTestInfoRes)},
+        {18, -1, -1, sizeof(::User::PacketType)},
+        {29, -1, -1, sizeof(::User::C2SPCLoginUserReq)},
+        {38, -1, -1, sizeof(::User::S2CPCLoginUserRes)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
+    &::User::_C2STestInfoReq_default_instance_._instance,
+    &::User::_S2CTestInfoRes_default_instance_._instance,
     &::User::_PacketType_default_instance_._instance,
     &::User::_C2SPCLoginUserReq_default_instance_._instance,
     &::User::_S2CPCLoginUserRes_default_instance_._instance,
 };
 const char descriptor_table_protodef_LogicPacket_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-    "\n\021LogicPacket.proto\022\004User\"\202\001\n\nPacketType"
-    "\0222\n\017C2SLoginUserReq\030\001 \001(\0132\027.User.C2SPCLo"
-    "ginUserReqH\000\0222\n\017S2CLoginUserRes\030\002 \001(\0132\027."
-    "User.S2CPCLoginUserResH\000B\014\n\nType_oneof\"#"
-    "\n\021C2SPCLoginUserReq\022\016\n\006UserID\030\001 \001(\r\"H\n\021S"
-    "2CPCLoginUserRes\022\016\n\006UserID\030\001 \001(\r\022\020\n\010User"
-    "Name\030\002 \001(\t\022\021\n\tUserLevel\030\003 \001(\rb\006proto3"
+    "\n\021LogicPacket.proto\022\004User\" \n\016C2STestInfo"
+    "Req\022\016\n\006ReqNum\030\001 \001(\r\" \n\016S2CTestInfoRes\022\016\n"
+    "\006ResStr\030\001 \001(\t\"\202\001\n\nPacketType\0222\n\017C2SLogin"
+    "UserReq\030\001 \001(\0132\027.User.C2SPCLoginUserReqH\000"
+    "\0222\n\017S2CLoginUserRes\030\002 \001(\0132\027.User.S2CPCLo"
+    "ginUserResH\000B\014\n\nType_oneof\"#\n\021C2SPCLogin"
+    "UserReq\022\016\n\006UserID\030\001 \001(\r\"H\n\021S2CPCLoginUse"
+    "rRes\022\016\n\006UserID\030\001 \001(\r\022\020\n\010UserName\030\002 \001(\t\022\021"
+    "\n\tUserLevel\030\003 \001(\r2@\n\007ReqInfo\0225\n\007GetInfo\022"
+    "\024.User.C2STestInfoReq\032\024.User.S2CTestInfo"
+    "Resb\006proto3"
 };
 static ::absl::once_flag descriptor_table_LogicPacket_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_LogicPacket_2eproto = {
     false,
     false,
-    277,
+    411,
     descriptor_table_protodef_LogicPacket_2eproto,
     "LogicPacket.proto",
     &descriptor_table_LogicPacket_2eproto_once,
     nullptr,
     0,
-    3,
+    5,
     schemas,
     file_default_instances,
     TableStruct_LogicPacket_2eproto::offsets,
@@ -182,6 +248,366 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_LogicPac
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2
 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_LogicPacket_2eproto(&descriptor_table_LogicPacket_2eproto);
 namespace User {
+// ===================================================================
+
+class C2STestInfoReq::_Internal {
+ public:
+};
+
+C2STestInfoReq::C2STestInfoReq(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:User.C2STestInfoReq)
+}
+C2STestInfoReq::C2STestInfoReq(
+    ::google::protobuf::Arena* arena, const C2STestInfoReq& from)
+    : C2STestInfoReq(arena) {
+  MergeFrom(from);
+}
+inline PROTOBUF_NDEBUG_INLINE C2STestInfoReq::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : _cached_size_{0} {}
+
+inline void C2STestInfoReq::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+  _impl_.reqnum_ = {};
+}
+C2STestInfoReq::~C2STestInfoReq() {
+  // @@protoc_insertion_point(destructor:User.C2STestInfoReq)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void C2STestInfoReq::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void C2STestInfoReq::Clear() {
+// @@protoc_insertion_point(message_clear_start:User.C2STestInfoReq)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.reqnum_ = 0u;
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* C2STestInfoReq::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 0, 2> C2STestInfoReq::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_C2STestInfoReq_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // uint32 ReqNum = 1;
+    {::_pbi::TcParser::SingularVarintNoZag1<::uint32_t, offsetof(C2STestInfoReq, _impl_.reqnum_), 63>(),
+     {8, 63, 0, PROTOBUF_FIELD_OFFSET(C2STestInfoReq, _impl_.reqnum_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // uint32 ReqNum = 1;
+    {PROTOBUF_FIELD_OFFSET(C2STestInfoReq, _impl_.reqnum_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUInt32)},
+  }},
+  // no aux_entries
+  {{
+  }},
+};
+
+::uint8_t* C2STestInfoReq::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:User.C2STestInfoReq)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // uint32 ReqNum = 1;
+  if (this->_internal_reqnum() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(
+        1, this->_internal_reqnum(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:User.C2STestInfoReq)
+  return target;
+}
+
+::size_t C2STestInfoReq::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:User.C2STestInfoReq)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // uint32 ReqNum = 1;
+  if (this->_internal_reqnum() != 0) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(
+        this->_internal_reqnum());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData C2STestInfoReq::_class_data_ = {
+    C2STestInfoReq::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* C2STestInfoReq::GetClassData() const {
+  return &_class_data_;
+}
+
+void C2STestInfoReq::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<C2STestInfoReq*>(&to_msg);
+  auto& from = static_cast<const C2STestInfoReq&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:User.C2STestInfoReq)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_reqnum() != 0) {
+    _this->_internal_set_reqnum(from._internal_reqnum());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void C2STestInfoReq::CopyFrom(const C2STestInfoReq& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:User.C2STestInfoReq)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool C2STestInfoReq::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* C2STestInfoReq::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void C2STestInfoReq::InternalSwap(C2STestInfoReq* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+        swap(_impl_.reqnum_, other->_impl_.reqnum_);
+}
+
+::google::protobuf::Metadata C2STestInfoReq::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_LogicPacket_2eproto_getter, &descriptor_table_LogicPacket_2eproto_once,
+      file_level_metadata_LogicPacket_2eproto[0]);
+}
+// ===================================================================
+
+class S2CTestInfoRes::_Internal {
+ public:
+};
+
+S2CTestInfoRes::S2CTestInfoRes(::google::protobuf::Arena* arena)
+    : ::google::protobuf::Message(arena) {
+  SharedCtor(arena);
+  // @@protoc_insertion_point(arena_constructor:User.S2CTestInfoRes)
+}
+inline PROTOBUF_NDEBUG_INLINE S2CTestInfoRes::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : resstr_(arena, from.resstr_),
+        _cached_size_{0} {}
+
+S2CTestInfoRes::S2CTestInfoRes(
+    ::google::protobuf::Arena* arena,
+    const S2CTestInfoRes& from)
+    : ::google::protobuf::Message(arena) {
+  S2CTestInfoRes* const _this = this;
+  (void)_this;
+  _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
+      from._internal_metadata_);
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
+
+  // @@protoc_insertion_point(copy_constructor:User.S2CTestInfoRes)
+}
+inline PROTOBUF_NDEBUG_INLINE S2CTestInfoRes::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : resstr_(arena),
+        _cached_size_{0} {}
+
+inline void S2CTestInfoRes::SharedCtor(::_pb::Arena* arena) {
+  new (&_impl_) Impl_(internal_visibility(), arena);
+}
+S2CTestInfoRes::~S2CTestInfoRes() {
+  // @@protoc_insertion_point(destructor:User.S2CTestInfoRes)
+  _internal_metadata_.Delete<::google::protobuf::UnknownFieldSet>();
+  SharedDtor();
+}
+inline void S2CTestInfoRes::SharedDtor() {
+  ABSL_DCHECK(GetArena() == nullptr);
+  _impl_.resstr_.Destroy();
+  _impl_.~Impl_();
+}
+
+PROTOBUF_NOINLINE void S2CTestInfoRes::Clear() {
+// @@protoc_insertion_point(message_clear_start:User.S2CTestInfoRes)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.resstr_.ClearToEmpty();
+  _internal_metadata_.Clear<::google::protobuf::UnknownFieldSet>();
+}
+
+const char* S2CTestInfoRes::_InternalParse(
+    const char* ptr, ::_pbi::ParseContext* ctx) {
+  ptr = ::_pbi::TcParser::ParseLoop(this, ptr, ctx, &_table_.header);
+  return ptr;
+}
+
+
+PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1
+const ::_pbi::TcParseTable<0, 1, 0, 34, 2> S2CTestInfoRes::_table_ = {
+  {
+    0,  // no _has_bits_
+    0, // no _extensions_
+    1, 0,  // max_field_number, fast_idx_mask
+    offsetof(decltype(_table_), field_lookup_table),
+    4294967294,  // skipmap
+    offsetof(decltype(_table_), field_entries),
+    1,  // num_field_entries
+    0,  // num_aux_entries
+    offsetof(decltype(_table_), field_names),  // no aux_entries
+    &_S2CTestInfoRes_default_instance_._instance,
+    ::_pbi::TcParser::GenericFallback,  // fallback
+  }, {{
+    // string ResStr = 1;
+    {::_pbi::TcParser::FastUS1,
+     {10, 63, 0, PROTOBUF_FIELD_OFFSET(S2CTestInfoRes, _impl_.resstr_)}},
+  }}, {{
+    65535, 65535
+  }}, {{
+    // string ResStr = 1;
+    {PROTOBUF_FIELD_OFFSET(S2CTestInfoRes, _impl_.resstr_), 0, 0,
+    (0 | ::_fl::kFcSingular | ::_fl::kUtf8String | ::_fl::kRepAString)},
+  }},
+  // no aux_entries
+  {{
+    "\23\6\0\0\0\0\0\0"
+    "User.S2CTestInfoRes"
+    "ResStr"
+  }},
+};
+
+::uint8_t* S2CTestInfoRes::_InternalSerialize(
+    ::uint8_t* target,
+    ::google::protobuf::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:User.S2CTestInfoRes)
+  ::uint32_t cached_has_bits = 0;
+  (void)cached_has_bits;
+
+  // string ResStr = 1;
+  if (!this->_internal_resstr().empty()) {
+    const std::string& _s = this->_internal_resstr();
+    ::google::protobuf::internal::WireFormatLite::VerifyUtf8String(
+        _s.data(), static_cast<int>(_s.length()), ::google::protobuf::internal::WireFormatLite::SERIALIZE, "User.S2CTestInfoRes.ResStr");
+    target = stream->WriteStringMaybeAliased(1, _s, target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target =
+        ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+            _internal_metadata_.unknown_fields<::google::protobuf::UnknownFieldSet>(::google::protobuf::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:User.S2CTestInfoRes)
+  return target;
+}
+
+::size_t S2CTestInfoRes::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:User.S2CTestInfoRes)
+  ::size_t total_size = 0;
+
+  ::uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string ResStr = 1;
+  if (!this->_internal_resstr().empty()) {
+    total_size += 1 + ::google::protobuf::internal::WireFormatLite::StringSize(
+                                    this->_internal_resstr());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::google::protobuf::Message::ClassData S2CTestInfoRes::_class_data_ = {
+    S2CTestInfoRes::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
+};
+const ::google::protobuf::Message::ClassData* S2CTestInfoRes::GetClassData() const {
+  return &_class_data_;
+}
+
+void S2CTestInfoRes::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
+  auto* const _this = static_cast<S2CTestInfoRes*>(&to_msg);
+  auto& from = static_cast<const S2CTestInfoRes&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:User.S2CTestInfoRes)
+  ABSL_DCHECK_NE(&from, _this);
+  ::uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_resstr().empty()) {
+    _this->_internal_set_resstr(from._internal_resstr());
+  }
+  _this->_internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void S2CTestInfoRes::CopyFrom(const S2CTestInfoRes& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:User.S2CTestInfoRes)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+PROTOBUF_NOINLINE bool S2CTestInfoRes::IsInitialized() const {
+  return true;
+}
+
+::_pbi::CachedSize* S2CTestInfoRes::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void S2CTestInfoRes::InternalSwap(S2CTestInfoRes* PROTOBUF_RESTRICT other) {
+  using std::swap;
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.resstr_, &other->_impl_.resstr_, arena);
+}
+
+::google::protobuf::Metadata S2CTestInfoRes::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_LogicPacket_2eproto_getter, &descriptor_table_LogicPacket_2eproto_once,
+      file_level_metadata_LogicPacket_2eproto[1]);
+}
 // ===================================================================
 
 class PacketType::_Internal {
@@ -473,7 +899,7 @@ void PacketType::InternalSwap(PacketType* PROTOBUF_RESTRICT other) {
 ::google::protobuf::Metadata PacketType::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_LogicPacket_2eproto_getter, &descriptor_table_LogicPacket_2eproto_once,
-      file_level_metadata_LogicPacket_2eproto[0]);
+      file_level_metadata_LogicPacket_2eproto[2]);
 }
 // ===================================================================
 
@@ -643,7 +1069,7 @@ void C2SPCLoginUserReq::InternalSwap(C2SPCLoginUserReq* PROTOBUF_RESTRICT other)
 ::google::protobuf::Metadata C2SPCLoginUserReq::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_LogicPacket_2eproto_getter, &descriptor_table_LogicPacket_2eproto_once,
-      file_level_metadata_LogicPacket_2eproto[1]);
+      file_level_metadata_LogicPacket_2eproto[3]);
 }
 // ===================================================================
 
@@ -900,7 +1326,7 @@ void S2CPCLoginUserRes::InternalSwap(S2CPCLoginUserRes* PROTOBUF_RESTRICT other)
 ::google::protobuf::Metadata S2CPCLoginUserRes::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_LogicPacket_2eproto_getter, &descriptor_table_LogicPacket_2eproto_once,
-      file_level_metadata_LogicPacket_2eproto[2]);
+      file_level_metadata_LogicPacket_2eproto[4]);
 }
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace User

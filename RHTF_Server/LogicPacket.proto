@@ -2,6 +2,18 @@ syntax = "proto3";
 
 package User;
 
+service ReqInfo {
+	rpc GetInfo(C2STestInfoReq) returns(S2CTestInfoRes);
+}
+
+message C2STestInfoReq {
+	uint32 ReqNum = 1;
+}
+
+message S2CTestInfoRes {
+	string ResStr = 1;
+}
+
 message PacketType {
 	oneof Type_oneof {
 		C2SPCLoginUserReq C2SLoginUserReq = 1;
