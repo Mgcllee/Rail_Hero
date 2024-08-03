@@ -6,6 +6,8 @@ using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using User;
+using System.Collections;
+using System.Collections.Concurrent;
 
 namespace RHTFMainServer
 {
@@ -16,9 +18,15 @@ namespace RHTFMainServer
         IPEndPoint serverAddress;
         TcpListener server;
 
-        static TcpClient accepter_client;
+        TcpClient accepter_client;
 
-        static TcpClient test_client;
+        TcpClient test_client;
+
+        // ConcurrentDictionary<string, TcpClient> Clients;
+        ConcurrentDictionary<int, TcpClient> Clients;
+
+        // add atomic integer settings
+        int c_uid = 0;
 
         public ServerSettings() { }
         public ServerSettings(int port)
@@ -36,7 +44,21 @@ namespace RHTFMainServer
             worker_thread();
             while (true)
             {
-                // Main Thread 종료 방지용
+                // Console.WriteLine("Accept waiting...");
+                accepter_client = server.AcceptTcpClient();
+                // Console.WriteLine("Accept sucess!!!");
+
+                try
+                {
+                    test_client = accepter_client;
+                    Clients.TryAdd(c_uid, test_client);
+                    
+                    accepter_client.Close();
+                }
+                catch 
+                { 
+                
+                }
             }
         }
 
@@ -44,11 +66,6 @@ namespace RHTFMainServer
         {
             await Task.Run(async () =>
             {
-                Console.WriteLine("Accept waiting...");
-                accepter_client = server.AcceptTcpClient();
-                Console.WriteLine("Accept sucess!!!");
-
-                test_client = accepter_client;
                 NetworkStream stream = test_client.GetStream();
 
                 byte[] data = new byte[test_client.ReceiveBufferSize];
