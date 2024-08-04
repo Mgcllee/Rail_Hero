@@ -11,6 +11,13 @@ using System.Collections.Concurrent;
 
 namespace RHTFMainServer
 {
+    enum TYPE
+    {
+        ACCEPT = 1,
+        RECV = 2,
+        SEND = 3
+    };
+
     public class ServerSettings
     {
         private int main_server_port;
@@ -22,10 +29,10 @@ namespace RHTFMainServer
 
         TcpClient test_client;
 
-        // ConcurrentDictionary<string, TcpClient> Clients;
-        ConcurrentDictionary<int, TcpClient> Clients;
+        object lock_obj = new object();
+        ConcurrentDictionary<int, TcpClient> Clients = new ConcurrentDictionary<int, TcpClient>();
+        ConcurrentQueue<(int, TYPE)> job_queue = new ConcurrentQueue<(int, TYPE)>();
 
-        // add atomic integer settings
         int c_uid = 0;
 
         public ServerSettings() { }
@@ -38,71 +45,86 @@ namespace RHTFMainServer
         {
             serverAddress = new IPEndPoint(IPAddress.Any, main_server_port);
             server = new TcpListener(serverAddress);
-
+            
             server.Start();
 
             worker_thread();
             while (true)
             {
-                // Console.WriteLine("Accept waiting...");
+                Console.WriteLine("Accept waiting...");
                 accepter_client = server.AcceptTcpClient();
-                // Console.WriteLine("Accept sucess!!!");
 
                 try
                 {
-                    test_client = accepter_client;
-                    Clients.TryAdd(c_uid, test_client);
-                    
-                    accepter_client.Close();
+                    lock(lock_obj)
+                    {
+                        c_uid += 1;
+                        
+                        test_client = accepter_client;
+
+                        Clients.TryAdd(c_uid, test_client);
+                    }
+
+                    // accepter_client.Close();
+                    Console.WriteLine("New Client enter");
+                    job_queue.Enqueue((c_uid, TYPE.RECV));
                 }
                 catch 
                 { 
-                
+                    
                 }
             }
         }
 
         async void worker_thread()
         {
+            ProcessPacketC2S ppc2s = new ProcessPacketC2S();
+            ProcessPacketS2C pps2c = new ProcessPacketS2C();
+
             await Task.Run(async () =>
             {
-                NetworkStream stream = test_client.GetStream();
-
-                byte[] data = new byte[test_client.ReceiveBufferSize];
-                System.Array.Clear(data, 0, data.Length);
-                int bytesRead = stream.Read(data, 0, data.Length);
-
-                PacketType message;
-                using (MemoryStream ms = new MemoryStream(data, 0, bytesRead))
+                while (true)
                 {
-                    message = PacketType.Parser.ParseFrom(ms);
-                }
+                    try
+                    {
+                        (int, TYPE) job;
+                        job_queue.TryDequeue(out job);
+                        
+                        if (job.Item1.CompareTo(c_uid) > 0 || job.Item1 == 0)
+                            continue;
 
-                switch (message.TypeOneofCase)
-                {
-                    case PacketType.TypeOneofOneofCase.C2SLoginUserReq:
+                        // process each packet type
+                        switch(job.Item2)
                         {
-                            Console.WriteLine
-                            (
-                                "[Login Info]\nUserID: "
-                                + message.C2SLoginUserReq.UserID
-                            );
+                            case TYPE.ACCEPT:
+                                {
 
-                            PacketType packet = new PacketType();
-                            packet.S2CLoginUserRes = new S2CPCLoginUserRes()
-                            {
-                                UserID = 4,
-                                UserLevel = 4,
-                                UserName = "Mgcllee"
-                            };
+                                }
+                                break;
+                            case TYPE.RECV:
+                                {
+                                    Console.WriteLine("Recv new packet");
+                                    NetworkStream stream = Clients[job.Item1].GetStream();
 
-                            byte[] send_data = packet.ToByteArray();
-                            stream.Write(send_data, 0, send_data.Length);
+                                    byte[] data = new byte[Clients[job.Item1].ReceiveBufferSize];
+                                    System.Array.Clear(data, 0, data.Length);
+                                    int bytesRead = stream.Read(data, 0, data.Length);
 
-                            ReqInfo.ReqInfoClient req;
-                            
+                                    ppc2s.process_packet_c2s(data, bytesRead);
+
+                                }
+                                break;
+                            case TYPE.SEND:
+                                {
+                                    NetworkStream stream = Clients[job.Item1].GetStream();
+
+                                    // pps2c.process_packet_s2c(stream, );
+                                }
+                                break;
                         }
-                        break;
+                    }
+                    catch { }
+                        
                 }
             });
         }
