@@ -14,18 +14,16 @@ namespace RHTFMainServer
             {
                 case PacketType.TypeOneofOneofCase.S2CLoginUserRes:
                     {
-                        PacketType packet = new PacketType();
+                        /*PacketType packet = new PacketType();
                         packet.S2CLoginUserRes = new S2CPCLoginUserRes()
                         {
                             UserID = 4,
                             UserLevel = 4,
                             UserName = "Mgcllee"
-                        };
+                        };*/
 
-                        byte[] send_data = packet.ToByteArray();
+                        byte[] send_data = message.ToByteArray();
                         stream.Write(send_data, 0, send_data.Length);
-
-                        // ReqInfo.ReqInfoClient req;
                     }
                     break;
             }

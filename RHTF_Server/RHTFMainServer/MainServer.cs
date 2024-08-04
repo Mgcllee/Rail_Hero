@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using User;
 using System.Collections;
 using System.Collections.Concurrent;
+using System.Runtime.InteropServices;
 
 namespace RHTFMainServer
 {
@@ -20,54 +21,40 @@ namespace RHTFMainServer
 
     public class ServerSettings
     {
-        private int main_server_port;
-
-        IPEndPoint serverAddress;
-        TcpListener server;
-
-        TcpClient accepter_client;
-
-        TcpClient test_client;
-
-        object lock_obj = new object();
-        ConcurrentDictionary<int, TcpClient> Clients = new ConcurrentDictionary<int, TcpClient>();
-        ConcurrentQueue<(int, TYPE)> job_queue = new ConcurrentQueue<(int, TYPE)>();
-
-        int c_uid = 0;
+        private object lock_obj = new object();
+        private int c_uid = 0;
 
         public ServerSettings() { }
         public ServerSettings(int port)
         {
-            main_server_port = port;
+            ServerVariable.main_server_port = port;
         }
 
         public void OnMainServer()
         {
-            serverAddress = new IPEndPoint(IPAddress.Any, main_server_port);
-            server = new TcpListener(serverAddress);
-            
-            server.Start();
+            ServerVariable.serverAddress = new IPEndPoint(IPAddress.Any, ServerVariable.main_server_port);
+            ServerVariable.server = new TcpListener(ServerVariable.serverAddress);
+
+            ServerVariable.server.Start();
 
             worker_thread();
             while (true)
             {
                 Console.WriteLine("Accept waiting...");
-                accepter_client = server.AcceptTcpClient();
+                TcpClient accepter_client = new TcpClient();
+                accepter_client = ServerVariable.server.AcceptTcpClient();
 
                 try
                 {
-                    lock(lock_obj)
+                    Console.WriteLine("New Client enter");
+                    lock (lock_obj)
                     {
                         c_uid += 1;
-                        
-                        test_client = accepter_client;
 
-                        Clients.TryAdd(c_uid, test_client);
+                        // Concurrent but "c_uid += 1"
+                        ServerVariable.Clients.TryAdd(c_uid, accepter_client);
+                        ServerVariable.job_queue.Enqueue((c_uid, (TYPE.RECV, new PacketType())));
                     }
-
-                    // accepter_client.Close();
-                    Console.WriteLine("New Client enter");
-                    job_queue.Enqueue((c_uid, TYPE.RECV));
                 }
                 catch 
                 { 
@@ -87,14 +74,16 @@ namespace RHTFMainServer
                 {
                     try
                     {
-                        (int, TYPE) job;
-                        job_queue.TryDequeue(out job);
+                        if (ServerVariable.job_queue.Count == 0)
+                            continue;
+                        (int, (TYPE, PacketType)) job;
+                        ServerVariable.job_queue.TryDequeue(out job);
                         
                         if (job.Item1.CompareTo(c_uid) > 0 || job.Item1 == 0)
                             continue;
 
                         // process each packet type
-                        switch(job.Item2)
+                        switch(job.Item2.Item1)
                         {
                             case TYPE.ACCEPT:
                                 {
@@ -103,22 +92,22 @@ namespace RHTFMainServer
                                 break;
                             case TYPE.RECV:
                                 {
-                                    Console.WriteLine("Recv new packet");
-                                    NetworkStream stream = Clients[job.Item1].GetStream();
+                                    Console.WriteLine("Recv new packet uid: " + job.Item1);
+                                    NetworkStream stream = ServerVariable.Clients[job.Item1].GetStream();
 
-                                    byte[] data = new byte[Clients[job.Item1].ReceiveBufferSize];
-                                    System.Array.Clear(data, 0, data.Length);
+                                    byte[] data = new byte[ServerVariable.Clients[job.Item1].ReceiveBufferSize];
+                                    Array.Clear(data, 0, data.Length);
                                     int bytesRead = stream.Read(data, 0, data.Length);
 
-                                    ppc2s.process_packet_c2s(data, bytesRead);
+                                    ppc2s.process_packet_c2s(c_uid, data, bytesRead);
 
                                 }
                                 break;
                             case TYPE.SEND:
                                 {
-                                    NetworkStream stream = Clients[job.Item1].GetStream();
+                                    NetworkStream stream = ServerVariable.Clients[job.Item1].GetStream();
 
-                                    // pps2c.process_packet_s2c(stream, );
+                                    pps2c.process_packet_s2c(stream, job.Item2.Item2);
                                 }
                                 break;
                         }

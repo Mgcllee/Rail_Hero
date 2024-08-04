@@ -7,7 +7,7 @@ namespace RHTFMainServer
 {
     class ProcessPacketC2S
     {
-        public void process_packet_c2s(byte[] data, int bytesRead)
+        public void process_packet_c2s(int c_uid, byte[] data, int bytesRead)
         {
             PacketType message;
             using (MemoryStream ms = new MemoryStream(data, 0, bytesRead))
@@ -24,6 +24,15 @@ namespace RHTFMainServer
                             "[Login Info]\nUserID: "
                             + message.C2SLoginUserReq.UserID
                         );
+
+                        PacketType packet = new PacketType();
+                        packet.S2CLoginUserRes = new S2CPCLoginUserRes()
+                        {
+                            UserID = 4,
+                            UserLevel = 4,
+                            UserName = "Mgcllee"
+                        };
+                        ServerVariable.job_queue.Enqueue((c_uid, (TYPE.SEND, packet)));
                     }
                     break;
             }
