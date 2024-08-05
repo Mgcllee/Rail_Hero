@@ -24,8 +24,17 @@ C++20 과 Boost 를 사용.
 # ProtoBuf
 protoc version: [v25.1](https://github.com/protocolbuffers/protobuf/releases/tag/v25.3)  
 
+<br/>
+
 C++ project protobuf version: vcpkg protobuf:x64-windows 4.25.1  
+C++ project gRPC version: vcpkg grpc:x64-windows 1.60.0  
+
+<br/>
+
 C# Nuget Google.Protobuf version: [3.25.1](https://www.nuget.org/packages/Google.Protobuf/3.23.3?_src=template)  
+C# Nuget Grpc.Core.Api version: [2.65.0](https://www.nuget.org/packages/Grpc.Core.Api/2.65.0?_src=template)  
+C# Nuget Grpc.Net.Common version: [2.65.0](https://www.nuget.org/packages/Grpc.Net.Common/2.65.0?_src=template)  
+C# Nuget Grpc.Tools version: [2.65.0](https://www.nuget.org/packages/Grpc.Tools/2.65.0?_src=template)  
 
 Unreal Engine 5.3.2 Protobuf version : C++ protobuf:x64-windows 4.25.1 (vcpkg version)  
 Unity Protobuf version : C# Nuget Google.Protobuf 3.25.1 + @  
