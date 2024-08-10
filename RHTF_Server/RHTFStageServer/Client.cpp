@@ -6,7 +6,6 @@ Client::Client(SESSION _new_session)
 	
 }
 
-// Final Disconnect : close socket, ...
 bool Client::Disconnect()
 {
 	_session._disconnect();

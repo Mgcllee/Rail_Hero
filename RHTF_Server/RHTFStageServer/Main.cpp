@@ -3,6 +3,7 @@
 #include "stdafx.h"
 #include "worker.h"
 
+// define static variable
 HANDLE h_iocp;
 SOCKET g_s_socket;
 SOCKET g_c_socket;
@@ -38,13 +39,6 @@ int main(int argc, char* argv[])
 	g_over.curr_type = TYPE::ACCEPT;
 
 	err = AcceptEx(g_s_socket, g_c_socket, g_over._send_buf, 0, addr_size + 16, addr_size + 16, 0, &g_over._over);
-
-
-	/*
-	jthread를 사용하해서 GetLastError 함수로
-	995 번 오류가 발생하였음.
-	I/O 가 닫히는 문제가 있다.
-	*/
 
     std::vector<std::thread> worker_threads;
     int thread_cnt = std::thread::hardware_concurrency();

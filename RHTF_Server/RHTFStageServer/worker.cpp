@@ -45,8 +45,7 @@ void test_client()
     message.set_reqnum(4045);
 
     User::ReqInfo::Service req;
-    req.GetInfo()
-    
+    // req.GetInfo();
 
     closesocket(hSocket);
     WSACleanup();
@@ -83,23 +82,18 @@ void worker_thread(HANDLE h_iocp)
         {
         case ACCEPT:
         {
-            // 새로운 클라이언트의 고유 ID 발급 필요!
-            // 병목 현상을 최대한 해결해줄 발급기가 필요
             int new_c_id = (++next_client_id);
 
             if (-1 != new_c_id)
             {
                 printf("Accept New Client!\n");
-                // [[클라이언트 객체 초기화]]
-                Client new_c_info(g_c_socket); // g_~ 객체 atomic 필요
+                Client new_c_info(g_c_socket);
 
-                // Clients.insert(std::make_pair(new_c_id, new_c_info));
                 Clients[new_c_id] = new_c_info;
 
                 CreateIoCompletionPort(reinterpret_cast<HANDLE>(g_c_socket), h_iocp, new_c_id, 0);
                 Clients[new_c_id].get_session().do_recv();
                 
-                // Global Client Socket 다시 원상복귀 초기화 (다음 새로운 클라이언트 준비)
                 g_c_socket = WSASocket(AF_INET, SOCK_STREAM, 0, NULL, 0, WSA_FLAG_OVERLAPPED);
             }
             else
@@ -117,7 +111,6 @@ void worker_thread(HANDLE h_iocp)
             unsigned int c_id = static_cast<int>(key);
             int amount_packet = num_bytes + (Clients[c_id].get_session().get_prev_rest_packet());
 
-            // 읽어온 WSAOVERLAPPED 구조체 변환.
             char* recv_packet = ex_over->_send_buf;
             
             while (amount_packet > 0)
@@ -127,11 +120,7 @@ void worker_thread(HANDLE h_iocp)
                 if (packet_size <= amount_packet)
                 {
                     process_packet(c_id, recv_packet);
-
-                    // 패킷 크기만큼 읽어오기.
                     recv_packet += packet_size;
-
-                    // 현재 남아있는 패킷 줄이기.
                     amount_packet -= packet_size;
                 }
                 else
@@ -139,7 +128,6 @@ void worker_thread(HANDLE h_iocp)
                     break;
                 }
 
-                // 남아버린 버퍼 크기를 다음을 위해 저장해두기
                 Clients[c_id].get_session().set_prev_rest_packet(amount_packet);
 
                 if (amount_packet > 0)
@@ -147,7 +135,6 @@ void worker_thread(HANDLE h_iocp)
                     memcpy(ex_over->_send_buf, recv_packet, amount_packet);
                 }
 
-                // do_recv() 호출이 필수인가?
                 Clients[c_id].get_session().do_recv();
             }
         }

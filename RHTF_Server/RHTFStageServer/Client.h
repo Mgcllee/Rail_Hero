@@ -27,8 +27,6 @@ public:
 
 private:
 	SESSION _session;
-	// Client Class에서 
-	// 반드시 _uid 객체를 갖고 있어야하는가.
 
 
 public:
