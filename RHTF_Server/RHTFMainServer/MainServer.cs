@@ -1,14 +1,9 @@
-﻿using Google.Protobuf;
-using System;
+﻿using System;
 using System.Diagnostics;
-using System.IO;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading.Tasks;
 using User;
-using System.Collections;
-using System.Collections.Concurrent;
-using System.Runtime.InteropServices;
 
 namespace RHTFMainServer
 {
@@ -51,7 +46,6 @@ namespace RHTFMainServer
                     {
                         c_uid += 1;
 
-                        // Concurrent but "c_uid += 1"
                         ServerVariable.Clients.TryAdd(c_uid, accepter_client);
                         ServerVariable.job_queue.Enqueue((c_uid, (TYPE.RECV, new PacketType())));
                     }
@@ -123,7 +117,6 @@ namespace RHTFMainServer
     {
         void OnStageServer()
         {
-            // Stage Server 실행 
             string exe_name = "C:\\Git\\RHTF\\RHTF_Server\\x64\\Release\\RHTFStageServer.exe";
             string stage_server_addr = "127.0.0.1";
             int stage_server_port = 7777;
