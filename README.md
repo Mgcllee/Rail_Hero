@@ -1,5 +1,7 @@
-# RHTF
-Title: Rail Hero  
+# Rail Hero  
+
+데이터 직렬화를 이해하고  
+Protobuf 를 사용해 보고자 제작된 프로젝트입니다.  
 
 # Client
 Mobile: Unity 2022.3.32f1  
